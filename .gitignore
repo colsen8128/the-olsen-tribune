@@ -1,0 +1,8 @@
+# API keys — never commit the real .env file
+scripts/.env
+
+# Node dependencies — reinstall with `npm install` in scripts/
+scripts/node_modules/
+
+# macOS system files
+.DS_Store

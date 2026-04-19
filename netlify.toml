@@ -1,0 +1,31 @@
+# Netlify deployment configuration for The Olsen Tribune
+# Deploy by connecting this repo at app.netlify.com — no build step required.
+
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Block the site from being embedded in iframes (clickjacking protection)
+    X-Frame-Options = "DENY"
+
+    # Prevent browsers from MIME-sniffing responses away from the declared content-type
+    X-Content-Type-Options = "nosniff"
+
+    # Control how much referrer info is sent with requests
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Enforce HTTPS for 2 years, include subdomains
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+
+    # Disable access to sensitive browser APIs not needed by this site
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+
+    # Content Security Policy:
+    #   - Scripts: only from this domain
+    #   - Styles: this domain + Google Fonts
+    #   - Fonts: this domain + Google Fonts CDN
+    #   - Images: this domain + inline data URIs
+    #   - No outbound connections, no plugins, no iframes
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';"
