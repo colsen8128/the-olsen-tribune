@@ -1,0 +1,17 @@
+{
+  "name": "The Olsen Tribune",
+  "short_name": "OT",
+  "description": "Daily business intelligence — markets, technology, healthcare, politics, and analysis.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1A1410",
+  "theme_color": "#1A1410",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

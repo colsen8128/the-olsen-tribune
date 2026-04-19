@@ -21,9 +21,10 @@
 // "type": "module" in package.json activates ESM mode for this folder,
 // which is required by yahoo-finance2 v2 (it is an ESM-only package).
 
-// path / fs — built-in Node modules for file paths and reading/writing files
+// path / fs / vm — built-in Node modules
 import path            from 'path';
 import fs              from 'fs';
+import vm              from 'vm';
 // execFileSync — runs git commands without going through a shell (safer than execSync)
 import { execFileSync } from 'child_process';
 
@@ -452,6 +453,96 @@ function appendArticlesToFile(articles) {
 
 
 // ─────────────────────────────────────────────────────────────────────────────
+//  STEP 3b — Rebuild the hero section of index.html with the latest articles
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * Escapes characters that have special meaning in HTML.
+ * Used when injecting article content into the hero HTML.
+ */
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+/**
+ * Reads articles.js, finds the 4 most recent articles across all categories,
+ * and builds the hero section HTML — one lead story and three secondaries.
+ *
+ * Uses Node's vm module to evaluate articles.js in a sandboxed context so we
+ * can access the ARTICLES object without importing it as an ES module.
+ */
+async function updateHero() {
+  try {
+    const filePath = path.join(ROOT, 'assets', 'articles.js');
+    const src = fs.readFileSync(filePath, 'utf8');
+
+    const ctx = {};
+    vm.runInNewContext(src, ctx);
+    const articles = Object.values(ctx.ARTICLES || {});
+
+    if (articles.length === 0) {
+      console.log('  ⚠ No articles found — skipping hero update');
+      return;
+    }
+
+    // Sort all articles newest-first and take top 4
+    const sorted = articles.sort((a, b) => new Date(b.date) - new Date(a.date));
+    const [lead, ...secondaries] = sorted.slice(0, 4);
+
+    const secondaryHtml = secondaries.map(a => `
+          <div class="hero-secondary" data-nav="${escapeHtml(a.slug)}">
+            <div class="kicker">${escapeHtml(a.category)}</div>
+            <h3>${escapeHtml(a.headline)}</h3>
+            <p class="excerpt">${escapeHtml(a.deck)}</p>
+          </div>`).join('\n');
+
+    const heroHtml = `  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+
+        <!-- Lead story -->
+        <div class="hero-lead" data-nav="${escapeHtml(lead.slug)}">
+          <div class="kicker">${escapeHtml(lead.category)} &middot; ${escapeHtml(lead.date)}</div>
+          <h2>${escapeHtml(lead.headline)}</h2>
+          <p class="deck">${escapeHtml(lead.deck)}</p>
+          <div class="byline"><strong>${escapeHtml(lead.author)}</strong><span>${escapeHtml(lead.readTime)}</span></div>
+        </div>
+
+        <!-- Secondary stack -->
+        <div class="hero-stack">
+${secondaryHtml}
+        </div>
+
+      </div>
+    </div>
+  </section>`;
+
+    const indexPath = path.join(ROOT, 'index.html');
+    let html = fs.readFileSync(indexPath, 'utf8');
+
+    const updated = html.replace(
+      /<!-- HERO-START -->[\s\S]*?<!-- HERO-END -->/,
+      () => `<!-- HERO-START -->\n${heroHtml}\n  <!-- HERO-END -->`
+    );
+
+    if (updated === html) {
+      console.log('  ⚠ Hero markers not found in index.html — skipping hero update');
+      return;
+    }
+
+    fs.writeFileSync(indexPath, updated, 'utf8');
+    console.log('  ✓ Updated hero section in index.html');
+  } catch (err) {
+    console.warn('  ⚠ Hero update failed:', err.message);
+  }
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
 //  STEP 4 — Fetch market closing prices from Yahoo Finance
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -663,6 +754,10 @@ async function main() {
       console.error(`  ✗ Failed to generate articles for "${cat.name}":`, err.message);
     }
   }
+
+  // ── Hero update ───────────────────────────────────────────────────────────
+  console.log('\nUpdating hero section...');
+  await updateHero();
 
   // ── Ticker update ─────────────────────────────────────────────────────────
   console.log('\nUpdating market tickers...');
