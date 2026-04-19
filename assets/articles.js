@@ -417,7 +417,6 @@ const ARTICLES = {
       "For portfolio managers, the implication is that the AI infrastructure trade is maturing into something more textured than the uniform bull thesis of 2024. Winners will increasingly be defined by access to power, cooling, and community consent — three resources that cannot be conjured by balance sheet strength alone. Operators with entrenched positions in friendly jurisdictions, long-term power purchase agreements and strong local relationships will command premium economics. Those relying on the assumption that capital can always buy its way to capacity may discover, as Seattle is now suggesting, that the next phase of the build-out will be negotiated city by city, substation by substation, and permit by permit.",
     ]
   },
-,
 
   "samsung-one-ui-update-galaxy-strategy-1776637442724": {
     slug: "samsung-one-ui-update-galaxy-strategy-1776637442724",
@@ -456,7 +455,6 @@ const ARTICLES = {
       "For competitors, the implications cut both ways. Sony, which has restructured PlayStation Plus around tiered access but has invested less heavily in cloud delivery, may find its more conservative approach validated. Nvidia's GeForce Now, which has always sold cloud gaming on a metered basis, suddenly looks less like an outlier and more like the template. The risk for Microsoft is reputational. Game Pass has been a cornerstone of the Xbox brand's repositioning under chief executive Satya Nadella, and any perception that the value proposition is being quietly degraded could hand momentum to rivals at a delicate moment in the console cycle.",
     ]
   },
-,
 
   "liver-transplant-tolerance-trial-breakthrough-1776637488368": {
     slug: "liver-transplant-tolerance-trial-breakthrough-1776637488368",
@@ -495,7 +493,6 @@ const ARTICLES = {
       "For physicians, the cultural adjustment may prove harder than the technical one. Patients increasingly arrive at appointments with chatbot transcripts in hand, a practice that some clinicians find useful and others view as a challenge to professional authority. Medical schools are beginning to incorporate AI literacy into their curricula, teaching future doctors to collaborate with tools that will inevitably shape their practice. The question is no longer whether artificial intelligence will change diagnostic medicine, but whether the profession will lead that change or be reshaped by it. The early evidence suggests the window for leadership is closing quickly.",
     ]
   },
-,
 
   "hormuz-closure-rattles-global-markets-1776637533922": {
     slug: "hormuz-closure-rattles-global-markets-1776637533922",
@@ -534,7 +531,6 @@ const ARTICLES = {
       "Opposition, though muted, has not vanished. A coalition of addiction medicine specialists and conservative religious groups has raised concerns about the pace of the rollout, warning that public enthusiasm has outrun the evidence base. Critics also note the administration's decision to bypass traditional interagency review, a process that historically slows but also stabilizes major policy shifts. Whether the executive order survives legal challenge and produces durable regulatory change will depend heavily on forthcoming FDA guidance and on whether Congress chooses to codify elements of the directive into statute. For now, the order has accomplished something rare in contemporary Washington: it has moved a long-taboo subject firmly into the mainstream of health policy debate.",
     ]
   },
-,
 
   "seattle-data-center-moratorium-signals-shift-1776637582039": {
     slug: "seattle-data-center-moratorium-signals-shift-1776637582039",

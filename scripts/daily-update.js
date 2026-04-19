@@ -38,6 +38,8 @@ import Anthropic from '@anthropic-ai/sdk';
 // The default export is a class, so we instantiate it to access methods like .quote()
 import YahooFinance from 'yahoo-finance2';
 const yahooFinance = new YahooFinance();
+// Suppress the one-time survey prompt that would otherwise print to the log
+yahooFinance.suppressNotices(['yahooSurvey']);
 
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -362,8 +364,10 @@ function formatArticleEntry(a) {
   }
   lines.push(`    ]`);
 
-  // Closing brace with trailing comma (JS allows trailing commas in objects)
-  lines.push(`  },`);
+  // Closing brace — no trailing comma here. Commas between entries are added
+  // by appendArticlesToFile so we never accidentally produce a double-comma
+  // on subsequent runs.
+  lines.push(`  }`);
 
   return lines.join('\n');
 }
@@ -401,8 +405,11 @@ function appendArticlesToFile(articles) {
     return;
   }
 
-  // Build a single string containing all new article entries separated by blank lines
-  const newEntries = deduped.map(formatArticleEntry).join('\n\n');
+  // Join entries with ,\n\n so each article is separated from the next by a
+  // comma (required JS object syntax) and a blank line (readability).
+  // The comma that separates the *previous* last article from the first new
+  // entry is added by the replacement below — never by formatArticleEntry itself.
+  const newEntries = deduped.map(formatArticleEntry).join(',\n\n');
 
   // ── SECURITY FIX: use a function as the replacement, not a string ─────────
   // JavaScript's String.replace() treats special patterns in the replacement
