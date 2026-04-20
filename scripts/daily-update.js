@@ -39,8 +39,10 @@ import Anthropic from '@anthropic-ai/sdk';
 // The default export is a class, so we instantiate it to access methods like .quote()
 import YahooFinance from 'yahoo-finance2';
 const yahooFinance = new YahooFinance();
-// Suppress the one-time survey prompt that would otherwise print to the log
-yahooFinance.suppressNotices(['yahooSurvey']);
+// suppressNotices is only available in some versions — call it if it exists
+if (typeof yahooFinance.suppressNotices === 'function') {
+  yahooFinance.suppressNotices(['yahooSurvey']);
+}
 
 
 // ─────────────────────────────────────────────────────────────────────────────
