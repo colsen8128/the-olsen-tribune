@@ -403,30 +403,32 @@ function formatArticleEntry(a) {
 }
 
 /**
- * Reads articles.js, inserts new article entries before the closing };,
- * and writes the file back atomically (write → rename, never partial overwrite).
+ * Converts a category name to the filename slug used for its body file.
+ * e.g. "Financial Markets" → "financial-markets"
+ */
+function categoryToFilename(category) {
+  return category.toLowerCase().replace(/\s+/g, '-');
+}
+
+/**
+ * Appends new articles to the appropriate per-category body file and adds
+ * their metadata to article-index.js. Both files are written atomically.
  *
- * The ARTICLES object in articles.js ends with:
- *   }         ← closes the last article
- * };          ← closes the ARTICLES object
+ * Category body file format (assets/articles/{category}.js):
+ *   var ARTICLE_BODIES = ARTICLE_BODIES || {};
+ *   Object.assign(ARTICLE_BODIES, { ... });
+ *   Appending finds the closing \n\n}); and inserts before it.
  *
- * We add a comma after the last article's closing brace, then insert
- * the new entries, then restore the closing };
+ * article-index.js format (assets/article-index.js):
+ *   var ARTICLE_INDEX = [ ... ];
+ *   Appending finds the closing \n\n]; and inserts before it.
  */
 function appendArticlesToFile(articles) {
-  const filePath = path.join(ROOT, 'assets', 'articles.js');
-  let src = fs.readFileSync(filePath, 'utf8');
-
   // ── Duplicate slug check ──────────────────────────────────────────────────
-  // If the script is run twice in one day, Claude may produce the same slug.
-  // Writing a duplicate key to articles.js would silently overwrite the first
-  // article in JavaScript (last key wins). We skip any duplicates instead.
+  const indexSrc = fs.readFileSync(path.join(ROOT, 'assets', 'article-index.js'), 'utf8');
   const deduped = articles.filter(a => {
-    // The slug appears as a quoted key followed by ': {' in the file
-    const alreadyExists = src.includes(`'${a.slug}':`) || src.includes(`"${a.slug}":`);
-    if (alreadyExists) {
-      console.warn(`  ⚠ Skipping duplicate slug: "${a.slug}"`);
-    }
+    const alreadyExists = indexSrc.includes(`"slug":"${a.slug}"`);
+    if (alreadyExists) console.warn(`  ⚠ Skipping duplicate slug: "${a.slug}"`);
     return !alreadyExists;
   });
 
@@ -435,52 +437,43 @@ function appendArticlesToFile(articles) {
     return;
   }
 
-  // Join entries with ,\n\n so each article is separated from the next by a
-  // comma (required JS object syntax) and a blank line (readability).
-  // The comma that separates the *previous* last article from the first new
-  // entry is added by the replacement below — never by formatArticleEntry itself.
-  const newEntries = deduped.map(formatArticleEntry).join(',\n\n');
-
-  // ── SECURITY FIX: use a function as the replacement, not a string ─────────
-  // JavaScript's String.replace() treats special patterns in the replacement
-  // string literally:
-  //   $&  → inserts the matched text
-  //   $'  → inserts the text after the match
-  //   $`  → inserts the text before the match
-  //
-  // If Claude wrote a paragraph containing "$&" (e.g. "the S&P $& component"),
-  // passing that text as a replacement string would silently corrupt articles.js
-  // — the file would still parse as valid JS but with wrong content.
-  //
-  // When the replacement is a function, its return value is used as-is with
-  // no special pattern substitution, making this completely safe regardless
-  // of what characters the articles contain.
-  // Match optional trailing comma on the last entry, then \n\n}; at end of file.
-  // This handles both well-formed entries (no trailing comma) and hand-edited
-  // entries that have a trailing comma, preventing a double-comma syntax error.
-  const updated = src.replace(/,?\n\n\};\s*$/, () => `,\n\n${newEntries}\n\n};`);
-
-  // ── Verify the replacement actually happened ──────────────────────────────
-  // If articles.js was manually edited and no longer ends with `\n};`, the
-  // regex above won't match. `updated` would equal `src` and the articles
-  // would be silently lost. We detect this and throw rather than write nothing.
-  if (updated === src) {
-    throw new Error(
-      'Could not find the closing }; in articles.js — file may have been manually edited. ' +
-      'Ensure the file ends with a newline followed by };'
-    );
+  // ── Append full bodies to per-category files ──────────────────────────────
+  const byCategory = {};
+  for (const a of deduped) {
+    if (!byCategory[a.category]) byCategory[a.category] = [];
+    byCategory[a.category].push(a);
   }
 
-  // ── Atomic write: temp file → rename ─────────────────────────────────────
-  // Writing directly to articles.js means a crash mid-write leaves a
-  // partially-written, broken file. Writing to a temp file first and then
-  // renaming is atomic on the same filesystem: the rename either fully
-  // succeeds or leaves the original file untouched.
-  const tmpPath = filePath + '.tmp';
-  fs.writeFileSync(tmpPath, updated, 'utf8');
-  fs.renameSync(tmpPath, filePath);
+  for (const [category, catArticles] of Object.entries(byCategory)) {
+    const catFile = path.join(ROOT, 'assets', 'articles', `${categoryToFilename(category)}.js`);
+    let src = fs.readFileSync(catFile, 'utf8');
+    const newEntries = catArticles.map(formatArticleEntry).join(',\n\n');
+    // Using a function replacement to prevent $ patterns in article text from
+    // being interpreted as special replacement sequences by String.replace().
+    const updated = src.replace(/,?\n\n\}\);\s*$/, () => `,\n\n${newEntries}\n\n});\n`);
+    if (updated === src) {
+      throw new Error(`Could not find closing }); in assets/articles/${categoryToFilename(category)}.js`);
+    }
+    const tmp = catFile + '.tmp';
+    fs.writeFileSync(tmp, updated, 'utf8');
+    fs.renameSync(tmp, catFile);
+  }
 
-  console.log(`  ✓ Appended ${deduped.length} articles to assets/articles.js`);
+  // ── Append metadata to article-index.js ──────────────────────────────────
+  const metaEntries = deduped.map(a => {
+    const { body, ...meta } = a;
+    return '  ' + JSON.stringify(meta);
+  }).join(',\n\n');
+
+  const updatedIndex = indexSrc.replace(/,?\n\n\];\s*$/, () => `,\n\n${metaEntries}\n\n];\n`);
+  if (updatedIndex === indexSrc) {
+    throw new Error('Could not find closing ]; in assets/article-index.js');
+  }
+  const indexPath = path.join(ROOT, 'assets', 'article-index.js');
+  fs.writeFileSync(indexPath + '.tmp', updatedIndex, 'utf8');
+  fs.renameSync(indexPath + '.tmp', indexPath);
+
+  console.log(`  ✓ Appended ${deduped.length} articles to category files + article-index.js`);
 }
 
 
@@ -509,12 +502,12 @@ function escapeHtml(str) {
  */
 async function updateHero() {
   try {
-    const filePath = path.join(ROOT, 'assets', 'articles.js');
+    const filePath = path.join(ROOT, 'assets', 'article-index.js');
     const src = fs.readFileSync(filePath, 'utf8');
 
     const ctx = {};
     vm.runInNewContext(src, ctx);
-    const articles = Object.values(ctx.ARTICLES || {});
+    const articles = ctx.ARTICLE_INDEX || [];
 
     if (articles.length === 0) {
       console.log('  ⚠ No articles found — skipping hero update');
@@ -710,12 +703,12 @@ function escapeXml(str) {
 
 function generateFeed() {
   try {
-    const filePath = path.join(ROOT, 'assets', 'articles.js');
+    const filePath = path.join(ROOT, 'assets', 'article-index.js');
     const src = fs.readFileSync(filePath, 'utf8');
     const ctx = {};
     vm.runInNewContext(src, ctx);
 
-    const articles = Object.values(ctx.ARTICLES || {})
+    const articles = (ctx.ARTICLE_INDEX || [])
       .sort((a, b) => new Date(b.date) - new Date(a.date))
       .slice(0, 20);
 
@@ -777,7 +770,17 @@ function gitCommitAndPush(articleCount) {
   // execFileSync bypasses the shell entirely: the first argument is the binary
   // to run and the array contains the exact arguments passed to it. No shell
   // expansion ever happens, regardless of what characters the values contain.
-  execFileSync('git', ['add', 'assets/articles.js', 'feed.xml', ...HTML_FILES], { cwd: ROOT, stdio: 'inherit' });
+  execFileSync('git', [
+    'add',
+    'assets/article-index.js',
+    'assets/articles/financial-markets.js',
+    'assets/articles/technology.js',
+    'assets/articles/healthcare.js',
+    'assets/articles/politics.js',
+    'assets/articles/analysis.js',
+    'feed.xml',
+    ...HTML_FILES,
+  ], { cwd: ROOT, stdio: 'inherit' });
   execFileSync('git', ['commit', '-m', msg],                        { cwd: ROOT, stdio: 'inherit' });
   execFileSync('git', ['push'],                                      { cwd: ROOT, stdio: 'inherit' });
 

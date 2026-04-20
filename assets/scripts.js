@@ -46,8 +46,8 @@ function renderHomepageSections() {
     header.appendChild(viewAll);
     container.appendChild(header);
 
-    // Filter and sort 3 most recent
-    const articles = Object.values(ARTICLES)
+    // Filter and sort 3 most recent using the lightweight index
+    const articles = ARTICLE_INDEX
       .filter(function (a) { return a.category === cat.name; })
       .sort(function (a, b) { return new Date(b.date) - new Date(a.date); })
       .slice(0, 3);
@@ -121,6 +121,27 @@ document.addEventListener('DOMContentLoaded', function () {
 // ── Router ───────────────────────────────────────────────
 let currentSlug = null;
 
+// Tracks which category body files have been loaded so we never double-load
+const loadedCategories = {};
+
+// Dynamically injects a <script> tag to load a category's full article bodies.
+// Subsequent calls for the same category resolve immediately from cache.
+function loadCategoryFile(category) {
+  return new Promise(function (resolve) {
+    const filename = category.toLowerCase().replace(/\s+/g, '-');
+    if (loadedCategories[filename]) { resolve(); return; }
+    loadedCategories[filename] = true;
+    const script = document.createElement('script');
+    script.src = 'assets/articles/' + filename + '.js';
+    script.onload = resolve;
+    script.onerror = function () {
+      loadedCategories[filename] = false; // allow retry on next attempt
+      resolve();
+    };
+    document.head.appendChild(script);
+  });
+}
+
 function navigateTo(slug) {
   window.location.hash = slug;
 }
@@ -130,15 +151,28 @@ function goHome() {
   return false;
 }
 
-function renderArticle(slug) {
-  const a = ARTICLES[slug];
+async function renderArticle(slug) {
+  // Look up metadata from the lightweight index (always available)
+  const meta = ARTICLE_INDEX.find(function (a) { return a.slug === slug; });
+  if (!meta) { hideArticle(); return; }
+
+  // Load the category body file on demand if this article's body isn't cached yet
+  if (!window.ARTICLE_BODIES || !ARTICLE_BODIES[slug]) {
+    await loadCategoryFile(meta.category);
+  }
+
+  const a = window.ARTICLE_BODIES && ARTICLE_BODIES[slug];
   if (!a) { hideArticle(); return; }
+
   currentSlug = slug;
 
-  const keys = Object.keys(ARTICLES);
-  const idx  = keys.indexOf(slug);
-  const prev = idx > 0             ? ARTICLES[keys[idx - 1]] : null;
-  const next = idx < keys.length - 1 ? ARTICLES[keys[idx + 1]] : null;
+  // Prev/next: use chronological order (oldest first) so navigation feels natural
+  const sorted = ARTICLE_INDEX.slice().sort(function (x, y) {
+    return new Date(x.date) - new Date(y.date);
+  });
+  const idx  = sorted.findIndex(function (x) { return x.slug === slug; });
+  const prev = idx > 0                 ? sorted[idx - 1] : null;
+  const next = idx < sorted.length - 1 ? sorted[idx + 1] : null;
 
   const wrap = document.getElementById('articleBodyWrap');
   wrap.innerHTML = '';
@@ -212,14 +246,14 @@ function renderArticle(slug) {
   });
   wrap.appendChild(tagsDiv);
 
-  // Prev/Next nav
+  // Prev/Next nav (uses metadata from index — no body needed)
   const nav = document.createElement('div');
   nav.className = 'art-nav';
 
   if (prev) {
     const prevLink = document.createElement('div');
     prevLink.className = 'art-nav-link';
-    prevLink.setAttribute('data-nav', keys[idx - 1]);
+    prevLink.setAttribute('data-nav', prev.slug);
     const prevDir = document.createElement('div');
     prevDir.className = 'art-nav-dir';
     prevDir.textContent = '\u2190 Previous';
@@ -236,7 +270,7 @@ function renderArticle(slug) {
   if (next) {
     const nextLink = document.createElement('div');
     nextLink.className = 'art-nav-link';
-    nextLink.setAttribute('data-nav', keys[idx + 1]);
+    nextLink.setAttribute('data-nav', next.slug);
     const nextDir = document.createElement('div');
     nextDir.className = 'art-nav-dir';
     nextDir.textContent = 'Next \u2192';
@@ -264,9 +298,9 @@ function hideArticle() {
   window.scrollTo(0, 0);
 }
 
-function handleHash() {
+async function handleHash() {
   const slug = window.location.hash.replace('#', '');
-  if (slug && ARTICLES[slug]) renderArticle(slug);
+  if (slug) await renderArticle(slug);
   else hideArticle();
 }
 

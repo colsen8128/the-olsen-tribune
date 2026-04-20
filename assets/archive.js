@@ -12,9 +12,9 @@
   var listEl         = document.getElementById('archiveList');
   var countEl        = document.getElementById('archiveResultsCount');
 
-  // Populate category dropdown
+  // Populate category dropdown from the lightweight index
   var categories = [];
-  Object.values(ARTICLES).forEach(function (a) {
+  ARTICLE_INDEX.forEach(function (a) {
     if (categories.indexOf(a.category) === -1) categories.push(a.category);
   });
   categories.sort().forEach(function (cat) {
@@ -28,7 +28,7 @@
     var q   = searchInput.value.toLowerCase().trim();
     var cat = categorySelect.value;
 
-    var filtered = Object.values(ARTICLES).filter(function (a) {
+    var filtered = ARTICLE_INDEX.filter(function (a) {
       var matchCat = !cat || a.category === cat;
       var matchQ   = !q ||
         a.headline.toLowerCase().indexOf(q) !== -1 ||
@@ -39,7 +39,7 @@
 
     listEl.innerHTML = '';
 
-    var total = Object.keys(ARTICLES).length;
+    var total = ARTICLE_INDEX.length;
     countEl.textContent = filtered.length === total
       ? total + ' articles'
       : filtered.length + ' of ' + total + ' articles';

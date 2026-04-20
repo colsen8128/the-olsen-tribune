@@ -10,8 +10,8 @@ function initSubpage(config) {
   var PER_PAGE = 10;
   var currentPage = 1;
 
-  // Filter and sort articles for this category, newest first
-  var articles = Object.values(ARTICLES)
+  // Filter and sort articles for this category using the lightweight index
+  var articles = ARTICLE_INDEX
     .filter(function (a) { return a.category === config.category; })
     .sort(function (a, b) { return new Date(b.date) - new Date(a.date); });
 

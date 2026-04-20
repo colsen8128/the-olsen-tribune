@@ -1,4 +1,4 @@
-const CACHE = 'olsen-tribune-v1';
+const CACHE = 'olsen-tribune-v2';
 
 const STATIC_ASSETS = [
   '/',
@@ -17,6 +17,12 @@ const STATIC_ASSETS = [
   '/assets/icon.svg',
   '/manifest.json',
   '/feed.xml',
+  '/assets/article-index.js',
+  '/assets/articles/financial-markets.js',
+  '/assets/articles/technology.js',
+  '/assets/articles/healthcare.js',
+  '/assets/articles/politics.js',
+  '/assets/articles/analysis.js',
 ];
 
 self.addEventListener('install', e => {
@@ -38,8 +44,8 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
 
-  // articles.js: network-first so new articles appear immediately after daily update
-  if (url.pathname.endsWith('articles.js')) {
+  // Article files: network-first so new articles appear immediately after daily update
+  if (url.pathname.includes('/assets/articles/') || url.pathname.endsWith('article-index.js')) {
     e.respondWith(
       fetch(e.request)
         .then(res => {
