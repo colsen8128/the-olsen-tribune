@@ -35,6 +35,9 @@ dotenv.config({ path: path.join(import.meta.dirname, '.env') });
 // Official Anthropic SDK — wraps the Claude REST API into simple function calls
 import Anthropic from '@anthropic-ai/sdk';
 
+// rss-parser — lightweight RSS/Atom feed parser, no API key required
+import RSSParser from 'rss-parser';
+
 
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -52,13 +55,44 @@ const FETCH_TIMEOUT_MS = 15_000; // 15 seconds
 // The five site categories, each mapped to the closest NewsAPI topic.
 // NewsAPI supports: business, entertainment, general, health, science, technology.
 // The script fetches 10 top US headlines per category as inspiration for Claude.
+// RSS feeds by category — direct from authoritative sources, no API key needed.
+// Multiple feeds per category are merged so Claude has ~20 headlines to draw from.
 const CATEGORIES = [
-  { name: 'Financial Markets', gNewsCategory: 'business'    },
-  { name: 'Technology',        gNewsCategory: 'technology'  },
-  { name: 'Healthcare',        gNewsCategory: 'health'      },
-  { name: 'Politics',          gNewsCategory: 'nation'      },
-  // Analysis draws from business headlines but asks Claude for a deeper angle
-  { name: 'Analysis',          gNewsCategory: 'business'    },
+  {
+    name: 'Financial Markets',
+    feeds: [
+      'https://feeds.bbci.co.uk/news/business/rss.xml',
+      'https://feeds.marketwatch.com/marketwatch/topstories/',
+    ],
+  },
+  {
+    name: 'Technology',
+    feeds: [
+      'https://techcrunch.com/feed/',
+      'https://feeds.arstechnica.com/arstechnica/index',
+    ],
+  },
+  {
+    name: 'Healthcare',
+    feeds: [
+      'https://feeds.bbci.co.uk/news/health/rss.xml',
+      'https://feeds.bbci.co.uk/news/science_and_environment/rss.xml',
+    ],
+  },
+  {
+    name: 'Politics',
+    feeds: [
+      'https://feeds.npr.org/1014/rss.xml',
+      'https://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml',
+    ],
+  },
+  {
+    name: 'Analysis',
+    feeds: [
+      'https://feeds.bbci.co.uk/news/business/rss.xml',
+      'https://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml',
+    ],
+  },
 ];
 
 // Market symbols to update in the ticker bar.
@@ -145,26 +179,33 @@ async function fetchWithTimeout(url, options = {}) {
  * so that Claude writes completely original content rather than paraphrasing
  * copyrighted text.
  */
-async function fetchHeadlines(gNewsCategory) {
-  // One request per category (5/day total), staying well within the free tier limit of 10/day.
-  const url =
-    `https://gnews.io/api/v4/top-headlines` +
-    `?category=${gNewsCategory}` +
-    `&lang=en` +
-    `&country=us` +
-    `&max=10` +
-    `&apikey=${process.env.GNEWS_API_KEY}`;
+async function fetchHeadlines(feeds) {
+  const parser = new RSSParser({ timeout: FETCH_TIMEOUT_MS });
+  const allItems = [];
 
-  const res  = await fetchWithTimeout(url);
-  const data = await res.json();
-
-  if (!data.articles) {
-    throw new Error(`GNews error for "${gNewsCategory}": ${data.errors?.[0] ?? 'unknown error'}`);
+  for (const feedUrl of feeds) {
+    try {
+      const feed = await parser.parseURL(feedUrl);
+      allItems.push(...feed.items);
+    } catch (err) {
+      console.warn(`  ⚠ Could not fetch RSS feed ${feedUrl}: ${err.message}`);
+    }
   }
 
-  return data.articles
-    .filter(a => a.title && a.description)
-    .map(a => `- ${a.title}: ${a.description}`)
+  if (allItems.length === 0) {
+    throw new Error('All RSS feeds failed for this category');
+  }
+
+  // Deduplicate by title, take the 20 most recent, format as bullet list
+  const seen = new Set();
+  return allItems
+    .filter(item => {
+      if (!item.title || seen.has(item.title)) return false;
+      seen.add(item.title);
+      return true;
+    })
+    .slice(0, 20)
+    .map(item => `- ${item.title}${item.contentSnippet ? ': ' + item.contentSnippet.slice(0, 120) : ''}`)
     .join('\n');
 }
 
@@ -417,7 +458,10 @@ function appendArticlesToFile(articles) {
   // When the replacement is a function, its return value is used as-is with
   // no special pattern substitution, making this completely safe regardless
   // of what characters the articles contain.
-  const updated = src.replace(/\n\};\s*$/, () => `,\n\n${newEntries}\n\n};`);
+  // Match optional trailing comma on the last entry, then \n\n}; at end of file.
+  // This handles both well-formed entries (no trailing comma) and hand-edited
+  // entries that have a trailing comma, preventing a double-comma syntax error.
+  const updated = src.replace(/,?\n\n\};\s*$/, () => `,\n\n${newEntries}\n\n};`);
 
   // ── Verify the replacement actually happened ──────────────────────────────
   // If articles.js was manually edited and no longer ends with `\n};`, the
@@ -754,7 +798,7 @@ async function main() {
   // Check that both API keys exist before doing any work.
   // If a key is missing, print a helpful message and exit with a non-zero
   // code so the OS logs the failure.
-  const required = ['GNEWS_API_KEY', 'ANTHROPIC_API_KEY', 'FINNHUB_API_KEY'];
+  const required = ['ANTHROPIC_API_KEY', 'FINNHUB_API_KEY'];
   for (const key of required) {
     if (!process.env[key]) {
       console.error(`\nMissing required environment variable: ${key}`);
@@ -773,7 +817,7 @@ async function main() {
     console.log(`Generating articles for: ${cat.name}`);
     try {
       // Fetch headlines first…
-      const headlines = await fetchHeadlines(cat.gNewsCategory);
+      const headlines = await fetchHeadlines(cat.feeds);
       console.log(`  ✓ Fetched ${headlines.split('\n').length} headlines from NewsAPI`);
 
       // …then ask Claude to write 2 original articles based on them…

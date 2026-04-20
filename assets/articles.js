@@ -569,7 +569,7 @@ var ARTICLES = {
       "A further complication is the rapid demonstration of cheap asymmetric weapons. Reports that Iranian-designed systems costing a fraction of Western air-defense munitions have successfully engaged expensive U.S. assets will reverberate through defense procurement debates from Washington to Taipei. If relatively inexpensive drones and missiles can reliably threaten multimillion-dollar platforms, the implied cost curve of defending global trade routes steepens considerably. That is a structural shift, not a transient headline — and one that markets, focused on this quarter's earnings, have barely begun to price.",
     ]
   },
-,
+
 
   "iran-conflict-energy-markets-volatility-1776693935813": {
     slug: "iran-conflict-energy-markets-volatility-1776693935813",
