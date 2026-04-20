@@ -59,12 +59,12 @@ const FETCH_TIMEOUT_MS = 15_000; // 15 seconds
 // NewsAPI supports: business, entertainment, general, health, science, technology.
 // The script fetches 10 top US headlines per category as inspiration for Claude.
 const CATEGORIES = [
-  { name: 'Financial Markets', newsApiCategory: 'business'   },
-  { name: 'Technology',        newsApiCategory: 'technology' },
-  { name: 'Healthcare',        newsApiCategory: 'health'     },
-  { name: 'Politics',          newsApiCategory: 'general'    },
+  { name: 'Financial Markets', gNewsCategory: 'business'    },
+  { name: 'Technology',        gNewsCategory: 'technology'  },
+  { name: 'Healthcare',        gNewsCategory: 'health'      },
+  { name: 'Politics',          gNewsCategory: 'nation'      },
   // Analysis draws from business headlines but asks Claude for a deeper angle
-  { name: 'Analysis',          newsApiCategory: 'business'   },
+  { name: 'Analysis',          gNewsCategory: 'business'    },
 ];
 
 // Market symbols to update in the ticker bar.
@@ -149,28 +149,28 @@ async function fetchWithTimeout(url, options = {}) {
  * so that Claude writes completely original content rather than paraphrasing
  * copyrighted text.
  */
-async function fetchHeadlines(newsApiCategory) {
-  // Build the request URL. Parameters:
-  //   country=us  — US sources only (keeps content geographically relevant)
-  //   category    — one of NewsAPI's topic buckets (business, technology, etc.)
-  //   pageSize=10 — fetch the 10 most recent headlines (stays within free tier limits)
+async function fetchHeadlines(gNewsCategory) {
+  // GNews free tier works from any server (unlike NewsAPI which blocks non-localhost).
+  // Parameters:
+  //   category — one of GNews's topic buckets
+  //   lang=en  — English articles only
+  //   country=us — US sources only
+  //   max=10   — fetch 10 headlines (free tier allows up to 10 per request)
   const url =
-    `https://newsapi.org/v2/top-headlines` +
-    `?country=us` +
-    `&category=${newsApiCategory}` +
-    `&pageSize=10` +
-    `&apiKey=${process.env.NEWS_API_KEY}`;
+    `https://gnews.io/api/v4/top-headlines` +
+    `?category=${gNewsCategory}` +
+    `&lang=en` +
+    `&country=us` +
+    `&max=10` +
+    `&apikey=${process.env.GNEWS_API_KEY}`;
 
-  // Use our timeout wrapper so a slow NewsAPI response can't stall the whole run
   const res  = await fetchWithTimeout(url);
   const data = await res.json();
 
-  if (data.status !== 'ok') {
-    throw new Error(`NewsAPI error for "${newsApiCategory}": ${data.message}`);
+  if (!data.articles) {
+    throw new Error(`GNews error for "${gNewsCategory}": ${data.errors?.[0] ?? 'unknown error'}`);
   }
 
-  // Filter out any articles that are missing a title or description,
-  // then join them into a plain bullet list for Claude's prompt
   return data.articles
     .filter(a => a.title && a.description)
     .map(a => `- ${a.title}: ${a.description}`)
@@ -776,7 +776,7 @@ async function main() {
   // Check that both API keys exist before doing any work.
   // If a key is missing, print a helpful message and exit with a non-zero
   // code so the OS logs the failure.
-  const required = ['NEWS_API_KEY', 'ANTHROPIC_API_KEY'];
+  const required = ['GNEWS_API_KEY', 'ANTHROPIC_API_KEY'];
   for (const key of required) {
     if (!process.env[key]) {
       console.error(`\nMissing required environment variable: ${key}`);
@@ -795,7 +795,7 @@ async function main() {
     console.log(`Generating articles for: ${cat.name}`);
     try {
       // Fetch headlines first…
-      const headlines = await fetchHeadlines(cat.newsApiCategory);
+      const headlines = await fetchHeadlines(cat.gNewsCategory);
       console.log(`  ✓ Fetched ${headlines.split('\n').length} headlines from NewsAPI`);
 
       // …then ask Claude to write 2 original articles based on them…
