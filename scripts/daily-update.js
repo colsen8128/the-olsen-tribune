@@ -150,28 +150,33 @@ async function fetchWithTimeout(url, options = {}) {
  * copyrighted text.
  */
 async function fetchHeadlines(gNewsCategory) {
-  // GNews free tier works from any server (unlike NewsAPI which blocks non-localhost).
-  // Parameters:
-  //   category — one of GNews's topic buckets
-  //   lang=en  — English articles only
-  //   country=us — US sources only
-  //   max=10   — fetch 10 headlines (free tier allows up to 10 per request)
-  const url =
+  // Fetch headlines twice per category (2 requests × 5 categories = 10/day, the full free tier allowance).
+  // Combining both sets gives Claude 20 headlines to work from, producing richer articles.
+  const buildUrl = (page) =>
     `https://gnews.io/api/v4/top-headlines` +
     `?category=${gNewsCategory}` +
     `&lang=en` +
     `&country=us` +
     `&max=10` +
+    `&page=${page}` +
     `&apikey=${process.env.GNEWS_API_KEY}`;
 
-  const res  = await fetchWithTimeout(url);
-  const data = await res.json();
+  const [res1, res2] = await Promise.all([
+    fetchWithTimeout(buildUrl(1)),
+    fetchWithTimeout(buildUrl(2)),
+  ]);
+  const [data1, data2] = await Promise.all([res1.json(), res2.json()]);
 
-  if (!data.articles) {
-    throw new Error(`GNews error for "${gNewsCategory}": ${data.errors?.[0] ?? 'unknown error'}`);
+  if (!data1.articles) {
+    throw new Error(`GNews error for "${gNewsCategory}": ${data1.errors?.[0] ?? 'unknown error'}`);
   }
 
-  return data.articles
+  const combined = [
+    ...(data1.articles || []),
+    ...(data2.articles || []),
+  ];
+
+  return combined
     .filter(a => a.title && a.description)
     .map(a => `- ${a.title}: ${a.description}`)
     .join('\n');
