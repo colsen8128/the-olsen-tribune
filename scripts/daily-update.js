@@ -35,14 +35,6 @@ dotenv.config({ path: path.join(import.meta.dirname, '.env') });
 // Official Anthropic SDK — wraps the Claude REST API into simple function calls
 import Anthropic from '@anthropic-ai/sdk';
 
-// yahoo-finance2 — fetches market prices from Yahoo Finance without a paid API key.
-// The default export is a class, so we instantiate it to access methods like .quote()
-import YahooFinance from 'yahoo-finance2';
-const yahooFinance = new YahooFinance();
-// suppressNotices is only available in some versions — call it if it exists
-if (typeof yahooFinance.suppressNotices === 'function') {
-  yahooFinance.suppressNotices(['yahooSurvey']);
-}
 
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -73,21 +65,23 @@ const CATEGORIES = [
 // yf     — Yahoo Finance symbol used to fetch the data
 // isBond — true for the 10-Year Treasury, which displays a yield level (%) and
 //          change in percentage-points rather than a price and % change
+// Finnhub symbols for stocks/indices/crypto.
+// Free tier supports US stocks, major indices, and crypto pairs.
 const TICKER_SYMBOLS = [
-  { sym: 'S&amp;P 500', yf: '^GSPC',   isBond: false },
-  { sym: 'DJIA',        yf: '^DJI',    isBond: false },
-  { sym: 'NASDAQ',      yf: '^IXIC',   isBond: false },
-  { sym: 'AAPL',        yf: 'AAPL',    isBond: false },
-  { sym: 'MSFT',        yf: 'MSFT',    isBond: false },
-  { sym: 'AMZN',        yf: 'AMZN',    isBond: false },
-  { sym: 'TSLA',        yf: 'TSLA',    isBond: false },
-  { sym: 'BTC',         yf: 'BTC-USD', isBond: false },
-  { sym: '10Y',         yf: '^TNX',    isBond: true  },
-  { sym: 'WTI',         yf: 'CL=F',    isBond: false },
-  { sym: 'GOLD',        yf: 'GC=F',    isBond: false },
-  { sym: 'NVDA',        yf: 'NVDA',    isBond: false },
-  { sym: 'GOOGL',       yf: 'GOOGL',   isBond: false },
-  { sym: 'META',        yf: 'META',    isBond: false },
+  { sym: 'S&amp;P 500', finnhub: '^GSPC',             isBond: false },
+  { sym: 'DJIA',        finnhub: '^DJI',              isBond: false },
+  { sym: 'NASDAQ',      finnhub: '^IXIC',             isBond: false },
+  { sym: 'AAPL',        finnhub: 'AAPL',              isBond: false },
+  { sym: 'MSFT',        finnhub: 'MSFT',              isBond: false },
+  { sym: 'AMZN',        finnhub: 'AMZN',              isBond: false },
+  { sym: 'TSLA',        finnhub: 'TSLA',              isBond: false },
+  { sym: 'BTC',         finnhub: 'BINANCE:BTCUSDT',   isBond: false },
+  { sym: '10Y',         finnhub: '^TNX',              isBond: true  },
+  { sym: 'WTI',         finnhub: 'NYMEX:CL1!',        isBond: false },
+  { sym: 'GOLD',        finnhub: 'OANDA:XAU_USD',     isBond: false },
+  { sym: 'NVDA',        finnhub: 'NVDA',              isBond: false },
+  { sym: 'GOOGL',       finnhub: 'GOOGL',             isBond: false },
+  { sym: 'META',        finnhub: 'META',              isBond: false },
 ];
 
 // Every HTML file on the site that contains a ticker bar.
@@ -152,33 +146,23 @@ async function fetchWithTimeout(url, options = {}) {
  * copyrighted text.
  */
 async function fetchHeadlines(gNewsCategory) {
-  // Fetch headlines twice per category (2 requests × 5 categories = 10/day, the full free tier allowance).
-  // Combining both sets gives Claude 20 headlines to work from, producing richer articles.
-  const buildUrl = (page) =>
+  // One request per category (5/day total), staying well within the free tier limit of 10/day.
+  const url =
     `https://gnews.io/api/v4/top-headlines` +
     `?category=${gNewsCategory}` +
     `&lang=en` +
     `&country=us` +
     `&max=10` +
-    `&page=${page}` +
     `&apikey=${process.env.GNEWS_API_KEY}`;
 
-  const [res1, res2] = await Promise.all([
-    fetchWithTimeout(buildUrl(1)),
-    fetchWithTimeout(buildUrl(2)),
-  ]);
-  const [data1, data2] = await Promise.all([res1.json(), res2.json()]);
+  const res  = await fetchWithTimeout(url);
+  const data = await res.json();
 
-  if (!data1.articles) {
-    throw new Error(`GNews error for "${gNewsCategory}": ${data1.errors?.[0] ?? 'unknown error'}`);
+  if (!data.articles) {
+    throw new Error(`GNews error for "${gNewsCategory}": ${data.errors?.[0] ?? 'unknown error'}`);
   }
 
-  const combined = [
-    ...(data1.articles || []),
-    ...(data2.articles || []),
-  ];
-
-  return combined
+  return data.articles
     .filter(a => a.title && a.description)
     .map(a => `- ${a.title}: ${a.description}`)
     .join('\n');
@@ -563,43 +547,30 @@ async function fetchMarketData() {
 
   for (const t of TICKER_SYMBOLS) {
     try {
-      // quote() returns a rich object. The fields we care about:
-      //   regularMarketPrice          — the last traded price
-      //   regularMarketChangePercent  — % change from previous close (e.g. 0.24 = +0.24%)
-      //   regularMarketChange         — absolute change (used for the 10Y yield)
-      const q = await yahooFinance.quote(t.yf);
+      const url = `https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(t.finnhub)}&token=${process.env.FINNHUB_API_KEY}`;
+      const res = await fetchWithTimeout(url);
+      const q   = await res.json();
 
-      // Guard against Yahoo Finance returning null/undefined for a price —
-      // this can happen for thinly-traded instruments or during maintenance
-      const price = q.regularMarketPrice;
-      if (price == null) {
-        throw new Error('regularMarketPrice is null or undefined');
-      }
+      // Finnhub returns { c: currentPrice, pc: previousClose, d: change, dp: changePercent }
+      const price = q.c;
+      if (!price) throw new Error('No price returned');
 
       if (t.isBond) {
-        // For the 10-Year Treasury we show the yield level (e.g. "4.42%")
-        // and the change in percentage points (e.g. "+0.04"), not a % change
-        const change    = q.regularMarketChange ?? 0;
+        const change    = q.d ?? (price - q.pc);
         const isUp      = change >= 0;
         const changeStr = (isUp ? '+' : '') + change.toFixed(2);
         results[t.sym] = { displayPrice: price.toFixed(2) + '%', changeStr, isUp };
       } else {
-        const pct  = q.regularMarketChangePercent ?? 0;
+        const pct  = q.dp ?? (q.pc ? ((price - q.pc) / q.pc) * 100 : 0);
         const isUp = pct >= 0;
-
-        // Format the price with appropriate precision:
-        // - Bitcoin and Gold (> 10,000): whole number with commas
-        // - Everything else: two decimal places
         const displayPrice = price >= 10_000
           ? Math.round(price).toLocaleString('en-US')
           : price.toFixed(2);
-
         const changeStr = (isUp ? '+' : '') + pct.toFixed(2) + '%';
         results[t.sym] = { displayPrice, changeStr, isUp };
       }
     } catch (err) {
-      // One failed symbol shouldn't stop the rest — log a warning and continue
-      console.warn(`  ⚠ Could not fetch ${t.sym} (${t.yf}): ${err.message}`);
+      console.warn(`  ⚠ Could not fetch ${t.sym} (${t.finnhub}): ${err.message}`);
     }
   }
 
@@ -783,7 +754,7 @@ async function main() {
   // Check that both API keys exist before doing any work.
   // If a key is missing, print a helpful message and exit with a non-zero
   // code so the OS logs the failure.
-  const required = ['GNEWS_API_KEY', 'ANTHROPIC_API_KEY'];
+  const required = ['GNEWS_API_KEY', 'ANTHROPIC_API_KEY', 'FINNHUB_API_KEY'];
   for (const key of required) {
     if (!process.env[key]) {
       console.error(`\nMissing required environment variable: ${key}`);
