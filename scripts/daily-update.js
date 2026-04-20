@@ -1,25 +1,27 @@
 /**
  * daily-update.js — The Olsen Tribune
  *
- * Runs every morning at 8 AM ET to:
- *   1. Pull today's top headlines from NewsAPI (a licensed aggregator that
- *      surfaces stories from Bloomberg, NYT, Reuters, WSJ, etc.)
+ * Runs every morning at 8 AM ET (via GitHub Actions) to:
+ *   1. Fetch today's top headlines from RSS feeds (BBC, TechCrunch, Ars Technica,
+ *      NPR, MarketWatch) — no API key required, no rate limits
  *   2. Send those headlines to the Claude API, which writes 2 original,
- *      publication-quality articles per category
+ *      publication-quality articles per category (10 articles total)
  *   3. Append the new articles to assets/articles.js
- *   4. Fetch previous-day closing prices from Yahoo Finance
- *   5. Rewrite the ticker bar in every HTML file with fresh prices
- *   6. Git commit + push so Netlify auto-redeploys the live site
+ *   4. Rebuild the hero section of index.html with the 4 newest articles
+ *   5. Fetch live market prices from Finnhub for all 14 ticker symbols
+ *   6. Rewrite the ticker bar in every HTML file with fresh prices
+ *   7. Regenerate feed.xml (RSS feed) with the 20 most recent articles
+ *   8. Git commit + push so GitHub Pages redeploys the live site
  *
  * Requirements:
  *   - Node.js 18 or later (built-in fetch is used — no extra HTTP library needed)
  *   - Run `npm install` inside the scripts/ folder before first use
  *   - Copy .env.example to .env and fill in your API keys
+ *   - ANTHROPIC_API_KEY and FINNHUB_API_KEY must be set as GitHub Actions secrets
  */
 
 // ES module imports — Node 18+ supports these natively.
-// "type": "module" in package.json activates ESM mode for this folder,
-// which is required by yahoo-finance2 v2 (it is an ESM-only package).
+// "type": "module" in package.json activates ESM mode for this folder.
 
 // path / fs / vm — built-in Node modules
 import path            from 'path';
@@ -52,11 +54,8 @@ const ROOT = path.resolve(import.meta.dirname, '..');
 // Without this, a hung server would stall the script indefinitely.
 const FETCH_TIMEOUT_MS = 15_000; // 15 seconds
 
-// The five site categories, each mapped to the closest NewsAPI topic.
-// NewsAPI supports: business, entertainment, general, health, science, technology.
-// The script fetches 10 top US headlines per category as inspiration for Claude.
 // RSS feeds by category — direct from authoritative sources, no API key needed.
-// Multiple feeds per category are merged so Claude has ~20 headlines to draw from.
+// Two feeds per category are merged giving Claude ~20 headlines to draw from.
 const CATEGORIES = [
   {
     name: 'Financial Markets',
@@ -95,11 +94,9 @@ const CATEGORIES = [
   },
 ];
 
-// Market symbols to update in the ticker bar.
-// yf     — Yahoo Finance symbol used to fetch the data
-// isBond — true for the 10-Year Treasury, which displays a yield level (%) and
-//          change in percentage-points rather than a price and % change
-// Finnhub symbols for stocks/indices/crypto.
+// Finnhub symbols for the ticker bar.
+// isBond — true for the 10-Year Treasury, which shows a yield level (%) and
+//          change in percentage-points rather than a price and % change.
 // Free tier supports US stocks, major indices, and crypto pairs.
 const TICKER_SYMBOLS = [
   { sym: 'S&amp;P 500', finnhub: '^GSPC',             isBond: false },
@@ -168,14 +165,14 @@ async function fetchWithTimeout(url, options = {}) {
 
 
 // ─────────────────────────────────────────────────────────────────────────────
-//  STEP 1 — Fetch headlines from NewsAPI
+//  STEP 1 — Fetch headlines from RSS feeds
 // ─────────────────────────────────────────────────────────────────────────────
 
 /**
- * Calls the NewsAPI /top-headlines endpoint for a given topic and returns
- * a plain text list of "title: description" lines.
+ * Fetches headlines from one or more RSS feeds and returns a plain text
+ * bullet list of "title: snippet" lines for Claude to use as context.
  *
- * We pass only titles and descriptions to Claude — never full article bodies —
+ * We pass only titles and short snippets — never full article bodies —
  * so that Claude writes completely original content rather than paraphrasing
  * copyrighted text.
  */
@@ -818,7 +815,7 @@ async function main() {
     try {
       // Fetch headlines first…
       const headlines = await fetchHeadlines(cat.feeds);
-      console.log(`  ✓ Fetched ${headlines.split('\n').length} headlines from NewsAPI`);
+      console.log(`  ✓ Fetched ${headlines.split('\n').length} headlines from RSS feeds`);
 
       // …then ask Claude to write 2 original articles based on them…
       const articles = await generateArticles(anthropic, cat.name, headlines);
