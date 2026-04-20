@@ -722,7 +722,7 @@ function generateFeed() {
       .sort((a, b) => new Date(b.date) - new Date(a.date))
       .slice(0, 20);
 
-    const baseUrl  = 'https://colsen8128.netlify.app';
+    const baseUrl  = 'https://colsen8128.github.io/the-olsen-tribune';
     const buildDate = new Date().toUTCString();
 
     const items = articles.map(a => {
