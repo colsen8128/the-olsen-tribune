@@ -677,6 +677,67 @@ function updateTickers(marketData) {
 
 
 // ─────────────────────────────────────────────────────────────────────────────
+//  STEP 5b — Generate RSS feed (feed.xml)
+// ─────────────────────────────────────────────────────────────────────────────
+
+function escapeXml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
+function generateFeed() {
+  try {
+    const filePath = path.join(ROOT, 'assets', 'articles.js');
+    const src = fs.readFileSync(filePath, 'utf8');
+    const ctx = {};
+    vm.runInNewContext(src, ctx);
+
+    const articles = Object.values(ctx.ARTICLES || {})
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .slice(0, 20);
+
+    const baseUrl  = 'https://colsen8128.netlify.app';
+    const buildDate = new Date().toUTCString();
+
+    const items = articles.map(a => {
+      const url     = `${baseUrl}/index.html#${escapeXml(a.slug)}`;
+      const pubDate = new Date(a.date).toUTCString();
+      return `    <item>
+      <title>${escapeXml(a.headline)}</title>
+      <link>${url}</link>
+      <guid isPermaLink="true">${url}</guid>
+      <description>${escapeXml(a.deck)}</description>
+      <pubDate>${pubDate}</pubDate>
+      <category>${escapeXml(a.category)}</category>
+    </item>`;
+    }).join('\n');
+
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Olsen Tribune</title>
+    <link>${baseUrl}</link>
+    <description>Daily business intelligence — markets, technology, healthcare, politics, and analysis.</description>
+    <language>en-us</language>
+    <lastBuildDate>${buildDate}</lastBuildDate>
+    <atom:link href="${baseUrl}/feed.xml" rel="self" type="application/rss+xml"/>
+${items}
+  </channel>
+</rss>`;
+
+    fs.writeFileSync(path.join(ROOT, 'feed.xml'), xml, 'utf8');
+    console.log(`  ✓ Generated RSS feed with ${articles.length} articles`);
+  } catch (err) {
+    console.warn('  ⚠ RSS feed generation failed:', err.message);
+  }
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
 //  STEP 6 — Commit and push so Netlify redeploys the site
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -697,7 +758,7 @@ function gitCommitAndPush(articleCount) {
   // execFileSync bypasses the shell entirely: the first argument is the binary
   // to run and the array contains the exact arguments passed to it. No shell
   // expansion ever happens, regardless of what characters the values contain.
-  execFileSync('git', ['add', 'assets/articles.js', ...HTML_FILES], { cwd: ROOT, stdio: 'inherit' });
+  execFileSync('git', ['add', 'assets/articles.js', 'feed.xml', ...HTML_FILES], { cwd: ROOT, stdio: 'inherit' });
   execFileSync('git', ['commit', '-m', msg],                        { cwd: ROOT, stdio: 'inherit' });
   execFileSync('git', ['push'],                                      { cwd: ROOT, stdio: 'inherit' });
 
@@ -767,6 +828,10 @@ async function main() {
   } catch (err) {
     console.error('  ✗ Ticker update failed:', err.message);
   }
+
+  // ── RSS feed ──────────────────────────────────────────────────────────────
+  console.log('\nGenerating RSS feed...');
+  generateFeed();
 
   // ── Git push ──────────────────────────────────────────────────────────────
   if (allNewArticles.length > 0) {

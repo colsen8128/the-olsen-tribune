@@ -961,3 +961,152 @@ body.article-open .article-page { display: block; }
   scrollbar-width: none;
 }
 .nav-list::-webkit-scrollbar { display: none; }
+
+/* ─────────────────────────────────────────
+   THEME TOGGLE BUTTON
+───────────────────────────────────────── */
+.theme-toggle {
+  width: 28px;
+  height: 28px;
+  padding: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--ink-light);
+  flex-shrink: 0;
+  transition: color var(--t);
+}
+.theme-toggle:hover { color: var(--ink); }
+.theme-toggle svg { display: block; }
+
+/* ─────────────────────────────────────────
+   DARK MODE
+   Activates when the OS is set to dark mode (unless the user has manually
+   chosen light via the toggle), or when the user manually chooses dark.
+───────────────────────────────────────── */
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) { color-scheme: dark; }
+  html:not([data-theme="light"]) body,
+  html:not([data-theme="light"]) .site-header,
+  html:not([data-theme="light"]) .site-nav,
+  html:not([data-theme="light"]) .main-page,
+  html:not([data-theme="light"]) .article-page,
+  html:not([data-theme="light"]) .archive-page { background: #181210; }
+
+  html:not([data-theme="light"]) body { color: #EDE5DB; }
+
+  html:not([data-theme="light"]) .masthead-name,
+  html:not([data-theme="light"]) .nav-list a:hover,
+  html:not([data-theme="light"]) .story-headline,
+  html:not([data-theme="light"]) .art-headline,
+  html:not([data-theme="light"]) .archive-title,
+  html:not([data-theme="light"]) .subpage-title,
+  html:not([data-theme="light"]) .cat-section-name { color: #EDE5DB; }
+
+  html:not([data-theme="light"]) .nav-list a,
+  html:not([data-theme="light"]) .story-excerpt,
+  html:not([data-theme="light"]) .art-deck,
+  html:not([data-theme="light"]) .art-byline,
+  html:not([data-theme="light"]) .archive-excerpt,
+  html:not([data-theme="light"]) .subpage-desc,
+  html:not([data-theme="light"]) .about-body p { color: #A89880; }
+
+  html:not([data-theme="light"]) .art-content p { color: #D8D0C4; }
+
+  html:not([data-theme="light"]) .header-meta { border-bottom-color: #3A3028; }
+  html:not([data-theme="light"]) .site-nav { border-top-color: #4A4038; border-bottom-color: #3A3028; }
+  html:not([data-theme="light"]) .hero { border-bottom-color: #3A3028; }
+  html:not([data-theme="light"]) .hero-lead { border-right-color: #3A3028; }
+  html:not([data-theme="light"]) .hero-stack { border-top-color: #3A3028; }
+  html:not([data-theme="light"]) .hero-secondary { border-top-color: #3A3028; }
+  html:not([data-theme="light"]) .cat-section-home { border-top-color: #3A3028; }
+  html:not([data-theme="light"]) .cat-section-header { border-bottom-color: #4A4038; }
+  html:not([data-theme="light"]) .story-row { border-bottom-color: #3A3028; }
+  html:not([data-theme="light"]) .story-row:hover { background: #221810; }
+  html:not([data-theme="light"]) .about-band { border-top-color: #3A3028; }
+  html:not([data-theme="light"]) .about-values { border-top-color: #3A3028; }
+  html:not([data-theme="light"]) .art-byline { border-bottom-color: #3A3028; }
+  html:not([data-theme="light"]) .art-rule { border-top-color: #3A3028; }
+  html:not([data-theme="light"]) .art-tag { background: #2A2018; border-color: #3A3028; color: #A89880; }
+  html:not([data-theme="light"]) .art-nav { border-top-color: #3A3028; }
+  html:not([data-theme="light"]) .art-back-btn { border-color: #3A3028; color: #A89880; }
+  html:not([data-theme="light"]) .art-back-btn:hover { background: #EDE5DB; color: #181210; border-color: #EDE5DB; }
+  html:not([data-theme="light"]) .subpage-header { border-bottom-color: #4A4038; }
+  html:not([data-theme="light"]) .subpage-pagination { border-top-color: #3A3028; }
+  html:not([data-theme="light"]) .pagination-btn { border-color: #3A3028; color: #A89880; }
+  html:not([data-theme="light"]) .pagination-btn:hover:not(:disabled) { background: #EDE5DB; color: #181210; border-color: #EDE5DB; }
+  html:not([data-theme="light"]) .archive-header { border-bottom-color: #3A3028; }
+  html:not([data-theme="light"]) .archive-controls { border-bottom-color: #3A3028; }
+  html:not([data-theme="light"]) .archive-item { border-bottom-color: #3A3028; }
+  html:not([data-theme="light"]) .archive-search,
+  html:not([data-theme="light"]) .archive-filter { background: #221810; color: #EDE5DB; border-color: #3A3028; }
+  html:not([data-theme="light"]) .archive-search:focus { border-color: var(--tan); }
+  html:not([data-theme="light"]) .theme-toggle { color: #A89880; }
+  html:not([data-theme="light"]) .theme-toggle:hover { color: #EDE5DB; }
+  html:not([data-theme="light"]) .market-snapshot-section { border-top-color: #3A3028; }
+}
+
+html[data-theme="dark"] { color-scheme: dark; }
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] .site-header,
+html[data-theme="dark"] .site-nav,
+html[data-theme="dark"] .main-page,
+html[data-theme="dark"] .article-page,
+html[data-theme="dark"] .archive-page { background: #181210; }
+
+html[data-theme="dark"] body { color: #EDE5DB; }
+
+html[data-theme="dark"] .masthead-name,
+html[data-theme="dark"] .nav-list a:hover,
+html[data-theme="dark"] .story-headline,
+html[data-theme="dark"] .art-headline,
+html[data-theme="dark"] .archive-title,
+html[data-theme="dark"] .subpage-title,
+html[data-theme="dark"] .cat-section-name { color: #EDE5DB; }
+
+html[data-theme="dark"] .nav-list a,
+html[data-theme="dark"] .story-excerpt,
+html[data-theme="dark"] .art-deck,
+html[data-theme="dark"] .art-byline,
+html[data-theme="dark"] .archive-excerpt,
+html[data-theme="dark"] .subpage-desc,
+html[data-theme="dark"] .about-body p { color: #A89880; }
+
+html[data-theme="dark"] .art-content p { color: #D8D0C4; }
+
+html[data-theme="dark"] .header-meta { border-bottom-color: #3A3028; }
+html[data-theme="dark"] .site-nav { border-top-color: #4A4038; border-bottom-color: #3A3028; }
+html[data-theme="dark"] .hero { border-bottom-color: #3A3028; }
+html[data-theme="dark"] .hero-lead { border-right-color: #3A3028; }
+html[data-theme="dark"] .hero-stack { border-top-color: #3A3028; }
+html[data-theme="dark"] .hero-secondary { border-top-color: #3A3028; }
+html[data-theme="dark"] .cat-section-home { border-top-color: #3A3028; }
+html[data-theme="dark"] .cat-section-header { border-bottom-color: #4A4038; }
+html[data-theme="dark"] .story-row { border-bottom-color: #3A3028; }
+html[data-theme="dark"] .story-row:hover { background: #221810; }
+html[data-theme="dark"] .about-band { border-top-color: #3A3028; }
+html[data-theme="dark"] .about-values { border-top-color: #3A3028; }
+html[data-theme="dark"] .art-byline { border-bottom-color: #3A3028; }
+html[data-theme="dark"] .art-rule { border-top-color: #3A3028; }
+html[data-theme="dark"] .art-tag { background: #2A2018; border-color: #3A3028; color: #A89880; }
+html[data-theme="dark"] .art-nav { border-top-color: #3A3028; }
+html[data-theme="dark"] .art-back-btn { border-color: #3A3028; color: #A89880; }
+html[data-theme="dark"] .art-back-btn:hover { background: #EDE5DB; color: #181210; border-color: #EDE5DB; }
+html[data-theme="dark"] .subpage-header { border-bottom-color: #4A4038; }
+html[data-theme="dark"] .subpage-pagination { border-top-color: #3A3028; }
+html[data-theme="dark"] .pagination-btn { border-color: #3A3028; color: #A89880; }
+html[data-theme="dark"] .pagination-btn:hover:not(:disabled) { background: #EDE5DB; color: #181210; border-color: #EDE5DB; }
+html[data-theme="dark"] .archive-header { border-bottom-color: #3A3028; }
+html[data-theme="dark"] .archive-controls { border-bottom-color: #3A3028; }
+html[data-theme="dark"] .archive-item { border-bottom-color: #3A3028; }
+html[data-theme="dark"] .archive-search,
+html[data-theme="dark"] .archive-filter { background: #221810; color: #EDE5DB; border-color: #3A3028; }
+html[data-theme="dark"] .archive-search:focus { border-color: var(--tan); }
+html[data-theme="dark"] .theme-toggle { color: #A89880; }
+html[data-theme="dark"] .theme-toggle:hover { color: #EDE5DB; }
+html[data-theme="dark"] .market-snapshot-section { border-top-color: #3A3028; }

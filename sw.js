@@ -12,8 +12,11 @@ const STATIC_ASSETS = [
   '/assets/styles.css',
   '/assets/scripts.js',
   '/assets/subpage.js',
+  '/assets/theme.js',
+  '/assets/archive.js',
   '/assets/icon.svg',
   '/manifest.json',
+  '/feed.xml',
 ];
 
 self.addEventListener('install', e => {

@@ -1,4 +1,4 @@
-const ARTICLES = {
+var ARTICLES = {
 
   'fed-rate-cuts': {
     slug: 'fed-rate-cuts',
