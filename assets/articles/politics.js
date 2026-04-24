@@ -189,6 +189,44 @@ Object.assign(ARTICLE_BODIES, {
       "The House, where Republicans hold a thin majority, presents its own complications. Speaker Mike Johnson must balance the demands of hardline conservatives who want the bill expanded to include restrictions on asylum and parole authority against the reservations of members from swing districts who fear political blowback. A companion measure passed the House last month but omitted several enforcement provisions that Senate conservatives consider essential, setting the stage for a difficult conference negotiation even if the Senate measure clears its procedural gauntlet.",
       "The broader significance of the episode lies in what it reveals about the contemporary Congress. Reconciliation was designed for deficit reduction, not for policymaking on contested social questions — but both parties have steadily stretched its boundaries as regular order has collapsed. Budget scholars warn that using the tool to fund routine agency operations would mark a further erosion of the appropriations process, making future shutdowns more likely and shifting still more power toward whichever party controls both chambers and the White House.",
     ]
+  },
+
+  "johnson-surveillance-gambit-1777032152422": {
+    slug: "johnson-surveillance-gambit-1777032152422",
+    category: "Politics",
+    date: "April 24, 2026",
+    readTime: "6 min read",
+    author: "By The Olsen Tribune",
+    headline: "Johnson's Third Attempt to Salvage Surveillance Law Exposes GOP Fractures",
+    deck: "With a April 30 sunset looming, the Speaker is racing to corral a caucus increasingly skeptical of the intelligence community's core authorities.",
+    tags: ["Congress","National Security","Surveillance"],
+    pullquote: "This is no longer a fight between the parties. It is a fight within one party over what conservatism means in the age of the administrative state.",
+    body: [
+      "Speaker Mike Johnson's latest maneuver to extend a foundational pillar of American foreign intelligence gathering underscores the increasingly precarious math facing Republican leadership on Capitol Hill. After two failed procedural votes exposed a widening rift between national security hawks and a growing libertarian-populist bloc, the Louisiana Republican unveiled a narrower reauthorization package this week designed to win over holdouts who have demanded stricter guardrails on how the government queries data sweeps. The April 30 deadline gives Johnson roughly a week to thread a needle that has already drawn blood twice on the House floor, and aides concede the margin for error has effectively vanished.",
+      "At the center of the dispute is whether federal agents should be required to obtain a warrant before searching a vast repository of foreign communications for information about Americans incidentally swept up in the collection. Civil liberties advocates argue the current regime amounts to a backdoor loophole around the Fourth Amendment, while intelligence officials counter that a warrant requirement would hobble investigations into terrorism, fentanyl trafficking and Chinese espionage. Johnson's compromise reportedly offers tighter internal audit requirements and criminal penalties for analysts who abuse the database, but stops short of the warrant mandate demanded by the Freedom Caucus.",
+      "The political context is no less complicated than the policy. President Trump, who once decried the surveillance authority as the instrument of his own persecution, has sent mixed signals to lawmakers in recent weeks, according to two Republican aides familiar with the conversations. His ambivalence has emboldened rank-and-file members who might otherwise defer to the White House, leaving Johnson to negotiate without clear top-cover from the executive branch he nominally serves.",
+      "Democrats, for their part, have watched the infighting with a mixture of schadenfreude and alarm. Many in the party share the civil liberties critique but fear that a lapse in the authority — even a brief one — would create operational gaps that adversaries could exploit. Senior Democrats on the House Intelligence Committee have signaled willingness to provide votes for a clean short-term extension, but only if Johnson abandons riders that would expand the scope of collection to new categories of data brokers.",
+      "Whether the Speaker can deliver before the weekend recess will say as much about his tenuous grip on the gavel as it does about the future of American spycraft. A failure to extend the authority would mark the first meaningful lapse in a Section 702-style program since its inception, an outcome that former intelligence officials describe as unthinkable a decade ago but now entirely plausible. For Johnson, the stakes extend beyond the statute itself: another defeat on a must-pass national security bill would raise fresh questions about whether the House is governable at all under the current majority.",
+    ]
+  },
+
+  "brussels-ukraine-loan-hungary-1777032152423": {
+    slug: "brussels-ukraine-loan-hungary-1777032152423",
+    category: "Politics",
+    date: "April 24, 2026",
+    readTime: "5 min read",
+    author: "By The Olsen Tribune",
+    headline: "EU Unlocks $106 Billion for Kyiv as Orban Blinks, But Unity Remains Brittle",
+    deck: "The bloc's largest single financial commitment to Ukraine since the war began papers over deep divisions that could resurface within months.",
+    tags: ["European Union","Ukraine","Foreign Policy"],
+    pullquote: "The money buys Ukraine time. What it does not buy is a durable European consensus on how this war ends.",
+    body: [
+      "The European Union's approval of a $106 billion loan package for Ukraine represents both a logistical triumph and a political fragile compromise, secured only after Hungarian Prime Minister Viktor Orban withdrew a veto that had threatened to derail the bloc's most ambitious financial commitment to Kyiv since Russia's full-scale invasion. The deal, hammered out over a marathon negotiating session in Brussels, gives Ukraine desperately needed budgetary runway to fund salaries, pensions and munitions procurement through the remainder of the fiscal year — an interval European officials concede may prove decisive on the battlefield.",
+      "Orban's capitulation came after weeks of pressure from Berlin, Paris and Rome, along with a series of side agreements that analysts say amounted to a face-saving off-ramp. Hungary secured carve-outs ensuring that none of the loan proceeds would flow through mechanisms Budapest has long opposed, and received assurances on the disbursement of frozen cohesion funds unrelated to the Ukraine file. Critics across the continent derided the concessions as extortion; defenders described them as the unavoidable cost of unanimity in a bloc that requires consensus on foreign policy questions of this magnitude.",
+      "The package's structure is novel. Rather than draw exclusively on member-state contributions, the loan leverages windfall profits generated by frozen Russian sovereign assets held primarily in Belgian clearinghouses. That architecture, championed by the Commission, allows European leaders to present the aid as effectively financed by Moscow itself — a political selling point amid growing voter fatigue with open-ended support for Kyiv. Legal experts, however, warn that the mechanism rests on contested interpretations of sovereign immunity that could be tested in European courts.",
+      "The Brussels breakthrough lands at a moment of profound uncertainty about American commitment. President Trump has oscillated between threats to condition future U.S. aid on territorial concessions by Kyiv and insistence that he alone can broker a durable settlement. European capitals have quietly begun stress-testing scenarios in which the continent assumes the overwhelming share of Ukraine's external financing requirements, a burden that even optimistic forecasts suggest would strain fiscal rules already under review.",
+      "For Ukrainian President Volodymyr Zelenskyy, the infusion provides tangible validation after a punishing stretch of diplomatic setbacks. Yet senior officials in Kyiv privately acknowledge that money alone cannot substitute for the air defense interceptors, long-range munitions and manpower that remain in short supply. The EU deal, in that sense, is less an inflection point than a holding action — enough to prevent collapse, insufficient to guarantee victory, and dependent on a European political coalition whose cohesion will be tested anew the next time Budapest picks up the phone.",
+    ]
   }
 
 });
