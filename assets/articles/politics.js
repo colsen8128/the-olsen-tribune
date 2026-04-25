@@ -227,6 +227,44 @@ Object.assign(ARTICLE_BODIES, {
       "The Brussels breakthrough lands at a moment of profound uncertainty about American commitment. President Trump has oscillated between threats to condition future U.S. aid on territorial concessions by Kyiv and insistence that he alone can broker a durable settlement. European capitals have quietly begun stress-testing scenarios in which the continent assumes the overwhelming share of Ukraine's external financing requirements, a burden that even optimistic forecasts suggest would strain fiscal rules already under review.",
       "For Ukrainian President Volodymyr Zelenskyy, the infusion provides tangible validation after a punishing stretch of diplomatic setbacks. Yet senior officials in Kyiv privately acknowledge that money alone cannot substitute for the air defense interceptors, long-range munitions and manpower that remain in short supply. The EU deal, in that sense, is less an inflection point than a holding action — enough to prevent collapse, insufficient to guarantee victory, and dependent on a European political coalition whose cohesion will be tested anew the next time Budapest picks up the phone.",
     ]
+  },
+
+  "war-powers-clock-tests-congress-resolve-1777118550143": {
+    slug: "war-powers-clock-tests-congress-resolve-1777118550143",
+    category: "Politics",
+    date: "April 25, 2026",
+    readTime: "6 min read",
+    author: "By The Olsen Tribune",
+    headline: "War Powers Clock Forces Congress Into a Reckoning Over Iran",
+    deck: "As the statutory 60-day window closes on the administration's military engagement with Tehran, lawmakers face a vote many would rather avoid.",
+    tags: ["Congress","Iran","War Powers"],
+    pullquote: "The War Powers Resolution has been treated as a suggestion for half a century. The question now is whether this Congress wants to keep it that way.",
+    body: [
+      "The countdown embedded in the 1973 War Powers Resolution is once again exposing the awkward seam between executive ambition and legislative caution. With the 60-day window approaching its expiration, members of both parties are being forced to confront a question they have largely managed to avoid since the Vietnam era: whether the United States is, in any formal sense, at war with Iran. The administration's position remains that the strikes carried out earlier this spring were limited, defensive and time-bound. A growing chorus on Capitol Hill, including a notable bloc of Republicans uneasy with open-ended Middle East commitments, argues otherwise.",
+      "Senate aides describe a procedural environment in which leadership is attempting to delay a privileged resolution until after the recess, a maneuver that critics say would itself constitute a substantive policy choice. Senator Tim Kaine, a longtime advocate of reasserting congressional authority over the use of force, has signaled he will press for a floor vote regardless of the calendar. House sponsors are working in parallel, though the path there is complicated by a leadership reluctant to embarrass the White House on a national security matter.",
+      "What makes this iteration of the debate distinct is the political geometry. The traditional alignment, in which hawkish Republicans pressed reluctant Democrats toward confrontation, has fractured. A meaningful share of the president's own coalition, animated by the noninterventionist instincts that have reshaped the party's foreign policy rhetoric, is openly skeptical of further escalation. That skepticism has been amplified by prominent media figures on the right who have publicly questioned the strategic logic of a sustained campaign against Tehran.",
+      "Markets, for their part, have largely shrugged. Crude prices have stabilized after an initial spike, and defense contractors have seen only modest moves. Investors appear to be betting that whatever Congress does, the operational tempo will be calibrated to avoid the kind of broad regional conflict that would disrupt shipping lanes or energy flows. That calm could prove fragile if a vote were to fail on the floor and be interpreted abroad as a green light for expanded operations.",
+      "The deeper stakes are constitutional. The War Powers Resolution has been treated as a suggestion for half a century, honored selectively and litigated rarely. A clean vote, whatever its outcome, would establish a contemporary precedent at a moment when the executive branch has accumulated unprecedented latitude in matters of force. Whether lawmakers seize the opportunity or allow the clock to run out without a recorded position will say as much about the institution as it does about the conflict itself.",
+    ]
+  },
+
+  "doj-drops-powell-probe-warsh-path-clears-1777118550144": {
+    slug: "doj-drops-powell-probe-warsh-path-clears-1777118550144",
+    category: "Politics",
+    date: "April 25, 2026",
+    readTime: "5 min read",
+    author: "By The Olsen Tribune",
+    headline: "Justice Department Closes Powell Inquiry, Clearing Runway for Warsh",
+    deck: "The decision to abandon a politically charged probe into the outgoing Fed chair removes a complication for the administration's nominee to lead the central bank.",
+    tags: ["Federal Reserve","Justice Department","Monetary Policy"],
+    pullquote: "A confirmation that proceeds under the shadow of a federal investigation is a different proposition than one that does not.",
+    body: [
+      "The Justice Department's quiet decision to terminate its inquiry into Federal Reserve Chairman Jerome Powell, an investigation that had centered on cost overruns associated with the central bank's Washington headquarters renovation, removes one of the more peculiar overhangs in recent monetary policy history. The probe, opened amid presidential criticism of the chairman's handling of interest rates, had been widely viewed by legal observers as thin on its merits. Its closure, announced in a brief filing late this week, was unaccompanied by detailed explanation.",
+      "The practical consequence is to clear the political and procedural track for Kevin Warsh, the former Fed governor whom the president has nominated to succeed Powell. Senate Banking Committee staff had privately warned that confirmation hearings conducted while Powell remained under federal scrutiny would invite uncomfortable questions and risk dragging the central bank into partisan terrain it has historically labored to avoid. With the investigation closed, Warsh's hearing is expected to proceed on a more conventional timeline, with a committee vote possible before the August recess.",
+      "Warsh brings a distinct policy disposition to the role. A veteran of the 2008 financial crisis response and a longtime critic of what he has described as the Fed's drift toward activist balance sheet management, he is expected to argue for a more disciplined approach to quantitative tightening and a higher bar for emergency interventions. His writings have also emphasized the costs of prolonged accommodation, a stance that puts him in some tension with the administration's stated preference for lower rates.",
+      "The Powell episode will nonetheless leave a residue. Critics of the administration argue that the opening of a criminal inquiry into a sitting Fed chairman, regardless of its eventual disposition, established a troubling template for executive pressure on an institution whose independence is foundational to the dollar's global role. Defenders of the probe counter that questions about construction expenditures at a public institution are legitimate regardless of who occupies the corner office. The dispute is unlikely to fade quietly.",
+      "For markets, the resolution is broadly clarifying. Treasury yields ticked modestly lower on the news, and equity futures responded favorably to the prospect of a more orderly transition at the Fed. Investors who had been pricing in a tail risk of institutional disruption appear to be unwinding that hedge. Whether the underlying tension between the White House and the central bank has been resolved, or merely postponed, will become apparent only once Warsh is in the chair and confronts his first difficult call.",
+    ]
   }
 
 });
