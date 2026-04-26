@@ -378,6 +378,44 @@ Object.assign(ARTICLE_BODIES, {
       "Compounding the strategic pressure are unusual signals from the supply side. Sold-out Mac mini units have begun appearing on eBay at substantial markups, with developers and small AI shops reportedly purchasing the machines in bulk to run inference workloads cheaply. The phenomenon is flattering in one sense, since it confirms the appeal of Apple silicon for AI tasks, but it also reveals that the company has not yet built a coherent strategy for serving the professional and enterprise AI market that is now buying its consumer hardware out of necessity.",
       "Investors will watch the transition with a mixture of confidence and anxiety. Apple's balance sheet, brand, and ecosystem provide a margin of error that few companies enjoy. Yet the technology landscape Ternus inherits is more contested than the one Cook took over in 2011. Rivals are willing to spend tens of billions of dollars on compute partnerships, nuclear power agreements, and chip supply deals to secure their positions. Apple's traditional reluctance to participate in such arms races has served it well, but the next chief executive may discover that selective engagement is no longer optional. The post-Jobs era, in a sense, begins now.",
     ]
+  },
+
+  "google-anthropic-compute-pact-1777204847245": {
+    slug: "google-anthropic-compute-pact-1777204847245",
+    category: "Technology",
+    date: "April 26, 2026",
+    readTime: "6 min read",
+    author: "By The Olsen Tribune",
+    headline: "Google's $40 Billion Anthropic Bet Redraws the AI Compute Map",
+    deck: "The search giant's deepening commitment to a rival lab underscores how scarcity of advanced chips is reshaping the competitive logic of artificial intelligence.",
+    tags: ["Artificial Intelligence","Cloud Computing","Capital Markets"],
+    pullquote: "Compute, not code, has become the binding constraint of the modern AI economy.",
+    body: [
+      "Google's plan to commit as much as $40 billion in cash and cloud credits to Anthropic represents one of the largest single bets ever placed on an artificial intelligence laboratory, and it reveals just how much the contours of the industry have shifted in the past eighteen months. What began as a contest over algorithms and research talent has hardened into a brutal competition for processors, power contracts, and data center capacity. In that environment, the companies that control infrastructure are increasingly the ones writing the checks, while model developers are scrambling to lock in supply at almost any price.",
+      "The arrangement is structured to flow capital in two directions at once. Google receives a deeper equity position in one of the most closely watched AI startups, while Anthropic gains guaranteed access to Tensor Processing Units and Google Cloud resources at a scale that would be virtually impossible to assemble on the open market. The deal effectively converts cloud capacity into a financial instrument, a pattern that has become familiar across the industry as Microsoft, Amazon, and Nvidia have all used compute commitments to cement strategic alignments with frontier labs.",
+      "For Anthropic, the timing is significant. The company has been ramping enterprise revenue at a torrid pace through its Claude family of models, but training and serving those systems consumes capital at rates that defy conventional venture math. Even with a valuation well into the hundreds of billions in private markets, Anthropic cannot internally finance the kind of multi-gigawatt buildout that next-generation models will require. Outside backing of this scale provides runway not just for one model cycle, but for several.",
+      "The transaction also raises uncomfortable questions for regulators on both sides of the Atlantic. Antitrust authorities have already begun probing the cluster of investments connecting hyperscalers to leading AI developers, concerned that exclusivity arrangements and revenue share structures could foreclose competition before challengers ever reach scale. A pact of this magnitude, layered on top of Anthropic's existing commercial ties to Amazon Web Services, will almost certainly draw fresh scrutiny in Washington, Brussels, and London.",
+      "What is unmistakable is that compute, not code, has become the binding constraint of the modern AI economy. The labs with privileged access to chips and electricity are pulling away from those without, and the largest cloud providers are using their balance sheets to ensure that the most valuable customers of the next decade remain inside their respective ecosystems. Google's Anthropic deal is not merely an investment. It is a statement about who intends to own the rails on which artificial intelligence will run.",
+    ]
+  },
+
+  "climate-tech-ipo-window-reopens-1777204847245": {
+    slug: "climate-tech-ipo-window-reopens-1777204847245",
+    category: "Technology",
+    date: "April 26, 2026",
+    readTime: "5 min read",
+    author: "By The Olsen Tribune",
+    headline: "After a Long Drought, Climate Tech Finds an Opening on Wall Street",
+    deck: "X-energy's debut and Fervo's pending listing suggest public investors may finally be willing to underwrite the long, capital-intensive timelines of energy innovation.",
+    tags: ["Climate Tech","IPO","Energy"],
+    pullquote: "The market is no longer asking whether these technologies work. It is asking whether they can be financed at scale.",
+    body: [
+      "For nearly three years, the climate technology sector has watched the public markets with something between hope and resignation. Promising companies with credible engineering and signed offtake agreements lined up at the door of the New York Stock Exchange and Nasdaq, only to retreat in the face of skeptical bankers and a generation of public investors burned by the SPAC era. The 27 percent first-day pop in shares of nuclear startup X-energy, paired with the imminent listing of geothermal developer Fervo, suggests the door has not just cracked open but may be swinging on its hinges.",
+      "Both companies represent a category that did not really exist on public exchanges five years ago: firm, dispatchable clean power, designed explicitly to serve industrial and data center loads. That positioning has proven decisive. With hyperscalers signing multi-decade power purchase agreements at premium prices to secure carbon-free electricity for AI training clusters, what was once a speculative climate narrative has become an infrastructure story with named, creditworthy customers.",
+      "The contrast with the previous wave of climate listings is stark. Many of the SPAC-era debutants went public with prototypes, projections, and little else. The current cohort arrives with operating assets, regulatory milestones, and contracted revenue. X-energy's small modular reactor designs have moved through key federal review stages, while Fervo has demonstrated commercial-scale geothermal output in Nevada and Utah. Investors are buying engineering progress, not slide decks.",
+      "Skeptics caution that one or two successful debuts do not constitute a recovery. Capital intensity in the sector remains punishing, project timelines stretch well beyond standard equity holding periods, and any softness in electricity demand forecasts could quickly reprice the entire group. There is also the political variable. Federal incentives for clean energy have been a moving target across recent administrations, and the next budget cycle could materially alter the economics of projects that take a decade to build.",
+      "Still, the signal from this week's trading is meaningful. The market is no longer asking whether these technologies work. It is asking whether they can be financed at scale, and a growing list of bankers, sovereign funds, and infrastructure investors appears prepared to answer in the affirmative. If the next few filings price cleanly, climate tech may finally have something it has lacked for most of its history: a functioning exit market.",
+    ]
   }
 
 });

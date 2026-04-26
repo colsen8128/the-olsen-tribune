@@ -466,6 +466,44 @@ Object.assign(ARTICLE_BODIES, {
       "For ordinary savers, the implications are more immediate than they may appear. Pension funds, both defined-benefit and defined-contribution, hold substantial equity allocations that translate market drawdowns directly into household wealth losses. A ten percent correction in global equities would wipe roughly two hundred billion pounds from UK pension assets alone, with consequences for retirement timing, consumer confidence and ultimately discretionary spending. The transmission mechanism from Wall Street and the City to high-street consumption is shorter and more powerful than is commonly appreciated.",
       "None of this guarantees a correction is imminent. Markets can remain expensive far longer than skeptics expect, and central bankers have a mixed record as market timers — Alan Greenspan's irrational exuberance speech preceded another three years of gains before the dot-com peak. But the deputy's willingness to speak plainly about a topic her predecessors typically avoided is itself a data point. Investors who treat it as noise rather than signal may find themselves, in due course, wishing they had paid closer attention to the warning sirens that sounded before the storm.",
     ]
+  },
+
+  "iran-war-inflation-eight-month-shadow-1777204978532": {
+    slug: "iran-war-inflation-eight-month-shadow-1777204978532",
+    category: "Analysis",
+    date: "April 26, 2026",
+    readTime: "6 min read",
+    author: "By The Olsen Tribune",
+    headline: "The Eight-Month Shadow: How the Iran Conflict Is Rewiring Western Price Expectations",
+    deck: "Government ministers now concede that elevated prices could persist well into next year, complicating central bank forecasts and household budgets alike.",
+    tags: ["Inflation","Geopolitics","Energy"],
+    pullquote: "What began as a regional security crisis has become a stress test for the post-pandemic disinflation narrative that markets had so carefully constructed.",
+    body: [
+      "When Treasury officials first modelled the macroeconomic consequences of the Iran conflict, the working assumption inside Whitehall was that any pricing shock would be sharp but mercifully short. That view is now being quietly revised. Senior figures concede that elevated prices, particularly at the petrol pump and along aviation routes, could linger for as long as eight months — a horizon that pushes the inflationary consequences of the conflict deep into the next fiscal year and threatens to derail what had been a cautiously optimistic disinflation story across the G7.",
+      "The arithmetic is unforgiving. Jet fuel benchmarks have climbed sharply since hostilities escalated, and several carriers have already trimmed transatlantic and Gulf routings, citing both insurance premiums and crew rotation costs. Those decisions cascade. Reduced capacity means higher fares, which feed through to corporate travel budgets, which in turn pressure service-sector pricing — a category that central bankers watch with particular anxiety because it tends to be sticky on the way down.",
+      "The latest UK inflation print confirmed what energy traders had been signalling for weeks. Headline CPI ticked up, with transport and household fuels doing most of the work. Stripping out volatile components offers only modest comfort: core measures remain above the Bank of England's two percent target, and wage settlements in several unionised sectors are being negotiated against a backdrop of renewed price anxiety.",
+      "For the Bank's Monetary Policy Committee, the dilemma is acute. A premature cut risks embedding second-round effects; holding too long risks suffocating an economy where government borrowing, while at a three-year low, remains structurally elevated. Deputy governors have begun signalling, with unusual candour, that asset valuations look stretched relative to the deteriorating real-economy backdrop — a warning rarely delivered so plainly from Threadneedle Street.",
+      "What began as a regional security crisis has become a stress test for the post-pandemic disinflation narrative that markets had so carefully constructed. Households will feel it first at the forecourt and the supermarket. Policymakers will feel it next, in forecasts that need rewriting and in credibility that must be defended. Eight months, on current trajectories, may yet prove an optimistic estimate.",
+    ]
+  },
+
+  "meta-layoffs-ai-entry-level-reckoning-1777204978533": {
+    slug: "meta-layoffs-ai-entry-level-reckoning-1777204978533",
+    category: "Analysis",
+    date: "April 26, 2026",
+    readTime: "6 min read",
+    author: "By The Olsen Tribune",
+    headline: "Meta's Cull and the Vanishing Graduate Job: Silicon Valley's AI Bargain Comes Due",
+    deck: "A ten percent workforce reduction at Meta lands as warnings mount that artificial intelligence is hollowing out the bottom rung of the white-collar career ladder.",
+    tags: ["Technology","Labor","Artificial Intelligence"],
+    pullquote: "The implicit social contract — that early-career workers absorb routine tasks while learning the craft — is being rewritten in real time by systems that perform those tasks for fractions of a salaried wage.",
+    body: [
+      "Meta's decision to shed roughly one in ten employees is, on the surface, a familiar Silicon Valley ritual: a profitable behemoth trimming headcount to satisfy investors weary of ballooning capital expenditure. But the context surrounding this round of cuts is different in kind, not merely degree. The company has poured tens of billions of dollars into artificial intelligence infrastructure over the past eighteen months, and the layoffs arrive precisely as those investments begin to deliver measurable productivity gains across engineering, content moderation and advertising operations.",
+      "The pattern is not confined to Menlo Park. Across the technology sector, hiring freezes for graduate and junior positions have hardened into outright contraction. Former British prime minister Rishi Sunak this week voiced what hiring managers have been admitting privately for months: the entry-level rung of the professional ladder is being sawn off. Tasks once assigned to first-year analysts, paralegals and junior coders are increasingly handled by large language models supervised by a thinner layer of senior staff.",
+      "The implications extend well beyond any single company's quarterly earnings. The implicit social contract — that early-career workers absorb routine tasks while learning the craft — is being rewritten in real time by systems that perform those tasks for fractions of a salaried wage. Universities, which have spent two decades aligning curricula with corporate pipelines, now confront graduating cohorts whose target jobs are evaporating faster than new ones can be defined.",
+      "There is a geopolitical dimension as well. A White House memorandum this week accused Chinese firms of systematically distilling American AI models, a claim that complicates the narrative of unassailable US leadership in the sector. If frontier capabilities diffuse more rapidly than Washington had assumed, the productivity dividends that justify aggressive workforce restructuring may compress, leaving companies with leaner payrolls but commoditised technology stacks.",
+      "Investors, for now, are rewarding the discipline. Meta's shares have outperformed peers since the cuts were trailed, and analysts expect similar announcements from competitors before the year is out. Whether the broader economy can absorb a generation of underemployed graduates while sustaining the consumer demand that underwrites Big Tech's revenues is a question that boardrooms have been notably reluctant to answer. The bargain has been struck. The bill arrives later.",
+    ]
   }
 
 });
