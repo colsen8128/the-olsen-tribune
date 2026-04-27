@@ -504,6 +504,44 @@ Object.assign(ARTICLE_BODIES, {
       "There is a geopolitical dimension as well. A White House memorandum this week accused Chinese firms of systematically distilling American AI models, a claim that complicates the narrative of unassailable US leadership in the sector. If frontier capabilities diffuse more rapidly than Washington had assumed, the productivity dividends that justify aggressive workforce restructuring may compress, leaving companies with leaner payrolls but commoditised technology stacks.",
       "Investors, for now, are rewarding the discipline. Meta's shares have outperformed peers since the cuts were trailed, and analysts expect similar announcements from competitors before the year is out. Whether the broader economy can absorb a generation of underemployed graduates while sustaining the consumer demand that underwrites Big Tech's revenues is a question that boardrooms have been notably reluctant to answer. The bargain has been struck. The bill arrives later.",
     ]
+  },
+
+  "iran-war-shockwaves-household-budgets-1777291395302": {
+    slug: "iran-war-shockwaves-household-budgets-1777291395302",
+    category: "Analysis",
+    date: "April 27, 2026",
+    readTime: "6 min read",
+    author: "By The Olsen Tribune",
+    headline: "The Long Tail of the Iran Conflict Is Now Sitting at the Kitchen Table",
+    deck: "From jet fuel surcharges to grocery bills, the macroeconomic spillover from a stalled Middle East peace process is quietly rewriting household finances across the West.",
+    tags: ["Geopolitics","Inflation","Energy"],
+    pullquote: "The conflict has effectively imposed a stealth tax on every paycheck, and that tax has an estimated maturity of at least eight months.",
+    body: [
+      "When traders speak of an oil shock, they tend to imagine a discrete moment — a tanker stopped, a pipeline severed, a price spike captured on a Bloomberg terminal. The reality of the current Iran conflict is proving stranger and slower. Brent crude has not erupted so much as it has steadily rotated upward, dragged by the collapse of the Pakistan-mediated peace track and the White House's decision to withdraw its negotiating team. The cumulative effect, however, is now percolating into balance sheets that have nothing to do with futures markets. British families interviewed in recent days describe shrinking grocery baskets and rationed heating, while Treasury officials privately concede that elevated prices may persist into the second quarter of next year.",
+      "The transmission mechanism is well understood but rarely appreciated outside policy circles. Crude prices feed directly into refined products, which feed into freight, which feeds into the unit cost of nearly every imported good. Jet fuel, in particular, has become the canary: airlines have already begun trimming UK-bound capacity and lifting fares, with some carriers quietly cancelling marginal routes altogether. For consumers, the visible symptom is a more expensive summer holiday. The invisible symptom is a structural lift in the price of moving anything, anywhere.",
+      "What makes this episode unusual is the asymmetry between the geopolitical narrative and the economic one. Markets initially treated the conflict as a contained risk, pricing in a swift diplomatic resolution. That assumption has now been falsified. The cancellation of the Pakistan talks suggests Washington sees no near-term off-ramp, and the absence of a credible mediator removes the natural ceiling on energy prices that traders had penciled in. Goldman's commodity desk and several London-based analysts have begun revising their crude forecasts upward, with some now modeling a sustained $90-plus environment.",
+      "The political consequences are starting to crystallize. UK ministers have publicly acknowledged that elevated inflation could last eight months — an extraordinarily candid timeline that effectively concedes the Bank of England's path back to target will be delayed. The improvement in public borrowing reported this week, the lowest in three years, is being treated by analysts as a final clean print before the war's fiscal drag fully arrives. Welfare upratings, debt servicing costs and energy support schemes will all be reassessed against a higher price baseline.",
+      "For households, the hardest part is psychological. Parents quoted in recent reporting spoke of shielding their children from financial anxiety, a detail that captures something the macro data cannot. The conflict has effectively imposed a stealth tax on every paycheck, and that tax has an estimated maturity of at least eight months. Until a credible diplomatic channel reopens — and there is little indication one will — the kitchen table will remain the truest barometer of a war being fought thousands of miles away.",
+    ]
+  },
+
+  "ai-capex-meta-layoffs-labor-market-1777291395303": {
+    slug: "ai-capex-meta-layoffs-labor-market-1777291395303",
+    category: "Analysis",
+    date: "April 27, 2026",
+    readTime: "7 min read",
+    author: "By The Olsen Tribune",
+    headline: "Meta's Layoffs Reveal the Uncomfortable Math Behind the AI Capex Boom",
+    deck: "As Big Tech pours unprecedented capital into artificial intelligence, the labor side of the ledger is being rewritten — and the entry-level rungs of the career ladder are disappearing first.",
+    tags: ["Technology","Labor","AI"],
+    pullquote: "The companies building the future of work are also, quite deliberately, building a future with fewer workers in it.",
+    body: [
+      "Meta's decision to eliminate roughly one in ten jobs lands at an awkward moment for the artificial intelligence industry. The cuts arrive not during a period of contraction but in the middle of the largest capital expenditure cycle in the sector's history, with hyperscalers on track to spend more than $300 billion on AI infrastructure this year alone. The juxtaposition is jarring: a company spending billions to build intelligence is simultaneously shedding thousands of the humans who once supplied it. For investors, this is the AI thesis being prosecuted in real time. For the labor market, it is something more unsettling.",
+      "The pattern is no longer confined to Silicon Valley. Former British Prime Minister Rishi Sunak this week echoed what economists at the OECD and IMF have been signaling for months: the entry-level job, long the foundation of professional career formation, is being hollowed out. Junior coders, paralegals, analysts and copywriters are precisely the cohort whose tasks generative models perform most competently. Graduate hiring data from the major consultancies and banks already shows double-digit declines from pre-pandemic peaks, and the trajectory is accelerating.",
+      "What complicates the picture is the geopolitical overlay. A White House memo this week accused Chinese firms of systematically distilling American AI models — effectively cloning frontier capabilities at a fraction of the training cost. If accurate, the allegation undermines one of the central economic assumptions of the AI buildout: that massive capex confers durable competitive moats. Should distilled models prove commercially viable, the return on those $300 billion infrastructure bets could compress sharply, which would in turn intensify pressure on incumbents to extract savings from headcount.",
+      "The Bank of England's deputy governor warned this week that equity valuations look stretched, a comment notable mostly for its bluntness. The implicit concern is that a meaningful share of index gains has been concentrated in a handful of names whose forward earnings depend on AI productivity assumptions that remain unproven at scale. If those assumptions slip — through commoditization, regulation, or simply slower-than-promised enterprise adoption — the correction would be felt well beyond technology shareholders, given how deeply pension funds and retail portfolios are now exposed.",
+      "The broader question is whether policymakers can adapt quickly enough. Retraining programs, apprenticeship reform and tax incentives for human-complementary technology have been discussed for years but rarely implemented at the scale the moment demands. Meanwhile, the companies building the future of work are also, quite deliberately, building a future with fewer workers in it. The Meta announcement will not be the last of its kind this cycle; it may, in retrospect, look like one of the earlier ones. For graduates entering the workforce now, the ladder has not merely been raised — several of its lower rungs have been removed entirely.",
+    ]
   }
 
 });

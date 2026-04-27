@@ -303,6 +303,44 @@ Object.assign(ARTICLE_BODIES, {
       "Equity of access has emerged as a parallel concern. Treatment is currently concentrated at a small number of specialist centres, meaning that families often travel considerable distances and navigate complex referral pathways to qualify. Patient advocacy groups warn that postcode lotteries, long a feature of rare-disease care, are being reinforced rather than dismantled by the geography of advanced therapy delivery. Regulators are weighing whether to mandate broader regional capacity, a move that would require substantial capital investment in cell-handling infrastructure and specialist training.",
       "The broader question, increasingly debated within the Department of Health and at international forums such as the OECD, is whether existing health-technology assessment frameworks can keep pace with the science. Quality-adjusted life-year thresholds, developed in an era of small-molecule drugs, struggle to value treatments that may functionally cure a child of a lifelong condition. Until that methodological gap is closed, each new gene-therapy approval will continue to provoke the same uneasy mix of celebration and sticker shock — and each transformed patient will stand as both a clinical triumph and a fiscal stress test.",
     ]
+  },
+
+  "uk-healthy-life-expectancy-decline-1777291310382": {
+    slug: "uk-healthy-life-expectancy-decline-1777291310382",
+    category: "Healthcare",
+    date: "April 27, 2026",
+    readTime: "6 min read",
+    author: "By The Olsen Tribune",
+    headline: "Britain's Healthy Lifespan Shrinks as Housing and Obesity Crises Compound",
+    deck: "A two-year drop in healthy life expectancy over the past decade is forcing policymakers to confront the structural drivers of preventable disease.",
+    tags: ["Public Health","United Kingdom","Health Policy"],
+    pullquote: "We are watching the social determinants of health unwind in real time, and the bill will land squarely on the NHS.",
+    body: [
+      "The number of years a Briton can expect to live in good health has fallen by roughly two years over the past decade, according to new analysis that lays bare the mounting toll of substandard housing, rising obesity rates and entrenched regional deprivation. The figures, which have prompted alarm across the public health community, suggest that the country's overall longevity gains have not translated into a healthier population — a divergence that carries significant fiscal and social consequences.",
+      "Economists at several leading think tanks warn that the trend threatens to widen the productivity gap with peer economies. A shrinking healthy lifespan effectively reduces the working-age population's capacity, increases reliance on disability benefits, and intensifies pressure on a National Health Service already grappling with record waiting lists. The Treasury's long-term spending forecasts, which assume gradual improvements in population health, may need to be reconsidered if current trajectories persist.",
+      "Damp, mould and overcrowding in temporary accommodation have emerged as particularly stark contributors. A cross-party parliamentary report this week documented children developing chronic skin conditions and respiratory illnesses linked directly to housing quality. Charities estimate that the number of families in temporary housing has reached record levels, with knock-on costs to local authorities running into the billions.",
+      "Obesity, meanwhile, continues its steady climb. Roughly two-thirds of UK adults are now classified as overweight or obese, a metric that correlates tightly with the rise in type 2 diabetes, cardiovascular disease and certain cancers. Public health officials have repeatedly called for stronger fiscal measures on ultra-processed foods, but successive governments have stopped short of comprehensive intervention, citing concerns about consumer prices.",
+      "The geographic dimension is equally striking. Healthy life expectancy in the most deprived areas of the North East and parts of Wales now lags affluent southern boroughs by more than a decade. Without targeted investment in housing, primary care and preventative services, analysts say, the gap is likely to harden into a permanent feature of British life — one with profound implications for labour markets, pension systems and the political contract between regions.",
+    ]
+  },
+
+  "gene-therapy-childhood-blindness-commercial-frontier-1777291310383": {
+    slug: "gene-therapy-childhood-blindness-commercial-frontier-1777291310383",
+    category: "Healthcare",
+    date: "April 27, 2026",
+    readTime: "5 min read",
+    author: "By The Olsen Tribune",
+    headline: "Gene Therapy's Quiet Commercial Breakthrough in Childhood Blindness",
+    deck: "A six-year-old's restored vision underscores how one-time genetic treatments are reshaping pediatric medicine — and the economics of rare disease.",
+    tags: ["Biotech","Gene Therapy","Pharmaceuticals"],
+    pullquote: "We are entering an era in which a single intervention can substitute for a lifetime of disability — but the pricing models have yet to catch up.",
+    body: [
+      "The successful treatment of a young girl with inherited retinal dystrophy at Great Ormond Street Hospital this month offers a window into a quietly maturing corner of biotechnology. Luxturna, the gene therapy used in the procedure, targets mutations in the RPE65 gene that cause progressive blindness from infancy. For the family involved, the result has been transformative; for investors and health systems, it is the latest data point in a long debate over how to value one-shot curative therapies.",
+      "Developed originally by Spark Therapeutics and now marketed by Roche following a $4.8 billion acquisition, Luxturna was among the first gene therapies approved by both the FDA and European regulators. Its list price — approaching $850,000 in the United States and roughly £613,000 in the United Kingdom — remains a flashpoint in conversations about the sustainability of curative medicine. Yet the underlying clinical proposition is increasingly difficult to dispute: a single subretinal injection can deliver functional sight to children who would otherwise face decades of blindness and dependency.",
+      "The economics are forcing payers into unfamiliar territory. NHS England has negotiated confidential outcome-based agreements for several gene therapies, allowing the service to claw back portions of cost if treatment efficacy fades. Private insurers in the United States have experimented with annuity-style payments spread over five years. Both approaches reflect a recognition that traditional drug-pricing frameworks, designed for chronic medications, fit awkwardly with therapies intended to be administered once.",
+      "The pipeline behind Luxturna is expanding rapidly. More than two dozen gene therapies are now approved globally for indications ranging from spinal muscular atrophy to sickle cell disease, with hundreds more in late-stage trials. Analysts at Evaluate Pharma project the gene therapy market will exceed $40 billion in annual sales within the decade, though commercial uptake has frequently lagged forecasts because of complex manufacturing, narrow patient populations and reimbursement frictions.",
+      "For the wider healthcare sector, the implications extend beyond individual disease areas. As more conditions become addressable through one-time genetic intervention, the long-term cost curves of paediatric and rare-disease care could shift meaningfully. The challenge for policymakers is to align incentives so that breakthroughs reach patients quickly without destabilising the budgets of public health systems already stretched by demographic pressures.",
+    ]
   }
 
 });
