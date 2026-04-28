@@ -9,3 +9,4 @@
 # Local environment files (in case any are added later)
 .env
 .env.local
+.claude/
