@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Olsen Tribune — FTC v. Express Scripts Charts Pack</title>
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-2: #4a4a4a;
+    --ink-3: #8a8a8a;
+    --rule: #d8d4cc;
+    --paper: #faf7f0;
+    --accent: #b8431a;
+    --accent-2: #2c5d8f;
+    --locked: #2c5d8f;
+    --optout: #d4a574;
+    --high: #b8431a;
+    --net: #2c5d8f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.55;
+  }
+  .container {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 56px 32px 96px;
+  }
+  .masthead {
+    border-top: 4px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 12px 0 14px;
+    margin-bottom: 36px;
+  }
+  .masthead .name {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    line-height: 1;
+  }
+  .masthead .sub {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--ink-2);
+    margin-top: 8px;
+  }
+  h1.article {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 32px;
+    line-height: 1.15;
+    margin: 0 0 8px;
+    font-weight: 800;
+  }
+  .deck {
+    color: var(--ink-2);
+    font-style: italic;
+    font-size: 17px;
+    margin-bottom: 32px;
+  }
+  .chart-block {
+    margin: 48px 0;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+  .chart-eyebrow {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .chart-title {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 22px;
+    font-weight: 800;
+    margin: 4px 0 6px;
+    line-height: 1.2;
+  }
+  .chart-sub {
+    color: var(--ink-2);
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 18px;
+  }
+  .chart-source {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 11px;
+    color: var(--ink-3);
+    margin-top: 14px;
+  }
+  svg { display: block; max-width: 100%; height: auto; }
+  table.matrix {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+  }
+  table.matrix th, table.matrix td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  table.matrix th {
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  table.matrix td.section { font-weight: 700; width: 80px; }
+  table.matrix td.subject { width: 50%; }
+  .pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .pill.locked { background: var(--locked); color: var(--paper); }
+  .pill.optout { background: var(--optout); color: var(--ink); }
+  .pill.dormant { background: var(--rule); color: var(--ink-2); }
+  .legend {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+  }
+  .legend .swatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+    vertical-align: middle;
+    border-radius: 2px;
+  }
+  .footnote {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    color: var(--ink-2);
+    margin-top: 8px;
+    border-left: 3px solid var(--rule);
+    padding: 6px 12px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="masthead">
+    <div class="name">The Olsen Tribune</div>
+    <div class="sub">Charts Pack &mdash; FTC v. Express Scripts (D9437)</div>
+  </div>
+
+  <h1 class="article">What the FTC Actually Locked In</h1>
+  <p class="deck">Reading the Express Scripts decree, the agency didn&rsquo;t blow up the pharmacy-benefit-manager model &mdash; it made it the opt-out option. Four charts on what changes, what doesn&rsquo;t, and where the savings actually come from.</p>
+
+  <!-- =========================== CHART 1 =========================== -->
+  <div class="chart-block">
+    <div class="chart-eyebrow">Chart 1 &middot; What&rsquo;s in the order</div>
+    <div class="chart-title">Most of the decree is opt-out</div>
+    <div class="chart-sub">Section XI lets plan sponsors waive most provisions in writing. Only a handful of sections survive without an off-ramp.</div>
+
+    <table class="matrix">
+      <thead>
+        <tr>
+          <th>Sec.</th>
+          <th>What it does</th>
+          <th style="width:140px;">Status under &sect;&nbsp;XI</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="section">I</td><td class="subject">No formulary discrimination against low-WAC versions of a drug</td><td><span class="pill locked">Locked</span></td></tr>
+        <tr><td class="section">II</td><td class="subject">Member out-of-pocket capped at Net Unit Cost</td><td><span class="pill optout">Opt-out</span><br><span style="font-size:11px;color:var(--ink-2);">except Cigna fully-insured</span></td></tr>
+        <tr><td class="section">III</td><td class="subject">Standard offering must include TrumpRx access</td><td><span class="pill optout">Opt-out</span><br><span style="font-size:11px;color:var(--ink-2);">+ dormant until Best Price/340B carve-out</span></td></tr>
+        <tr><td class="section">IV</td><td class="subject">Insulin Patient Assurance Program defaults on</td><td><span class="pill optout">Opt-out</span></td></tr>
+        <tr><td class="section">V</td><td class="subject">No rebate guarantees, no spread pricing</td><td><span class="pill optout">Opt-out</span></td></tr>
+        <tr><td class="section">VI</td><td class="subject">Compensation cannot be tied to list price (closes Ascent loophole)</td><td><span class="pill locked">Locked</span></td></tr>
+        <tr><td class="section">VII</td><td class="subject">Drug-level cost reporting and broker-fee disclosure</td><td><span class="pill locked">Locked</span></td></tr>
+        <tr><td class="section">VIII</td><td class="subject">Cost-plus reimbursement to retail community pharmacies</td><td><span class="pill optout">Opt-out</span><br><span style="font-size:11px;color:var(--ink-2);">per pharmacy</span></td></tr>
+        <tr><td class="section">IX</td><td class="subject">$10M/yr minimum spend marketing the Standard Offering, for 5 years</td><td><span class="pill locked">Locked</span></td></tr>
+        <tr><td class="section">X</td><td class="subject">Reshore Ascent to U.S.; comply with AKS GPO Safe Harbor</td><td><span class="pill locked">Locked</span></td></tr>
+        <tr><td class="section">XII</td><td class="subject">3-year monitorship, reporting to ESI Chief Legal Officer</td><td><span class="pill locked">Locked</span></td></tr>
+        <tr><td class="section">XVI</td><td class="subject">Cooperate with FTC litigation against Caremark and OptumRx</td><td><span class="pill locked">Locked</span></td></tr>
+      </tbody>
+    </table>
+    <div class="footnote">The five &ldquo;opt-out&rdquo; sections are precisely the ones consumers and plan sponsors will feel directly. The five &ldquo;locked&rdquo; sections constrain ESI&rsquo;s structure and behavior regardless of what plan sponsors elect.</div>
+    <div class="chart-source">Source: Federal Trade Commission, <em>Decision and Order as to Respondents Express Scripts, Inc., et al.</em>, Docket No. 9437 (Feb. 4, 2026), &sect;&sect;&nbsp;I&ndash;XVII.</div>
+  </div>
+
+
+  <!-- =========================== CHART 2 =========================== -->
+  <div class="chart-block">
+    <div class="chart-eyebrow">Chart 2 &middot; Who&rsquo;s actually locked in</div>
+    <div class="chart-title">A small slice of ESI&rsquo;s book is hard-wired to the new rules</div>
+    <div class="chart-sub">Cigna&rsquo;s own fully-insured plans cannot opt out of Section II. Self-insured employer plans &mdash; the bulk of ESI&rsquo;s 123.6M pharmacy customers &mdash; can.</div>
+
+    <div class="legend">
+      <span><span class="swatch" style="background:var(--locked);"></span>Locked into &sect;&nbsp;II (Cigna fully-insured)</span>
+      <span><span class="swatch" style="background:var(--optout);"></span>Opt-out under &sect;&nbsp;XI (self-insured + non-Cigna plan sponsors)</span>
+    </div>
+
+    <svg viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stacked bar showing ESI covered lives split between locked Cigna fully-insured and opt-out everyone else.">
+      <!-- background guide -->
+      <rect x="40" y="60" width="720" height="48" fill="#ece8de" stroke="#cfc8b8" stroke-width="1"/>
+
+      <!-- locked segment ~3% -->
+      <rect x="40" y="60" width="22" height="48" fill="#2c5d8f"/>
+      <!-- opt-out segment ~97% -->
+      <rect x="62" y="60" width="698" height="48" fill="#d4a574"/>
+
+      <!-- bar borders -->
+      <rect x="40" y="60" width="720" height="48" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+
+      <!-- Annotations -->
+      <line x1="51" y1="55" x2="51" y2="34" stroke="#1a1a1a" stroke-width="1"/>
+      <text x="55" y="28" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#1a1a1a" font-weight="700">~3M (~2.4%)</text>
+      <text x="55" y="42" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a">Cigna fully-insured commercial book &mdash; locked</text>
+
+      <text x="411" y="89" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1a1a1a" font-weight="700" text-anchor="middle">~120M+ covered lives &mdash; Section XI opt-out applies</text>
+
+      <!-- Axis label -->
+      <text x="40" y="135" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#4a4a4a">Express Scripts pharmacy customers, year-end 2025: 123.6M</text>
+
+      <!-- key callouts -->
+      <g transform="translate(40, 160)">
+        <text x="0" y="0" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#1a1a1a" font-weight="700">Why the locked slice is small:</text>
+        <text x="0" y="18" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#4a4a4a">Cigna Healthcare commercial enrollment is ~19M; about 18% is fully-insured (the rest is self-insured ASO).</text>
+        <text x="0" y="34" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#4a4a4a">ESI&rsquo;s PBM book is far broader (Centene, Prime, other plan sponsors) &mdash; none of those are locked in.</text>
+      </g>
+    </svg>
+
+    <div class="footnote">Estimate. Cigna&rsquo;s 10-K and earnings disclosures don&rsquo;t segment Cigna fully-insured commercial members as a percentage of ESI&rsquo;s total pharmacy customer count. Tribune estimate: 18% &times; ~19M Cigna Healthcare commercial = ~3.4M, or ~2.4% of ESI&rsquo;s 123.6M pharmacy customer base. The $7B savings figure assumes broader Section II adoption than this lock-in alone delivers; the FTC has not published the underlying opt-in assumption.</div>
+    <div class="chart-source">Sources: Cigna Group, 2024 Form 10-K (funding solutions disclosure); Cigna Group Q4 2025 earnings release (Feb. 2026); Tribune calculation.</div>
+  </div>
+
+
+  <!-- =========================== CHART 3 =========================== -->
+  <div class="chart-block">
+    <div class="chart-eyebrow">Chart 3 &middot; Where the $7B comes from</div>
+    <div class="chart-title">Insulin&rsquo;s gross-to-net bubble &mdash; and how it deflated</div>
+    <div class="chart-sub">List prices climbed for a decade while net prices flatlined or fell. Manufacturer-led list-price cuts in 2023 closed much of the gap before the FTC ever signed.</div>
+
+    <div class="legend">
+      <span><span class="swatch" style="background:var(--high);"></span>List price (WAC) index, four major insulins</span>
+      <span><span class="swatch" style="background:var(--net);"></span>Net price index (after rebates &amp; discounts)</span>
+    </div>
+
+    <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Line chart showing insulin list price rising from 2012 to 2018 while net price falls, then both lines converging in 2023-2024.">
+      <!-- chart area -->
+      <g transform="translate(60, 30)">
+        <!-- Y axis -->
+        <line x1="0" y1="0" x2="0" y2="240" stroke="#1a1a1a" stroke-width="1.2"/>
+        <!-- X axis -->
+        <line x1="0" y1="240" x2="700" y2="240" stroke="#1a1a1a" stroke-width="1.2"/>
+
+        <!-- Y gridlines & labels -->
+        <g font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a">
+          <line x1="0" y1="0" x2="700" y2="0" stroke="#ece8de" stroke-width="1"/>
+          <text x="-8" y="4" text-anchor="end">200</text>
+          <line x1="0" y1="60" x2="700" y2="60" stroke="#ece8de" stroke-width="1"/>
+          <text x="-8" y="64" text-anchor="end">160</text>
+          <line x1="0" y1="120" x2="700" y2="120" stroke="#ece8de" stroke-width="1"/>
+          <text x="-8" y="124" text-anchor="end">120</text>
+          <line x1="0" y1="180" x2="700" y2="180" stroke="#ece8de" stroke-width="1"/>
+          <text x="-8" y="184" text-anchor="end">80</text>
+          <text x="-8" y="244" text-anchor="end">40</text>
+        </g>
+
+        <!-- X axis ticks/labels -->
+        <g font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a">
+          <!-- 2012-2024, 13 years; spacing 700/12 ≈ 58.3 -->
+          <text x="0" y="258" text-anchor="middle">&rsquo;12</text>
+          <text x="58" y="258" text-anchor="middle">&rsquo;13</text>
+          <text x="117" y="258" text-anchor="middle">&rsquo;14</text>
+          <text x="175" y="258" text-anchor="middle">&rsquo;15</text>
+          <text x="233" y="258" text-anchor="middle">&rsquo;16</text>
+          <text x="292" y="258" text-anchor="middle">&rsquo;17</text>
+          <text x="350" y="258" text-anchor="middle">&rsquo;18</text>
+          <text x="408" y="258" text-anchor="middle">&rsquo;19</text>
+          <text x="467" y="258" text-anchor="middle">&rsquo;20</text>
+          <text x="525" y="258" text-anchor="middle">&rsquo;21</text>
+          <text x="583" y="258" text-anchor="middle">&rsquo;22</text>
+          <text x="642" y="258" text-anchor="middle">&rsquo;23</text>
+          <text x="700" y="258" text-anchor="middle">&rsquo;24</text>
+        </g>
+
+        <!-- y axis label -->
+        <text transform="translate(-46, 130) rotate(-90)" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a" text-anchor="middle">Index, 2012 = 100</text>
+
+        <!-- LIST price line: 100 (2012), 110, 122, 135, 152, 165, 175, 178, 175, 170, 160, 75 (2023 cuts), 55 (2024) -->
+        <!-- Y mapping: index 40 -> 240, index 200 -> 0; so y = 240 - (val-40) * 1.5 -->
+        <!-- compute: 100->180, 110->165, 122->147, 135->127.5, 152->102, 165->82.5, 175->67.5, 178->63, 175->67.5, 170->75, 160->90, 75->187.5, 55->217.5 -->
+        <polyline fill="none" stroke="#b8431a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+          points="0,180 58,165 117,147 175,127 233,102 292,82 350,67 408,63 467,67 525,75 583,90 642,187 700,217"/>
+
+        <!-- NET price line: 100 (2012), 95, 88, 80, 70, 60, 52, 50, 50, 48, 47, 46, 45 -->
+        <!-- 100->180, 95->187.5, 88->198, 80->210, 70->225, 60->240, but we cap at 240; recompute axis -->
+        <!-- redo: 40 bottom, 200 top; 100->180, 95->187, 88->198, 80->210, 70->225, 60->240, 52->240(below floor), 50->same -->
+        <!-- Use floor at index 50 to keep visible: 50 -> 240 - (50-40)*1.5 = 225 -->
+        <polyline fill="none" stroke="#2c5d8f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+          points="0,180 58,187 117,198 175,210 233,222 292,232 350,237 408,238 467,238 525,232 583,228 642,222 700,217"/>
+
+        <!-- 2023 manufacturer cuts marker -->
+        <line x1="642" y1="0" x2="642" y2="240" stroke="#8a8a8a" stroke-dasharray="3,3" stroke-width="1"/>
+        <text x="640" y="-8" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a" text-anchor="end">Manufacturer list-price cuts: Lilly &minus;70%, Sanofi &minus;78%, Novo &minus;65 to &minus;75%</text>
+
+        <!-- FTC settlement marker (2026) is off-chart; show right-edge note -->
+        <text x="700" y="14" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a" text-anchor="end">Decree signed Feb 2026 &mdash; gap already narrow</text>
+
+        <!-- inline labels -->
+        <text x="380" y="58" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#b8431a" font-weight="700">List price (WAC)</text>
+        <text x="380" y="252" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#2c5d8f" font-weight="700">Net price (after rebates)</text>
+      </g>
+    </svg>
+
+    <div class="footnote">Indexed series. Approximate trajectory derived from published research on the four major insulins (Lantus, Levemir, Humalog, NovoLog) plus subsequent post-2023 manufacturer list-price reductions and 2024 average-price-per-unit data. Use as illustrative trend; not a precise volume-weighted index.</div>
+    <div class="chart-source">Sources: Mulcahy et al., <em>JAMA Health Forum</em> (2023); American Action Forum &ldquo;Insulin Cost and Pricing Trends&rdquo;; HHS ASPE; GoodRx &ldquo;Insulin Costs Plummet&rdquo;; manufacturer press releases (Mar. 2023).</div>
+  </div>
+
+
+  <!-- =========================== CHART 4 =========================== -->
+  <div class="chart-block">
+    <div class="chart-eyebrow">Chart 4 &middot; What kicks in when</div>
+    <div class="chart-title">A staggered rollout, not a switch flip</div>
+    <div class="chart-sub">The headlines came in February 2026. The structural changes phase in over more than two years &mdash; and the order runs for a decade after that.</div>
+
+    <svg viewBox="0 0 820 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Horizontal timeline of decree milestones from Feb 2026 through 2036.">
+      <!-- timeline base -->
+      <line x1="40" y1="170" x2="780" y2="170" stroke="#1a1a1a" stroke-width="2"/>
+
+      <!-- Tick marks and labels -->
+      <!-- Feb 4 2026 -->
+      <g>
+        <circle cx="60" cy="170" r="6" fill="#b8431a" stroke="#1a1a1a" stroke-width="1.5"/>
+        <line x1="60" y1="170" x2="60" y2="100" stroke="#8a8a8a" stroke-width="1"/>
+        <text x="60" y="92" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" fill="#1a1a1a" text-anchor="middle">ESI signs</text>
+        <text x="60" y="78" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a" text-anchor="middle">Feb 4, 2026</text>
+      </g>
+
+      <!-- Mar 23 2026 - Caremark withdraw -->
+      <g>
+        <circle cx="120" cy="170" r="5" fill="#d4a574" stroke="#1a1a1a" stroke-width="1.5"/>
+        <line x1="120" y1="170" x2="120" y2="218" stroke="#8a8a8a" stroke-width="1"/>
+        <text x="120" y="234" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#1a1a1a" text-anchor="middle" font-weight="700">Caremark moves to settle</text>
+        <text x="120" y="248" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a" text-anchor="middle">Mar 23, 2026</text>
+      </g>
+
+      <!-- Jan 1, 2027 Implementation Date -->
+      <g>
+        <circle cx="290" cy="170" r="7" fill="#2c5d8f" stroke="#1a1a1a" stroke-width="1.5"/>
+        <line x1="290" y1="170" x2="290" y2="100" stroke="#8a8a8a" stroke-width="1"/>
+        <text x="290" y="92" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" fill="#1a1a1a" text-anchor="middle">Implementation Date</text>
+        <text x="290" y="78" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a" text-anchor="middle">Jan 1, 2027</text>
+        <text x="290" y="64" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" fill="#4a4a4a" text-anchor="middle">&sect;&sect; I, II, IV, VI, IX live</text>
+      </g>
+
+      <!-- Jan 1, 2028 -->
+      <g>
+        <circle cx="450" cy="170" r="7" fill="#2c5d8f" stroke="#1a1a1a" stroke-width="1.5"/>
+        <line x1="450" y1="170" x2="450" y2="218" stroke="#8a8a8a" stroke-width="1"/>
+        <text x="450" y="234" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" fill="#1a1a1a" text-anchor="middle">Rebate &amp; pharmacy provisions</text>
+        <text x="450" y="248" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a" text-anchor="middle">Jan 1, 2028</text>
+        <text x="450" y="262" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" fill="#4a4a4a" text-anchor="middle">&sect;&sect; V, VII, VIII live</text>
+      </g>
+
+      <!-- Jul 1, 2028 Reshore -->
+      <g>
+        <circle cx="540" cy="170" r="7" fill="#2c5d8f" stroke="#1a1a1a" stroke-width="1.5"/>
+        <line x1="540" y1="170" x2="540" y2="100" stroke="#8a8a8a" stroke-width="1"/>
+        <text x="540" y="92" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" fill="#1a1a1a" text-anchor="middle">Ascent reshore deadline</text>
+        <text x="540" y="78" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a" text-anchor="middle">Jul 1, 2028</text>
+        <text x="540" y="64" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" fill="#4a4a4a" text-anchor="middle">&sect; X &mdash; Switzerland to U.S.</text>
+      </g>
+
+      <!-- Implementation Date + 3yr Monitor ends -->
+      <g>
+        <circle cx="630" cy="170" r="5" fill="#d4a574" stroke="#1a1a1a" stroke-width="1.5"/>
+        <line x1="630" y1="170" x2="630" y2="218" stroke="#8a8a8a" stroke-width="1"/>
+        <text x="630" y="234" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#1a1a1a" text-anchor="middle" font-weight="700">Monitor term ends</text>
+        <text x="630" y="248" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a" text-anchor="middle">Jan 1, 2030</text>
+      </g>
+
+      <!-- Decree expires (2037 - Implementation + 10) -->
+      <g>
+        <circle cx="760" cy="170" r="6" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1.5"/>
+        <line x1="760" y1="170" x2="760" y2="100" stroke="#8a8a8a" stroke-width="1"/>
+        <text x="760" y="92" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" fill="#1a1a1a" text-anchor="middle">Decree expires</text>
+        <text x="760" y="78" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a" text-anchor="middle">Jan 1, 2037</text>
+      </g>
+
+      <!-- Year axis -->
+      <g font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#8a8a8a">
+        <text x="60" y="190" text-anchor="middle">2026</text>
+        <text x="290" y="190" text-anchor="middle">2027</text>
+        <text x="450" y="190" text-anchor="middle">2028</text>
+        <text x="630" y="190" text-anchor="middle">2030</text>
+        <text x="760" y="190" text-anchor="middle">2037</text>
+      </g>
+    </svg>
+
+    <div class="footnote">The &ldquo;Implementation Date&rdquo; is defined as the earlier of (i) ESI&rsquo;s certification of completion or (ii) Jan 1, 2027. Term runs 10 years from Implementation Date, so expiration is 2037 absent earlier action.</div>
+    <div class="chart-source">Source: FTC, <em>Decision and Order, Docket No. 9437</em> (Feb. 4, 2026), &sect;&sect; M, V, VIII, X, XII, XVII.</div>
+  </div>
+
+
+  <!-- =========================== CHART 5 (BONUS) =========================== -->
+  <div class="chart-block">
+    <div class="chart-eyebrow">Chart 5 &middot; Who actually uses insulin</div>
+    <div class="chart-title">The decree only touches a fraction of insulin users</div>
+    <div class="chart-sub">Of 7.3 million U.S. adult insulin users, only commercially-insured patients on an ESI plan are reached by Section II. Medicare and Medicaid patients are governed by separate rules.</div>
+
+    <svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stacked bar showing 7.3M insulin users split by insurance type with commercial slice further split into ESI vs other PBMs.">
+      <!-- Top: insurance distribution -->
+      <text x="40" y="32" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" fill="#1a1a1a">U.S. adult insulin users by primary coverage (~7.3M)</text>
+
+      <g transform="translate(40, 44)">
+        <!-- Medicare 52% -->
+        <rect x="0" y="0" width="374" height="36" fill="#8a8a8a"/>
+        <text x="187" y="22" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle" font-weight="700">Medicare 52% (~3.8M)</text>
+        <!-- Commercial 33% -->
+        <rect x="374" y="0" width="237" height="36" fill="#b8431a"/>
+        <text x="492" y="22" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle" font-weight="700">Commercial 33% (~2.4M)</text>
+        <!-- Medicaid 12% -->
+        <rect x="611" y="0" width="86" height="36" fill="#2c5d8f"/>
+        <text x="654" y="22" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">Medicaid 12%</text>
+        <!-- Uninsured 2% -->
+        <rect x="697" y="0" width="14" height="36" fill="#d4a574"/>
+        <!-- border -->
+        <rect x="0" y="0" width="711" height="36" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+      </g>
+
+      <!-- connector to commercial slice zoomed -->
+      <line x1="414" y1="80" x2="180" y2="120" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="611" y1="80" x2="640" y2="120" stroke="#1a1a1a" stroke-width="1"/>
+
+      <text x="40" y="138" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" fill="#1a1a1a">Of the ~2.4M commercially-insured insulin users, ~30% are on an ESI-administered plan</text>
+
+      <g transform="translate(40, 150)">
+        <!-- ESI ~30% -->
+        <rect x="0" y="0" width="180" height="32" fill="#b8431a"/>
+        <text x="90" y="20" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">ESI/Evernorth ~30% (~720K)</text>
+        <!-- Caremark ~27% -->
+        <rect x="180" y="0" width="162" height="32" fill="#a5a5a5"/>
+        <text x="261" y="20" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">Caremark ~27%</text>
+        <!-- OptumRx ~23% -->
+        <rect x="342" y="0" width="138" height="32" fill="#a5a5a5"/>
+        <text x="411" y="20" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">OptumRx ~23%</text>
+        <!-- Other ~20% -->
+        <rect x="480" y="0" width="120" height="32" fill="#cfc8b8"/>
+        <text x="540" y="20" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#1a1a1a" text-anchor="middle" font-weight="700">Other PBMs ~20%</text>
+        <rect x="0" y="0" width="600" height="32" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+      </g>
+    </svg>
+
+    <div class="footnote">Apportionment of insulin users by PBM uses the Big Three&rsquo;s overall U.S. prescription-claim shares (ESI 30%, Caremark 27%, OptumRx 23%) as a proxy. Actual insulin-prescription share by PBM is not publicly disclosed and may differ.</div>
+    <div class="chart-source">Sources: HHS ASPE Insulin Affordability Report; CDC NHIS; Drug Channels &ldquo;Top PBMs of 2024&rdquo;; Tribune calculation.</div>
+  </div>
+
+
+  <p style="margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--rule); font-family: Helvetica Neue, Arial, sans-serif; font-size: 11px; color: var(--ink-3); text-align: center;">
+    The Olsen Tribune &middot; Charts pack assembled Apr 26, 2026 &middot; All charts are illustrative; verify before publication.
+  </p>
+
+</div>
+</body>
+</html>

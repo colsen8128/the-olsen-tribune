@@ -1,135 +1,73 @@
 # The Olsen Tribune
 
-A professional business news website covering Financial Markets, Technology, Healthcare, Politics, and Analysis. Publishes new AI-written articles daily and updates market tickers automatically every weekday morning at 8 AM ET.
+A one-person newsletter on the business of pharmacy benefit managers.
 
 **Live site:** [colsen8128.github.io/the-olsen-tribune](https://colsen8128.github.io/the-olsen-tribune)
 
 ---
 
-## Project Structure
+## What this is
+
+Each issue takes a single story breaking in the PBM space (FTC actions, Medicaid Best Price, formulary politics, manufacturer rebate flows, GLP-1 utilization, white bagging, 340B, the Big Three vs. the cost-plus upstarts) and sets out plainly what changes and what doesn't. Five-minute read. Primary sources. One author.
+
+The site is intentionally simple: static HTML, one shared stylesheet, no build step, no framework, no database.
+
+---
+
+## Structure
 
 ```
 the-olsen-tribune/
 │
-├── index.html                  # Homepage (hero + category sections + market snapshot)
-├── financial-markets.html      # Financial Markets sub-page
-├── technology.html             # Technology sub-page
-├── healthcare.html             # Healthcare sub-page
-├── politics.html               # Politics sub-page
-├── analysis.html               # Analysis sub-page
-├── archive.html                # Searchable article archive
+├── index.html          # Homepage (latest issue + subscribe + about preview)
+├── article.html        # Issue No. 1 — "What the FTC actually locked in"
+├── about.html          # About page (mission, methodology, contact)
+├── archive.html        # Chronological list of all issues
 │
 ├── assets/
-│   ├── articles.js             # All article content (single source of truth)
-│   ├── scripts.js              # Homepage routing, article reader, category sections
-│   ├── subpage.js              # Shared logic for the 5 category sub-pages
-│   ├── archive.js              # Archive page search and filter logic
-│   ├── theme.js                # Dark mode toggle (runs in <head> to prevent flash)
-│   └── styles.css              # All site styles (desktop + tablet + mobile + dark mode)
+│   ├── styles.css      # The single shared stylesheet for the entire site
+│   ├── theme.js        # Light / dark mode toggle (runs in <head> to avoid flash)
+│   └── icon.svg        # Favicon / app icon
 │
-├── scripts/
-│   ├── daily-update.js         # Daily automation script (articles + tickers + RSS feed)
-│   ├── package.json            # Node.js dependencies
-│   ├── .env                    # Your API keys (never committed to git)
-│   └── .env.example            # Template — copy to .env and fill in keys
-│
-├── .github/
-│   └── workflows/
-│       └── daily.yml           # GitHub Actions workflow — runs daily-update.js at 8 AM ET
-│
-├── sw.js                       # Service worker (PWA offline support + caching)
-├── manifest.json               # PWA manifest (installable on mobile/desktop)
-├── feed.xml                    # RSS feed (auto-generated daily, 20 most recent articles)
-├── .gitignore                  # Excludes .env and node_modules from git
-└── README.md                   # This file
+├── manifest.json       # PWA manifest (installable on mobile/desktop)
+├── feed.xml            # RSS feed
+├── netlify.toml        # Netlify deployment config and security headers
+├── .gitignore
+└── README.md           # This file
+
+research/               # Notes and source material used to write each issue.
+                        # Not linked from the public site.
 ```
 
 ---
 
-## How the Site Works
+## How to publish a new issue
 
-The site is entirely static — no server, no database. All article content lives in `assets/articles.js` as a JavaScript object. When a page loads, the browser runs JavaScript that reads from that object and renders the content dynamically.
+The site is fully static. Each issue is a self-contained HTML file that links back to the shared stylesheet, header, and nav. Adding an issue is three steps:
 
-- **Homepage** shows the 4 newest articles in the hero, plus the 3 most recent per category below
-- **Sub-pages** filter articles by category and paginate at 10 per page
-- **Archive** lets you search and filter all articles by keyword or category
-- **Article reader** is a hash-based overlay (`index.html#slug`) — navigating to `index.html#fed-rate-cuts` opens that article
-- **Dark mode** follows system preference automatically, with a manual toggle in the header
-- **PWA** — the site is installable on mobile and desktop and works offline via service worker
+1. **Write the issue** as a new HTML file (e.g. `issue-2-medicaid-best-price.html`). Easiest way is to duplicate `article.html`, change the headline / deck / body, and update the meta tags and `<title>`.
+2. **Update `archive.html`** by copying the template comment block already in the page and filling in the new issue number, date, topic, headline, deck, and href.
+3. **Update `index.html`** by replacing the hero issue card with the new issue's details. If you want to surface a list of recent issues on the homepage, uncomment the placeholder block already in the file.
 
----
-
-## Adding Articles Manually
-
-Open `assets/articles.js` and add a new entry inside the `ARTICLES` object. Every article follows this structure:
-
-```js
-'your-article-slug': {
-  slug:     'your-article-slug',
-  category: 'Financial Markets',   // must match exactly: Financial Markets,
-                                    // Technology, Healthcare, Politics, Analysis
-  date:     'April 20, 2026',
-  readTime: '5 min read',
-  author:   'By The Olsen Tribune',
-  headline: 'Your Article Headline',
-  deck:     'One sentence that summarizes the story.',
-  tags:     ['Tag One', 'Tag Two', 'Tag Three'],
-  pullquote: 'A compelling quote or sentence from the article.',
-  body: [
-    'First paragraph text...',
-    'Second paragraph text...',
-    'Third paragraph text...',
-  ]
-},
-```
-
-After saving, commit and push to GitHub — GitHub Pages redeploys automatically within a minute.
+Then `git push`. GitHub Pages redeploys within a minute.
 
 ---
 
-## Daily Automation
+## Local preview
 
-Every weekday at 8 AM ET the GitHub Actions workflow runs `scripts/daily-update.js`, which:
+The site is plain static HTML. To preview locally:
 
-1. Fetches today's top headlines from **RSS feeds** (BBC, TechCrunch, Ars Technica, NPR, MarketWatch) — no API key required
-2. Sends them to **Claude** (Anthropic API), which writes 2 original articles per category (10 total)
-3. Appends the new articles to `assets/articles.js`
-4. Rebuilds the **hero section** of `index.html` with the 4 newest articles
-5. Fetches live market prices from **Finnhub** for all 14 ticker symbols
-6. Updates the ticker bar in every HTML file
-7. Regenerates `feed.xml` with the 20 most recent articles
-8. Commits and pushes to GitHub so GitHub Pages redeploys the site
-
-You can also trigger a run manually from the [Actions tab](https://github.com/colsen8128/the-olsen-tribune/actions/workflows/daily.yml) using **Run workflow**.
-
-### First-Time Setup
-
-**1. Install dependencies**
 ```bash
-cd ~/Desktop/the-olsen-tribune/scripts
-npm install
+# Python 3 (built in on macOS)
+python3 -m http.server 8000
+
+# or, with Node
+npx serve .
 ```
 
-**2. Add API keys**
-```bash
-cp .env.example .env
-# Open .env and paste in your Anthropic and Finnhub API keys
-```
+Then open [http://localhost:8000](http://localhost:8000).
 
-| Key | Where to get it | Cost |
-|-----|----------------|------|
-| `ANTHROPIC_API_KEY` | [console.anthropic.com](https://console.anthropic.com) | ~$0.10–$0.30/day |
-| `FINNHUB_API_KEY` | [finnhub.io](https://finnhub.io) | Free |
-
-**3. Add secrets to GitHub Actions**
-
-Go to your repo → Settings → Secrets and variables → Actions and add:
-- `ANTHROPIC_API_KEY`
-- `FINNHUB_API_KEY`
-
-**4. Test a manual run**
-
-Trigger the workflow from the [Actions tab](https://github.com/colsen8128/the-olsen-tribune/actions/workflows/daily.yml) and watch the logs.
+Or just double-click `index.html` to open it in the browser. Most things will work, though the email-signup `<form>` and a couple of relative paths render slightly more correctly when served over HTTP.
 
 ---
 
@@ -139,18 +77,20 @@ The site is hosted on **GitHub Pages** served directly from the `main` branch. E
 
 ```bash
 git add -A
-git commit -m "Your message"
+git commit -m "Issue No. N — short description"
 git push
 ```
 
+`netlify.toml` is included as an alternative deployment target. Connect this repo at [app.netlify.com](https://app.netlify.com) and Netlify will publish the same files with stricter security headers (HSTS, CSP, etc.) baked in.
+
 ---
 
-## Categories
+## Subscribe form
 
-| Category | Sub-page | RSS Sources |
-|----------|----------|-------------|
-| Financial Markets | financial-markets.html | BBC Business, MarketWatch |
-| Technology | technology.html | TechCrunch, Ars Technica |
-| Healthcare | healthcare.html | BBC Health, BBC Science |
-| Politics | politics.html | NPR Politics, BBC US & Canada |
-| Analysis | analysis.html | BBC Business, BBC US & Canada |
+The subscribe forms on `index.html`, `about.html`, `archive.html`, and `article.html` currently use a small inline JS handler that swaps the form for a thank-you message on submit. This is a placeholder. To wire up a real list, replace the `<form>` action with the endpoint from your newsletter platform (Substack, Beehiiv, Buttondown, ConvertKit, etc.) and remove the JS handler.
+
+---
+
+## Style and methodology
+
+See [about.html](about.html) for the methodology statement that ships with the public site.

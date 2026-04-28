@@ -3,168 +3,191 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Archive — The Olsen Tribune</title>
-<meta name="description" content="Browse every article published by The Olsen Tribune. Filter by category or search by keyword.">
+<title>Archive &mdash; The Olsen Tribune</title>
+<meta name="description" content="Every issue of The Olsen Tribune, a one-person newsletter on the business of pharmacy benefit managers.">
+
+<!-- Security -->
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
+
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Stylesheet -->
 <link rel="stylesheet" href="assets/styles.css">
-<meta name="theme-color" content="#1A1410">
+
+<!-- App icon, theme color, RSS -->
+<meta name="theme-color" content="#faf7f0">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="assets/icon.svg">
+<link rel="alternate" type="application/rss+xml" title="The Olsen Tribune" href="feed.xml">
+
+<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Olsen Tribune">
 <meta property="og:title" content="Archive — The Olsen Tribune">
-<meta property="og:description" content="Browse every article published by The Olsen Tribune. Filter by category or search by keyword.">
-<meta property="og:url" content="https://colsen8128.github.io/the-olsen-tribune/archive.html">
-<meta property="og:image" content="https://colsen8128.github.io/the-olsen-tribune/assets/icon.svg">
+<meta property="og:description" content="Every issue of The Olsen Tribune.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Archive — The Olsen Tribune">
-<meta name="twitter:description" content="Browse every article published by The Olsen Tribune. Filter by category or search by keyword.">
-<link rel="alternate" type="application/rss+xml" title="The Olsen Tribune" href="feed.xml">
+
+<!-- Theme toggle (no flash) -->
 <script src="assets/theme.js"></script>
+
+<style>
+  /* Archive-page-specific tweaks */
+  .archive-year {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 40px 0 8px;
+    letter-spacing: -0.3px;
+    line-height: 1;
+  }
+  .archive-year:first-of-type { margin-top: 0; }
+  .archive-year-rule {
+    border: 0;
+    border-top: 1px solid var(--ink);
+    margin: 0 0 8px;
+  }
+  .archive-empty {
+    font-family: var(--font-body);
+    font-style: italic;
+    color: var(--ink-3);
+    padding: 28px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+</style>
 </head>
 <body>
 
-<!-- ══════════════ TICKER ══════════════ -->
-<div class="ticker">
-  <div class="ticker-track">
-    <div class="ticker-item"><span class="ticker-sym">S&amp;P 500</span><span class="ticker-val">6,582.69</span><span class="up">+0.11%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">DJIA</span><span class="ticker-val">46,504.67</span><span class="down">-0.13%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">NASDAQ</span><span class="ticker-val">21,879.18</span><span class="up">+0.18%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">AAPL</span><span class="ticker-val">271.06</span><span class="down">-0.87%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">MSFT</span><span class="ticker-val">424.62</span><span class="up">+2.13%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">AMZN</span><span class="ticker-val">263.99</span><span class="up">+3.49%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">TSLA</span><span class="ticker-val">376.30</span><span class="up">+0.69%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">BTC</span><span class="ticker-val">77,740</span><span class="down">-0.42%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">10Y</span><span class="ticker-val">4.42%</span><span class="up">+0.04</span></div>
-    <div class="ticker-item"><span class="ticker-sym">WTI</span><span class="ticker-val">105.20</span><span class="up">+5.07%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">GOLD</span><span class="ticker-val">4,688.50</span><span class="up">+0.52%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">S&amp;P 500</span><span class="ticker-val">6,582.69</span><span class="up">+0.11%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">DJIA</span><span class="ticker-val">46,504.67</span><span class="down">-0.13%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">NASDAQ</span><span class="ticker-val">21,879.18</span><span class="up">+0.18%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">AAPL</span><span class="ticker-val">271.06</span><span class="down">-0.87%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">MSFT</span><span class="ticker-val">424.62</span><span class="up">+2.13%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">AMZN</span><span class="ticker-val">263.99</span><span class="up">+3.49%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">TSLA</span><span class="ticker-val">376.30</span><span class="up">+0.69%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">BTC</span><span class="ticker-val">77,740</span><span class="down">-0.42%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">10Y</span><span class="ticker-val">4.42%</span><span class="up">+0.04</span></div>
-    <div class="ticker-item"><span class="ticker-sym">WTI</span><span class="ticker-val">105.20</span><span class="up">+5.07%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">GOLD</span><span class="ticker-val">4,688.50</span><span class="up">+0.52%</span></div>
-  </div>
-</div>
-
-<!-- ══════════════ SITE HEADER ══════════════ -->
+<!-- ============== HEADER ============== -->
 <header class="site-header">
   <div class="container">
-    <div class="header-meta">
-      <span id="headerDate"></span>
-      
+    <div class="topline">
+      <span class="date" id="headerDate"></span>
       <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode"></button>
     </div>
     <div class="masthead">
-      <a href="index.html">
-        <div class="masthead-name">The Olsen Tribune</div>
-      </a>
+      <a href="index.html" class="masthead-name">The Olsen Tribune</a>
+      <div class="masthead-tagline">Pharmacy benefits. The business behind the prescription.</div>
     </div>
   </div>
 </header>
 
-<!-- ══════════════ NAV ══════════════ -->
+<!-- ============== NAV ============== -->
 <nav class="site-nav">
   <div class="container">
     <ul class="nav-list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="financial-markets.html">Financial Markets</a></li>
-      <li><a href="technology.html">Technology</a></li>
-      <li><a href="healthcare.html">Healthcare</a></li>
-      <li><a href="politics.html">Politics</a></li>
-      <li><a href="analysis.html">Analysis</a></li>
-      <li><a href="archive.html" class="nav-archive">Archive</a></li>
+      <li><a href="index.html">Latest</a></li>
+      <li><a href="archive.html" class="is-active">Archive</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#subscribe">Subscribe</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- ══════════════ ARCHIVE ══════════════ -->
-<div class="archive-page">
+<!-- ============== MAIN ============== -->
+<main>
   <div class="container">
-    <div class="archive-header">
-      <div class="section-label"><span>Article Archive</span></div>
-    </div>
-    <div class="archive-controls">
-      <input
-        type="search"
-        id="archiveSearch"
-        class="archive-search"
-        placeholder="Search articles..."
-        aria-label="Search articles"
-        autocomplete="off"
-      >
-      <select id="archiveCategory" class="archive-filter" aria-label="Filter by category">
-        <option value="">All Categories</option>
-      </select>
-    </div>
-    <div id="archiveResultsCount" class="archive-results-count"></div>
-    <div id="archiveList" class="archive-list"></div>
-  </div>
-</div>
 
-<!-- ══════════════ FOOTER ══════════════ -->
+    <h1 class="page-title">Archive</h1>
+    <p class="page-deck">Every issue of The Olsen Tribune, newest first. One careful read on the PBM space each week.</p>
+
+    <!-- =============== 2026 =============== -->
+    <h2 class="archive-year">2026</h2>
+    <hr class="archive-year-rule">
+    <ul class="issue-list">
+
+      <li class="issue">
+        <div class="issue-meta"><span class="num">No. 1</span><span class="dot">&middot;</span>April 26, 2026<span class="dot">&middot;</span>FTC v. Express Scripts</div>
+        <h3><a href="article.html">What the FTC actually locked in</a></h3>
+        <p class="deck">Reading the Express Scripts decree, the agency didn&rsquo;t blow up the pharmacy-benefit-manager business model. It made the existing model the opt-out option.</p>
+      </li>
+
+      <!--
+        Future issues. Copy this template and increment the number:
+
+        <li class="issue">
+          <div class="issue-meta"><span class="num">No. 2</span><span class="dot">&middot;</span>Date<span class="dot">&middot;</span>Topic tag</div>
+          <h3><a href="path-to-article.html">Headline</a></h3>
+          <p class="deck">One-sentence deck.</p>
+        </li>
+      -->
+
+    </ul>
+
+    <!-- Subscribe -->
+    <section class="subscribe-block" id="subscribe">
+      <div class="eyebrow">Get the next issue</div>
+      <h2>One careful read on the PBM space, every week</h2>
+      <p>Free, weekly, written by one person who reads the primary documents so you don&rsquo;t have to.</p>
+      <form class="subscribe-form" id="subscribeForm" novalidate>
+        <input type="email" name="email" placeholder="your.email@example.com" required autocomplete="email" aria-label="Email address">
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="subscribe-trust">Free<span class="dot">&middot;</span>No spam<span class="dot">&middot;</span>Unsubscribe anytime</p>
+    </section>
+
+  </div>
+</main>
+
+<!-- ============== FOOTER ============== -->
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand-name">The Olsen Tribune</div>
-        <p class="footer-desc">Daily business intelligence for executives, investors, and the intellectually curious. Published from New York.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Coverage</h4>
-        <ul>
-          <li><a href="financial-markets.html">Financial Markets</a></li>
-          <li><a href="technology.html">Technology</a></li>
-          <li><a href="healthcare.html">Healthcare</a></li>
-          <li><a href="politics.html">Politics</a></li>
-          <li><a href="analysis.html">Analysis</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="index.html">About</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Advertise</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Cookie Policy</a></li>
-        </ul>
-      </div>
+    <div class="footer-row">
+      <div class="footer-brand">The Olsen Tribune</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Latest</a></li>
+        <li><a href="archive.html">Archive</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#subscribe">Subscribe</a></li>
+      </ul>
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 The Olsen Tribune. All rights reserved.</span>
       <div class="footer-social">
-        <a href="#" aria-label="X" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        </a>
-        <a href="#" aria-label="LinkedIn" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="feed.xml" aria-label="RSS" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+        <a href="feed.xml" aria-label="RSS feed">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
         </a>
       </div>
     </div>
   </div>
 </footer>
 
-<script src="assets/article-index.js"></script>
-<script src="assets/archive.js"></script>
+<!-- Scripts -->
+<script>
+  // Today's date in the topline
+  (function () {
+    var el = document.getElementById('headerDate');
+    if (!el) return;
+    var d = new Date();
+    el.textContent = d.toLocaleDateString('en-US', {
+      weekday: 'long', month: 'long', day: 'numeric', year: 'numeric'
+    });
+  }());
+
+  // Subscribe form
+  (function () {
+    var form = document.getElementById('subscribeForm');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var input = form.querySelector('input[type="email"]');
+      if (!input || !input.value || !/.+@.+\..+/.test(input.value)) {
+        input && input.focus();
+        return;
+      }
+      var thanks = document.createElement('p');
+      thanks.className = 'subscribe-trust';
+      thanks.style.color = 'var(--accent)';
+      thanks.style.fontSize = '13px';
+      thanks.style.marginTop = '4px';
+      thanks.textContent = "Thanks. You're on the list. The next issue will land in your inbox.";
+      form.parentNode.replaceChild(thanks, form);
+    });
+  }());
+</script>
 </body>
 </html>

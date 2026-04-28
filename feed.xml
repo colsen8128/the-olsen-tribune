@@ -1,171 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>The Olsen Tribune</title>
-    <link>https://colsen8128.github.io/the-olsen-tribune</link>
-    <description>Daily business intelligence — markets, technology, healthcare, politics, and analysis.</description>
+    <link>https://colsen8128.github.io/the-olsen-tribune/</link>
+    <description>A one-person newsletter on the business of pharmacy benefit managers. Primary sources, plain English, one careful read each week.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Apr 2026 12:04:01 GMT</lastBuildDate>
+    <copyright>Copyright 2026 The Olsen Tribune</copyright>
+    <managingEditor>colsen8128@gmail.com (Chris Olsen)</managingEditor>
+    <webMaster>colsen8128@gmail.com (Chris Olsen)</webMaster>
+    <lastBuildDate>Sun, 26 Apr 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://colsen8128.github.io/the-olsen-tribune/feed.xml" rel="self" type="application/rss+xml"/>
+
     <item>
-      <title>Bank of England Deputy Breaks Protocol With Stark Warning on Stretched Equity Valuations</title>
-      <link>https://colsen8128.github.io/the-olsen-tribune/index.html#boe-deputy-warns-equities-overstretched-1777291201388</link>
-      <guid isPermaLink="true">https://colsen8128.github.io/the-olsen-tribune/index.html#boe-deputy-warns-equities-overstretched-1777291201388</guid>
-      <description>A rare public intervention from Threadneedle Street has reignited debate over whether global stock markets have run too far ahead of underlying fundamentals.</description>
-      <pubDate>Mon, 27 Apr 2026 04:00:00 GMT</pubDate>
-      <category>Financial Markets</category>
+      <title>What the FTC actually locked in</title>
+      <link>https://colsen8128.github.io/the-olsen-tribune/article.html</link>
+      <guid isPermaLink="true">https://colsen8128.github.io/the-olsen-tribune/article.html</guid>
+      <description>Reading the Express Scripts decree, the agency didn't blow up the pharmacy-benefit-manager business model. It made the existing model the opt-out option. Here's what changes, what doesn't, and where the savings actually come from.</description>
+      <pubDate>Sun, 26 Apr 2026 12:00:00 GMT</pubDate>
+      <author>colsen8128@gmail.com (Chris Olsen)</author>
+      <category>FTC v. Express Scripts</category>
+      <category>Pharmacy Benefit Managers</category>
     </item>
-    <item>
-      <title>Crude&apos;s Stubborn Climb Forces Investors to Rewrite the Inflation Playbook</title>
-      <link>https://colsen8128.github.io/the-olsen-tribune/index.html#oil-shock-ripples-through-corporate-earnings-1777291201389</link>
-      <guid isPermaLink="true">https://colsen8128.github.io/the-olsen-tribune/index.html#oil-shock-ripples-through-corporate-earnings-1777291201389</guid>
-      <description>With diplomatic channels narrowing and supply chains under renewed strain, the oil complex is dictating a new set of winners and losers across global equity sectors.</description>
-      <pubDate>Mon, 27 Apr 2026 04:00:00 GMT</pubDate>
-      <category>Financial Markets</category>
-    </item>
-    <item>
-      <title>Meta&apos;s Cosmic Gamble: Inside the Tech Giant&apos;s Bet on Solar Power Beamed From Orbit</title>
-      <link>https://colsen8128.github.io/the-olsen-tribune/index.html#meta-orbital-solar-power-bet-1777291252788</link>
-      <guid isPermaLink="true">https://colsen8128.github.io/the-olsen-tribune/index.html#meta-orbital-solar-power-bet-1777291252788</guid>
-      <description>A modest first contract with a startup called Overview Energy signals that hyperscalers are willing to fund science-fiction-grade infrastructure to feed their insatiable AI data centers.</description>
-      <pubDate>Mon, 27 Apr 2026 04:00:00 GMT</pubDate>
-      <category>Technology</category>
-    </item>
-    <item>
-      <title>When Bots Buy From Bots: Anthropic&apos;s Marketplace Experiment Hints at a New Economic Layer</title>
-      <link>https://colsen8128.github.io/the-olsen-tribune/index.html#ai-agent-commerce-anthropic-experiment-1777291252788</link>
-      <guid isPermaLink="true">https://colsen8128.github.io/the-olsen-tribune/index.html#ai-agent-commerce-anthropic-experiment-1777291252788</guid>
-      <description>A controlled trial in which AI agents transacted with one another exposes both the promise and the peril of automating the act of commerce itself.</description>
-      <pubDate>Mon, 27 Apr 2026 04:00:00 GMT</pubDate>
-      <category>Technology</category>
-    </item>
-    <item>
-      <title>Britain&apos;s Healthy Lifespan Shrinks as Housing and Obesity Crises Compound</title>
-      <link>https://colsen8128.github.io/the-olsen-tribune/index.html#uk-healthy-life-expectancy-decline-1777291310382</link>
-      <guid isPermaLink="true">https://colsen8128.github.io/the-olsen-tribune/index.html#uk-healthy-life-expectancy-decline-1777291310382</guid>
-      <description>A two-year drop in healthy life expectancy over the past decade is forcing policymakers to confront the structural drivers of preventable disease.</description>
-      <pubDate>Mon, 27 Apr 2026 04:00:00 GMT</pubDate>
-      <category>Healthcare</category>
-    </item>
-    <item>
-      <title>Gene Therapy&apos;s Quiet Commercial Breakthrough in Childhood Blindness</title>
-      <link>https://colsen8128.github.io/the-olsen-tribune/index.html#gene-therapy-childhood-blindness-commercial-frontier-1777291310383</link>
-      <guid isPermaLink="true">https://colsen8128.github.io/the-olsen-tribune/index.html#gene-therapy-childhood-blindness-commercial-frontier-1777291310383</guid>
-      <description>A six-year-old&apos;s restored vision underscores how one-time genetic treatments are reshaping pediatric medicine — and the economics of rare disease.</description>
-      <pubDate>Mon, 27 Apr 2026 04:00:00 GMT</pubDate>
-      <category>Healthcare</category>
-    </item>
-    <item>
-      <title>Gunfire at Correspondents&apos; Dinner Reignites Debate Over Presidential Security Posture</title>
-      <link>https://colsen8128.github.io/the-olsen-tribune/index.html#whcd-shooting-security-questions-1777291349004</link>
-      <guid isPermaLink="true">https://colsen8128.github.io/the-olsen-tribune/index.html#whcd-shooting-security-questions-1777291349004</guid>
-      <description>The third major security incident involving President Trump in as many years has lawmakers and federal agencies questioning whether protective protocols have kept pace with a hardening threat environment.</description>
-      <pubDate>Mon, 27 Apr 2026 04:00:00 GMT</pubDate>
-      <category>Politics</category>
-    </item>
-    <item>
-      <title>Congress Returns to a Hardening DHS Shutdown and a Shrinking Window for Compromise</title>
-      <link>https://colsen8128.github.io/the-olsen-tribune/index.html#dhs-shutdown-congress-returns-1777291349005</link>
-      <guid isPermaLink="true">https://colsen8128.github.io/the-olsen-tribune/index.html#dhs-shutdown-congress-returns-1777291349005</guid>
-      <description>With border operations strained and tens of thousands of federal workers furloughed, lawmakers face mounting pressure to resolve a funding standoff that has now entered its fourth week.</description>
-      <pubDate>Mon, 27 Apr 2026 04:00:00 GMT</pubDate>
-      <category>Politics</category>
-    </item>
-    <item>
-      <title>The Long Tail of the Iran Conflict Is Now Sitting at the Kitchen Table</title>
-      <link>https://colsen8128.github.io/the-olsen-tribune/index.html#iran-war-shockwaves-household-budgets-1777291395302</link>
-      <guid isPermaLink="true">https://colsen8128.github.io/the-olsen-tribune/index.html#iran-war-shockwaves-household-budgets-1777291395302</guid>
-      <description>From jet fuel surcharges to grocery bills, the macroeconomic spillover from a stalled Middle East peace process is quietly rewriting household finances across the West.</description>
-      <pubDate>Mon, 27 Apr 2026 04:00:00 GMT</pubDate>
-      <category>Analysis</category>
-    </item>
-    <item>
-      <title>Meta&apos;s Layoffs Reveal the Uncomfortable Math Behind the AI Capex Boom</title>
-      <link>https://colsen8128.github.io/the-olsen-tribune/index.html#ai-capex-meta-layoffs-labor-market-1777291395303</link>
-      <guid isPermaLink="true">https://colsen8128.github.io/the-olsen-tribune/index.html#ai-capex-meta-layoffs-labor-market-1777291395303</guid>
-      <description>As Big Tech pours unprecedented capital into artificial intelligence, the labor side of the ledger is being rewritten — and the entry-level rungs of the career ladder are disappearing first.</description>
-      <pubDate>Mon, 27 Apr 2026 04:00:00 GMT</pubDate>
-      <category>Analysis</category>
-    </item>
-    <item>
-      <title>Bank of England Deputy Breaks Protocol With Blunt Warning on Stretched Equities</title>
-      <link>https://colsen8128.github.io/the-olsen-tribune/index.html#boe-deputy-warns-equities-overstretched-1777204801281</link>
-      <guid isPermaLink="true">https://colsen8128.github.io/the-olsen-tribune/index.html#boe-deputy-warns-equities-overstretched-1777204801281</guid>
-      <description>A rare public rebuke from Threadneedle Street&apos;s second-in-command rattles a market already grappling with war-driven inflation and faltering earnings momentum.</description>
-      <pubDate>Sun, 26 Apr 2026 04:00:00 GMT</pubDate>
-      <category>Financial Markets</category>
-    </item>
-    <item>
-      <title>Iran Conflict Reshapes Global Trade Flows as Inflation Re-Accelerates</title>
-      <link>https://colsen8128.github.io/the-olsen-tribune/index.html#iran-war-shockwaves-global-supply-chains-1777204801282</link>
-      <guid isPermaLink="true">https://colsen8128.github.io/the-olsen-tribune/index.html#iran-war-shockwaves-global-supply-chains-1777204801282</guid>
-      <description>From British fuel pumps to Chinese factory floors, the Middle East war is rewriting the cost structure of the world economy and forcing policymakers to recalibrate.</description>
-      <pubDate>Sun, 26 Apr 2026 04:00:00 GMT</pubDate>
-      <category>Financial Markets</category>
-    </item>
-    <item>
-      <title>Google&apos;s $40 Billion Anthropic Bet Redraws the AI Compute Map</title>
-      <link>https://colsen8128.github.io/the-olsen-tribune/index.html#google-anthropic-compute-pact-1777204847245</link>
-      <guid isPermaLink="true">https://colsen8128.github.io/the-olsen-tribune/index.html#google-anthropic-compute-pact-1777204847245</guid>
-      <description>The search giant&apos;s deepening commitment to a rival lab underscores how scarcity of advanced chips is reshaping the competitive logic of artificial intelligence.</description>
-      <pubDate>Sun, 26 Apr 2026 04:00:00 GMT</pubDate>
-      <category>Technology</category>
-    </item>
-    <item>
-      <title>After a Long Drought, Climate Tech Finds an Opening on Wall Street</title>
-      <link>https://colsen8128.github.io/the-olsen-tribune/index.html#climate-tech-ipo-window-reopens-1777204847245</link>
-      <guid isPermaLink="true">https://colsen8128.github.io/the-olsen-tribune/index.html#climate-tech-ipo-window-reopens-1777204847245</guid>
-      <description>X-energy&apos;s debut and Fervo&apos;s pending listing suggest public investors may finally be willing to underwrite the long, capital-intensive timelines of energy innovation.</description>
-      <pubDate>Sun, 26 Apr 2026 04:00:00 GMT</pubDate>
-      <category>Technology</category>
-    </item>
-    <item>
-      <title>Britain&apos;s NHS Faces a Workforce Paradox as Newly Qualified Clinicians Sit Idle</title>
-      <link>https://colsen8128.github.io/the-olsen-tribune/index.html#nhs-workforce-paradox-recruitment-freeze-1777204885681</link>
-      <guid isPermaLink="true">https://colsen8128.github.io/the-olsen-tribune/index.html#nhs-workforce-paradox-recruitment-freeze-1777204885681</guid>
-      <description>A hiring freeze across English trusts has left thousands of midwives, nurses and physiotherapists unable to secure roles, even as patient waiting lists balloon past historic highs.</description>
-      <pubDate>Sun, 26 Apr 2026 04:00:00 GMT</pubDate>
-      <category>Healthcare</category>
-    </item>
-    <item>
-      <title>Gene Therapy&apos;s Quiet Revolution Tests the Limits of Health-System Budgets</title>
-      <link>https://colsen8128.github.io/the-olsen-tribune/index.html#gene-therapy-rare-disease-economics-1777204885682</link>
-      <guid isPermaLink="true">https://colsen8128.github.io/the-olsen-tribune/index.html#gene-therapy-rare-disease-economics-1777204885682</guid>
-      <description>As one-time treatments restore sight, mobility and immune function in children with rare conditions, regulators and insurers are confronting pricing models the existing system was never built to absorb.</description>
-      <pubDate>Sun, 26 Apr 2026 04:00:00 GMT</pubDate>
-      <category>Healthcare</category>
-    </item>
-    <item>
-      <title>High Court Weighs Geofencing Case That Could Reshape Fourth Amendment for the Digital Age</title>
-      <link>https://colsen8128.github.io/the-olsen-tribune/index.html#supreme-court-geofencing-digital-privacy-1777204931395</link>
-      <guid isPermaLink="true">https://colsen8128.github.io/the-olsen-tribune/index.html#supreme-court-geofencing-digital-privacy-1777204931395</guid>
-      <description>Justices appear divided as a Virginia bank robbery investigation forces a reckoning over how police use sweeping location data dragnets.</description>
-      <pubDate>Sun, 26 Apr 2026 04:00:00 GMT</pubDate>
-      <category>Politics</category>
-    </item>
-    <item>
-      <title>White House Abruptly Pulls Envoys From Islamabad as Iran Diplomacy Collapses</title>
-      <link>https://colsen8128.github.io/the-olsen-tribune/index.html#trump-cancels-iran-talks-islamabad-1777204931396</link>
-      <guid isPermaLink="true">https://colsen8128.github.io/the-olsen-tribune/index.html#trump-cancels-iran-talks-islamabad-1777204931396</guid>
-      <description>President Trump&apos;s decision to cancel the trip led by Steve Witkoff and Jared Kushner deepens uncertainty over a war that is approaching its constitutional reckoning in Congress.</description>
-      <pubDate>Sun, 26 Apr 2026 04:00:00 GMT</pubDate>
-      <category>Politics</category>
-    </item>
-    <item>
-      <title>The Eight-Month Shadow: How the Iran Conflict Is Rewiring Western Price Expectations</title>
-      <link>https://colsen8128.github.io/the-olsen-tribune/index.html#iran-war-inflation-eight-month-shadow-1777204978532</link>
-      <guid isPermaLink="true">https://colsen8128.github.io/the-olsen-tribune/index.html#iran-war-inflation-eight-month-shadow-1777204978532</guid>
-      <description>Government ministers now concede that elevated prices could persist well into next year, complicating central bank forecasts and household budgets alike.</description>
-      <pubDate>Sun, 26 Apr 2026 04:00:00 GMT</pubDate>
-      <category>Analysis</category>
-    </item>
-    <item>
-      <title>Meta&apos;s Cull and the Vanishing Graduate Job: Silicon Valley&apos;s AI Bargain Comes Due</title>
-      <link>https://colsen8128.github.io/the-olsen-tribune/index.html#meta-layoffs-ai-entry-level-reckoning-1777204978533</link>
-      <guid isPermaLink="true">https://colsen8128.github.io/the-olsen-tribune/index.html#meta-layoffs-ai-entry-level-reckoning-1777204978533</guid>
-      <description>A ten percent workforce reduction at Meta lands as warnings mount that artificial intelligence is hollowing out the bottom rung of the white-collar career ladder.</description>
-      <pubDate>Sun, 26 Apr 2026 04:00:00 GMT</pubDate>
-      <category>Analysis</category>
-    </item>
+
   </channel>
 </rss>

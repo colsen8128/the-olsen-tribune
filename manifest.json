@@ -1,11 +1,11 @@
 {
   "name": "The Olsen Tribune",
-  "short_name": "OT",
-  "description": "Daily business intelligence — markets, technology, healthcare, politics, and analysis.",
+  "short_name": "Tribune",
+  "description": "A one-person newsletter on the business of pharmacy benefit managers.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#1A1410",
-  "theme_color": "#1A1410",
+  "background_color": "#faf7f0",
+  "theme_color": "#faf7f0",
   "icons": [
     {
       "src": "assets/icon.svg",

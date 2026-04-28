@@ -3,272 +3,170 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Olsen Tribune — Business News &amp; Analysis</title>
-<meta name="description" content="The Olsen Tribune delivers daily business news, market analysis, startup coverage, and leadership insights.">
+<title>The Olsen Tribune — Pharmacy benefits, the business behind the prescription</title>
+<meta name="description" content="A one-person newsletter on the business of pharmacy benefit managers, written by Chris Olsen. One issue per week, primary sources, plain English.">
+
+<!-- Security -->
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
+
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Stylesheet -->
 <link rel="stylesheet" href="assets/styles.css">
-<meta name="theme-color" content="#1A1410">
+
+<!-- App icon, theme color, RSS -->
+<meta name="theme-color" content="#faf7f0">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="assets/icon.svg">
+<link rel="alternate" type="application/rss+xml" title="The Olsen Tribune" href="feed.xml">
+
+<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Olsen Tribune">
-<meta property="og:title" content="The Olsen Tribune — Business News &amp; Analysis">
-<meta property="og:description" content="The Olsen Tribune delivers daily business news, market analysis, startup coverage, and leadership insights.">
-<meta property="og:url" content="https://colsen8128.github.io/the-olsen-tribune/">
-<meta property="og:image" content="https://colsen8128.github.io/the-olsen-tribune/assets/icon.svg">
+<meta property="og:title" content="The Olsen Tribune — Pharmacy benefits, the business behind the prescription">
+<meta property="og:description" content="A one-person newsletter on the business of pharmacy benefit managers.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="The Olsen Tribune — Business News &amp; Analysis">
-<meta name="twitter:description" content="The Olsen Tribune delivers daily business news, market analysis, startup coverage, and leadership insights.">
-<link rel="alternate" type="application/rss+xml" title="The Olsen Tribune" href="feed.xml">
+
+<!-- Theme toggle (no flash) -->
 <script src="assets/theme.js"></script>
 </head>
 <body>
 
-<!-- ══════════════ TICKER ══════════════ -->
-<div class="ticker">
-  <div class="ticker-track">
-    <div class="ticker-item"><span class="ticker-sym">S&amp;P 500</span><span class="ticker-val">6,582.69</span><span class="up">+0.11%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">DJIA</span><span class="ticker-val">46,504.67</span><span class="down">-0.13%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">NASDAQ</span><span class="ticker-val">21,879.18</span><span class="up">+0.18%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">AAPL</span><span class="ticker-val">271.06</span><span class="down">-0.87%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">MSFT</span><span class="ticker-val">424.62</span><span class="up">+2.13%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">AMZN</span><span class="ticker-val">263.99</span><span class="up">+3.49%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">TSLA</span><span class="ticker-val">376.30</span><span class="up">+0.69%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">BTC</span><span class="ticker-val">77,740</span><span class="down">-0.42%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">10Y</span><span class="ticker-val">4.42%</span><span class="up">+0.04</span></div>
-    <div class="ticker-item"><span class="ticker-sym">WTI</span><span class="ticker-val">105.20</span><span class="up">+5.07%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">GOLD</span><span class="ticker-val">4,688.50</span><span class="up">+0.52%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">S&amp;P 500</span><span class="ticker-val">6,582.69</span><span class="up">+0.11%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">DJIA</span><span class="ticker-val">46,504.67</span><span class="down">-0.13%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">NASDAQ</span><span class="ticker-val">21,879.18</span><span class="up">+0.18%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">AAPL</span><span class="ticker-val">271.06</span><span class="down">-0.87%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">MSFT</span><span class="ticker-val">424.62</span><span class="up">+2.13%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">AMZN</span><span class="ticker-val">263.99</span><span class="up">+3.49%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">TSLA</span><span class="ticker-val">376.30</span><span class="up">+0.69%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">BTC</span><span class="ticker-val">77,740</span><span class="down">-0.42%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">10Y</span><span class="ticker-val">4.42%</span><span class="up">+0.04</span></div>
-    <div class="ticker-item"><span class="ticker-sym">WTI</span><span class="ticker-val">105.20</span><span class="up">+5.07%</span></div>
-    <div class="ticker-item"><span class="ticker-sym">GOLD</span><span class="ticker-val">4,688.50</span><span class="up">+0.52%</span></div>
-  </div>
-</div>
-
-<!-- ══════════════ SITE HEADER ══════════════ -->
+<!-- ============== HEADER ============== -->
 <header class="site-header">
   <div class="container">
-    <div class="header-meta">
-      <span id="headerDate"></span>
-      
+    <div class="topline">
+      <span class="date" id="headerDate"></span>
       <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode"></button>
     </div>
     <div class="masthead">
-      <div class="masthead-name" data-go-home style="cursor:pointer">The Olsen Tribune</div>
+      <a href="index.html" class="masthead-name">The Olsen Tribune</a>
+      <div class="masthead-tagline">Pharmacy benefits. The business behind the prescription.</div>
     </div>
   </div>
 </header>
 
-<!-- ══════════════ NAV ══════════════ -->
+<!-- ============== NAV ============== -->
 <nav class="site-nav">
   <div class="container">
     <ul class="nav-list">
-      <li><a href="#" data-go-home>Home</a></li>
-      <li><a href="financial-markets.html">Financial Markets</a></li>
-      <li><a href="technology.html">Technology</a></li>
-      <li><a href="healthcare.html">Healthcare</a></li>
-      <li><a href="politics.html">Politics</a></li>
-      <li><a href="analysis.html">Analysis</a></li>
-      <li><a href="archive.html" class="nav-archive">Archive</a></li>
+      <li><a href="index.html" class="is-active">Latest</a></li>
+      <li><a href="archive.html">Archive</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#subscribe">Subscribe</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- ══════════════════════════════════════════
-     MAIN PAGE
-══════════════════════════════════════════ -->
-<div class="main-page" id="mainPage">
-
-  <!-- ── HERO ── -->
-  <!-- HERO-START -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-inner">
-
-        <!-- Lead story -->
-        <div class="hero-lead" data-nav="boe-deputy-warns-equities-overstretched-1777291201388">
-          <div class="kicker">Financial Markets &middot; April 27, 2026</div>
-          <h2>Bank of England Deputy Breaks Protocol With Stark Warning on Stretched Equity Valuations</h2>
-          <p class="deck">A rare public intervention from Threadneedle Street has reignited debate over whether global stock markets have run too far ahead of underlying fundamentals.</p>
-          <div class="byline"><strong>By The Olsen Tribune</strong><span>6 min read</span></div>
-        </div>
-
-        <!-- Secondary stack -->
-        <div class="hero-stack">
-
-          <div class="hero-secondary" data-nav="oil-shock-ripples-through-corporate-earnings-1777291201389">
-            <div class="kicker">Financial Markets</div>
-            <h3>Crude's Stubborn Climb Forces Investors to Rewrite the Inflation Playbook</h3>
-            <p class="excerpt">With diplomatic channels narrowing and supply chains under renewed strain, the oil complex is dictating a new set of winners and losers across global equity sectors.</p>
-          </div>
-
-          <div class="hero-secondary" data-nav="meta-orbital-solar-power-bet-1777291252788">
-            <div class="kicker">Technology</div>
-            <h3>Meta's Cosmic Gamble: Inside the Tech Giant's Bet on Solar Power Beamed From Orbit</h3>
-            <p class="excerpt">A modest first contract with a startup called Overview Energy signals that hyperscalers are willing to fund science-fiction-grade infrastructure to feed their insatiable AI data centers.</p>
-          </div>
-
-          <div class="hero-secondary" data-nav="ai-agent-commerce-anthropic-experiment-1777291252788">
-            <div class="kicker">Technology</div>
-            <h3>When Bots Buy From Bots: Anthropic's Marketplace Experiment Hints at a New Economic Layer</h3>
-            <p class="excerpt">A controlled trial in which AI agents transacted with one another exposes both the promise and the peril of automating the act of commerce itself.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-  <!-- HERO-END -->
-
-  <!-- ── 5 CATEGORY SECTIONS (dynamically populated by scripts.js) ── -->
+<!-- ============== MAIN ============== -->
+<main>
   <div class="container">
-    <div id="home-financial-markets" class="cat-section-home"></div>
-    <div id="home-technology"        class="cat-section-home"></div>
-    <div id="home-healthcare"        class="cat-section-home"></div>
-    <div id="home-politics"          class="cat-section-home"></div>
-    <div id="home-analysis"          class="cat-section-home"></div>
-  </div>
 
-  <!-- ── MARKET SNAPSHOT ── -->
-  <section class="market-snapshot-section">
-    <div class="container">
-      <div class="section-label"><span>Market Snapshot</span></div>
-      <div class="market-snapshot-wrap">
-        <div class="market-table">
-          <div class="market-row"><span class="market-sym">S&amp;P 500</span><span>6,582.69</span><span class="market-chg up">+0.11%</span></div>
-          <div class="market-row"><span class="market-sym">Nasdaq</span><span>21,879.18</span><span class="market-chg up">+0.18%</span></div>
-          <div class="market-row"><span class="market-sym">DJIA</span><span>46,504.67</span><span class="market-chg down">-0.13%</span></div>
-          <div class="market-row"><span class="market-sym">10Y Yield</span><span>4.42%</span><span class="market-chg up">+0.04</span></div>
-          <div class="market-row"><span class="market-sym">Bitcoin</span><span>66,627</span><span class="market-chg down">-1.18%</span></div>
-          <div class="market-row"><span class="market-sym">Gold</span><span>4,688.50</span><span class="market-chg up">+0.52%</span></div>
-          <div class="market-row"><span class="market-sym">WTI Oil</span><span>105.20</span><span class="market-chg up">+5.07%</span></div>
-        </div>
-        <div class="market-table">
-          <div class="market-row"><span class="market-sym">AAPL</span><span>256.01</span><span class="market-chg up">+0.24%</span></div>
-          <div class="market-row"><span class="market-sym">MSFT</span><span>364.51</span><span class="market-chg down">-1.32%</span></div>
-          <div class="market-row"><span class="market-sym">NVDA</span><span>875.40</span><span class="market-chg up">+2.14%</span></div>
-          <div class="market-row"><span class="market-sym">AMZN</span><span>209.77</span><span class="market-chg down">-0.38%</span></div>
-          <div class="market-row"><span class="market-sym">GOOGL</span><span>178.62</span><span class="market-chg up">+0.67%</span></div>
-          <div class="market-row"><span class="market-sym">META</span><span>512.33</span><span class="market-chg up">+1.05%</span></div>
-          <div class="market-row"><span class="market-sym">TSLA</span><span>360.56</span><span class="market-chg down">-5.43%</span></div>
-        </div>
+    <!-- Hero: latest issue -->
+    <article class="hero-issue">
+      <div class="kicker">Issue No. 1 &middot; April 26, 2026</div>
+      <h1><a href="article.html">What the FTC actually locked in</a></h1>
+      <p class="deck">Reading the Express Scripts decree, the agency didn&rsquo;t blow up the pharmacy-benefit-manager business model. It made the existing model the opt-out option. Here&rsquo;s what changes, what doesn&rsquo;t, and where the savings actually come from.</p>
+      <p class="byline"><strong>By Chris Olsen</strong><span class="dot">&middot;</span>5 min read<span class="dot">&middot;</span>FTC v. Express Scripts</p>
+      <a href="article.html" class="read-issue">Read the issue &rarr;</a>
+    </article>
+
+    <!--
+      When there are more issues, drop a section like this above the subscribe block:
+
+      <div class="section-head">
+        <h2>Recent issues</h2>
+        <a href="archive.html">All issues</a>
       </div>
-    </div>
-  </section>
+      <ul class="issue-list">
+        <li class="issue">
+          <div class="issue-meta"><span class="num">No. 2</span> &middot; Date</div>
+          <h3><a href="...">Headline</a></h3>
+          <p class="deck">Deck...</p>
+        </li>
+      </ul>
+    -->
 
-  <!-- ── NEWSLETTER BAND ── -->
-  <section class="nl-band">
-    <div class="container">
-      <div class="nl-eyebrow">The Daily Brief</div>
-      <h2>Business intelligence delivered before your morning coffee</h2>
-      <p>Join thousands of executives and investors who start their day with The Olsen Tribune.</p>
-      <form id="nl-band-form" class="nl-form">
-        <input type="email" placeholder="Enter your email address" required autocomplete="email">
+    <!-- Subscribe -->
+    <section class="subscribe-block" id="subscribe">
+      <div class="eyebrow">The Tribune</div>
+      <h2>A weekly read on the business of pharmacy benefits</h2>
+      <p>One issue per week. PBM economics, FTC actions, formulary politics, and the deals shaping how Americans pay for prescriptions. Written by one person who reads the primary documents so you don&rsquo;t have to.</p>
+      <form class="subscribe-form" id="subscribeForm" novalidate>
+        <input type="email" name="email" placeholder="your.email@example.com" required autocomplete="email" aria-label="Email address">
         <button type="submit">Subscribe</button>
       </form>
-      <p class="nl-trust">Free &middot; No spam &middot; Unsubscribe anytime</p>
-    </div>
-  </section>
+      <p class="subscribe-trust">Free<span class="dot">&middot;</span>No spam<span class="dot">&middot;</span>Unsubscribe anytime</p>
+    </section>
 
-  <!-- ── ABOUT ── -->
-  <section class="about-band" id="about">
-    <div class="container">
-      <div class="about-inner">
-        <div class="about-title-block">
-          <div class="eyebrow">About The Tribune</div>
-          <h2>Business journalism with substance, not noise</h2>
-        </div>
-        <div class="about-body">
-          <p>The Olsen Tribune was founded on a simple premise: busy professionals deserve business news that respects their intelligence and their time. Every piece we publish is grounded in data, sourced from credible institutions, and written with the analytical rigor you&#8217;d expect from a Bloomberg terminal.</p>
-          <p>Based in the United States and published daily, The Olsen Tribune covers global markets, technology, healthcare, politics, and the leaders shaping the business landscape.</p>
-          <div class="about-values">
-            <div class="val"><h4>Data-Driven</h4><p>Every claim backed by numbers</p></div>
-            <div class="val"><h4>Independent</h4><p>No sponsors, no conflicts</p></div>
-            <div class="val"><h4>Concise</h4><p>Respect for your time</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- About preview -->
+    <section class="about-preview">
+      <h2>About the Tribune</h2>
+      <p>The Olsen Tribune is a one-person newsletter on pharmacy benefit managers and the wider business of prescription drugs in the United States. Each issue takes one story breaking in the PBM space, reads the primary documents, and sets out plainly what changes and what doesn&rsquo;t. <a href="about.html">More about the Tribune &rarr;</a></p>
+    </section>
 
-</div><!-- /.main-page -->
-
-<!-- ══════════════════════════════════════════
-     ARTICLE PAGE
-══════════════════════════════════════════ -->
-<div class="article-page" id="articlePage">
-  <div class="container">
-    <div class="article-body-wrap" id="articleBodyWrap">
-      <!-- Rendered by scripts.js -->
-    </div>
   </div>
-</div>
+</main>
 
-<!-- ══════════════ FOOTER ══════════════ -->
+<!-- ============== FOOTER ============== -->
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand-name">The Olsen Tribune</div>
-        <p class="footer-desc">Daily business intelligence for executives, investors, and the intellectually curious. Published from New York.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Coverage</h4>
-        <ul>
-          <li><a href="financial-markets.html">Financial Markets</a></li>
-          <li><a href="technology.html">Technology</a></li>
-          <li><a href="healthcare.html">Healthcare</a></li>
-          <li><a href="politics.html">Politics</a></li>
-          <li><a href="analysis.html">Analysis</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#" data-go-home>About</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Advertise</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Cookie Policy</a></li>
-        </ul>
-      </div>
+    <div class="footer-row">
+      <div class="footer-brand">The Olsen Tribune</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Latest</a></li>
+        <li><a href="archive.html">Archive</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#subscribe">Subscribe</a></li>
+      </ul>
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 The Olsen Tribune. All rights reserved.</span>
       <div class="footer-social">
-        <a href="#" aria-label="X" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        </a>
-        <a href="#" aria-label="LinkedIn" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="feed.xml" aria-label="RSS" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+        <a href="feed.xml" aria-label="RSS feed">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
         </a>
       </div>
     </div>
   </div>
 </footer>
 
-<script src="assets/article-index.js"></script>
-<script src="assets/scripts.js"></script>
+<!-- ============== SCRIPTS ============== -->
+<script>
+  // Today's date in the topline
+  (function () {
+    var el = document.getElementById('headerDate');
+    if (!el) return;
+    var d = new Date();
+    el.textContent = d.toLocaleDateString('en-US', {
+      weekday: 'long', month: 'long', day: 'numeric', year: 'numeric'
+    });
+  }());
+
+  // Subscribe form: client-side thank-you swap (no backend wired up yet)
+  (function () {
+    var form = document.getElementById('subscribeForm');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var input = form.querySelector('input[type="email"]');
+      if (!input || !input.value || !/.+@.+\..+/.test(input.value)) {
+        input && input.focus();
+        return;
+      }
+      var thanks = document.createElement('p');
+      thanks.className = 'subscribe-trust';
+      thanks.style.color = 'var(--accent)';
+      thanks.style.fontSize = '13px';
+      thanks.style.marginTop = '4px';
+      thanks.textContent = "Thanks. You're on the list. The next issue will land in your inbox.";
+      form.parentNode.replaceChild(thanks, form);
+    });
+  }());
+</script>
 </body>
 </html>
