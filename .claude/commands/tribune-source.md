@@ -23,6 +23,22 @@ Search in this order. Move down the list only when higher-priority sources don't
 
 Never cite a press account as a source for a factual claim. Trace every number to its originating document.
 
+## Folder convention
+
+Every research topic gets its own folder under `research/`. Derive a short kebab-case slug from the topic (2–4 words, no stopwords, e.g. "pharmacy-deserts", "copay-accumulators", "ftc-express-scripts").
+
+Before producing the brief:
+
+1. Check whether `research/<slug>/` already exists. If it does and appears to cover the same topic, reuse it. If it covers a different topic, pick a more specific slug.
+2. If the folder does not exist, create it: `mkdir -p research/<slug>`.
+3. Write the brief to `research/<slug>/research_memo.md`.
+
+Always include the slug in the brief itself as a `**Folder:**` field so `/tribune-write` and `/tribune-chart` know where to write their output.
+
+After writing the file, print the path (`research/<slug>/research_memo.md`) and then echo the full brief content in the chat so the user can pipe it directly into `/tribune-write`.
+
+---
+
 ## Output format
 
 Produce this block exactly. Every section is required. Do not skip any section, even if the answer is "none identified."
@@ -31,6 +47,7 @@ Produce this block exactly. Every section is required. Do not skip any section, 
 ## TRIBUNE RESEARCH BRIEF
 
 **Topic:** [one sentence describing the specific question or claim being sourced]
+**Folder:** research/[slug]/
 **Date compiled:** [today's date]
 **Confidence:** [High / Medium / Low] — [one sentence explaining any gaps or unverified areas]
 

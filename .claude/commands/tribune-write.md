@@ -18,6 +18,12 @@ Read the input carefully.
 
 You have received a Research Brief from /tribune-source. Produce a complete article body in HTML, matching exactly the structure used in article.html and article-2.html.
 
+### Output destination
+
+Read the `**Folder:**` field from the brief. Write the article HTML to `<folder>/article.md` (create the folder if it does not exist). After writing, print the path to confirm, then echo the article body in chat.
+
+If the brief does not include a `**Folder:**` field, derive a kebab-case slug from the brief's Topic line and use `research/<slug>/article.md`. Tell the user the slug you chose.
+
 ### Style rules — these are hard constraints, not preferences. Violations are errors.
 
 - No em dashes. Not `&mdash;`, not `—`. Use a comma, a period, or restructure the sentence.

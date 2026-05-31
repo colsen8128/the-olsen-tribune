@@ -140,6 +140,12 @@ Status pill classes: `pill locked` (blue) and `pill optout` (muted). Use `class=
 
 ---
 
+## Output destination
+
+The input CHART PLACEHOLDER comes from an article in `research/<slug>/article.md`. Ask the user for the folder slug if it is not obvious from the input or from recent context, then append the chart block to `research/<slug>/article_charts.html` (create the file if it does not exist). After writing, print the path to confirm, then echo the chart block in chat so the user can paste it into the article.
+
+If the slug cannot be determined, write to `research/_unsorted/chart.html` and tell the user.
+
 ## Output
 
 Produce the complete `<div class="chart-block">...</div>` block only. No surrounding article HTML.
