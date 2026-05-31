@@ -561,6 +561,9 @@ h1.article-headline {
   font-size: 19px;
   line-height: 1.45;
   margin: 0 0 28px;
+  font-kerning: normal;
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-rendering: optimizeLegibility;
 }
 
 .article-byline {
