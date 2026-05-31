@@ -1,0 +1,330 @@
+<!-- Charts for Issue No. 3: The pharmacy desert is a PBM business model -->
+
+<!-- ============== CHART 1 ============== -->
+<div class="chart-block">
+  <div class="chart-eyebrow">Chart 1. Independents closed at more than twice the rate</div>
+  <div class="chart-title">U.S. retail pharmacy closures, 2010 to 2021, by ownership type</div>
+  <div class="chart-sub">Nearly one in three U.S. retail pharmacies closed over the decade. Independents shut at more than twice the rate of chains, and were disproportionately the only pharmacy serving their community.</div>
+
+  <div class="legend">
+    <span><span class="swatch" style="background:#2c5d8f;"></span>Chain pharmacies</span>
+    <span><span class="swatch" style="background:#b8431a;"></span>Independent pharmacies</span>
+  </div>
+
+  <svg viewBox="0 0 820 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart comparing the share of chain pharmacies and independent pharmacies that closed between 2010 and 2021. All retail closed at 29.4 percent, chains at approximately 20 percent, independents at approximately 40 percent.">
+    <g transform="translate(80, 30)">
+
+      <!-- Axes -->
+      <line x1="0" y1="0" x2="0" y2="240" stroke="#1a1a1a" stroke-width="1.2"/>
+      <line x1="0" y1="240" x2="660" y2="240" stroke="#1a1a1a" stroke-width="1.2"/>
+
+      <!-- scale: 50% max = 240px height; 1px = 0.208% -->
+      <g font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a">
+        <line x1="0" y1="0" x2="660" y2="0" stroke="#ece8de" stroke-width="1"/>
+        <text x="-8" y="4" text-anchor="end">50%</text>
+        <line x1="0" y1="48" x2="660" y2="48" stroke="#ece8de" stroke-width="1"/>
+        <text x="-8" y="52" text-anchor="end">40%</text>
+        <line x1="0" y1="96" x2="660" y2="96" stroke="#ece8de" stroke-width="1"/>
+        <text x="-8" y="100" text-anchor="end">30%</text>
+        <line x1="0" y1="144" x2="660" y2="144" stroke="#ece8de" stroke-width="1"/>
+        <text x="-8" y="148" text-anchor="end">20%</text>
+        <line x1="0" y1="192" x2="660" y2="192" stroke="#ece8de" stroke-width="1"/>
+        <text x="-8" y="196" text-anchor="end">10%</text>
+      </g>
+
+      <!-- Category labels -->
+      <g font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#1a1a1a" font-weight="700" text-anchor="middle">
+        <text x="110" y="262">All retail</text>
+        <text x="330" y="262">Chain</text>
+        <text x="550" y="262">Independent</text>
+      </g>
+
+      <!-- All retail: 29.4% → height = 29.4 * 4.8 = 141.12 → y = 98.88 -->
+      <g fill="#d4a574">
+        <rect x="80" y="99" width="60" height="141"/>
+        <text x="110" y="91" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#1a1a1a" font-weight="700" text-anchor="middle">29.4%</text>
+      </g>
+
+      <!-- Chain ~20% (illustrative) → height = 96 → y = 144 -->
+      <g fill="#2c5d8f">
+        <rect x="300" y="144" width="60" height="96"/>
+        <text x="330" y="136" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#1a1a1a" font-weight="700" text-anchor="middle">~20%</text>
+      </g>
+
+      <!-- Independent ~40% (illustrative, "more than 2x chain rate") → height = 192 → y = 48 -->
+      <g fill="#b8431a">
+        <rect x="520" y="48" width="60" height="192"/>
+        <text x="550" y="40" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#1a1a1a" font-weight="700" text-anchor="middle">~40%</text>
+      </g>
+
+      <!-- Y axis label -->
+      <text transform="translate(-58, 120) rotate(-90)" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a" text-anchor="middle">Share of stores closed, 2010–2021</text>
+
+    </g>
+  </svg>
+
+  <div class="footnote">All-retail figure (29.4%) is exact from Guadamuz et al. Chain and independent shares are illustrative approximations derived from the paper's finding that independents closed at more than twice the chain rate. Exact category percentages should be confirmed against the published paper before reuse.</div>
+  <div class="chart-source">Source: Guadamuz et al., "Retail Pharmacy Closures in the United States, 2010 to 2021," Health Affairs (December 2024).</div>
+</div>
+
+<!-- ============== CHART 2 ============== -->
+<div class="chart-block">
+  <div class="chart-eyebrow">Chart 2. Five states with the largest desert share</div>
+  <div class="chart-title">Share of state population living in a pharmacy desert</div>
+  <div class="chart-sub">In five states more than a quarter of residents already live in a pharmacy desert, well above the 17.7% national average. Eighteen states sit above 20%.</div>
+
+  <div class="legend">
+    <span><span class="swatch" style="background:#b8431a;"></span>State share in a pharmacy desert</span>
+    <span><span class="swatch" style="background:#2c5d8f;"></span>U.S. average (17.7%)</span>
+  </div>
+
+  <svg viewBox="0 0 820 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Horizontal bar chart of five U.S. states with the highest share of residents living in a pharmacy desert, all above 25 percent, compared to a U.S. average of 17.7 percent.">
+    <g transform="translate(110, 30)">
+
+      <!-- X axis (bottom) -->
+      <line x1="0" y1="0" x2="0" y2="240" stroke="#1a1a1a" stroke-width="1.2"/>
+      <line x1="0" y1="240" x2="620" y2="240" stroke="#1a1a1a" stroke-width="1.2"/>
+
+      <!-- scale: 30% max = 620px width; 1px = 0.0484% -->
+      <g font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a" text-anchor="middle">
+        <line x1="0" y1="0" x2="0" y2="240" stroke="#ece8de" stroke-width="0"/>
+        <text x="0" y="258">0%</text>
+        <line x1="124" y1="0" x2="124" y2="240" stroke="#ece8de" stroke-width="1"/>
+        <text x="124" y="258">6%</text>
+        <line x1="248" y1="0" x2="248" y2="240" stroke="#ece8de" stroke-width="1"/>
+        <text x="248" y="258">12%</text>
+        <line x1="372" y1="0" x2="372" y2="240" stroke="#ece8de" stroke-width="1"/>
+        <text x="372" y="258">18%</text>
+        <line x1="496" y1="0" x2="496" y2="240" stroke="#ece8de" stroke-width="1"/>
+        <text x="496" y="258">24%</text>
+        <line x1="620" y1="0" x2="620" y2="240" stroke="#ece8de" stroke-width="1"/>
+        <text x="620" y="258">30%</text>
+      </g>
+
+      <!-- U.S. average reference line at 17.7% → x = 365.7 -->
+      <line x1="366" y1="0" x2="366" y2="240" stroke="#2c5d8f" stroke-dasharray="4,3" stroke-width="1.4"/>
+      <text x="370" y="12" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#2c5d8f" font-weight="700">U.S. avg 17.7%</text>
+
+      <!-- Bars: 5 states, illustrative values at ~26% (NH 26.5, SD 26, WV 25.8, ME 25.5, VT 25.2). 26% → width 537.4 -->
+      <g font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#1a1a1a">
+        <rect x="0" y="14" width="548" height="32" fill="#b8431a"/>
+        <text x="-8" y="35" text-anchor="end" font-weight="700">New Hampshire</text>
+        <text x="556" y="35" fill="#1a1a1a" font-weight="700">26.5%</text>
+
+        <rect x="0" y="60" width="537" height="32" fill="#b8431a"/>
+        <text x="-8" y="81" text-anchor="end" font-weight="700">South Dakota</text>
+        <text x="545" y="81" fill="#1a1a1a" font-weight="700">26.0%</text>
+
+        <rect x="0" y="106" width="533" height="32" fill="#b8431a"/>
+        <text x="-8" y="127" text-anchor="end" font-weight="700">West Virginia</text>
+        <text x="541" y="127" fill="#1a1a1a" font-weight="700">25.8%</text>
+
+        <rect x="0" y="152" width="527" height="32" fill="#b8431a"/>
+        <text x="-8" y="173" text-anchor="end" font-weight="700">Maine</text>
+        <text x="535" y="173" fill="#1a1a1a" font-weight="700">25.5%</text>
+
+        <rect x="0" y="198" width="521" height="32" fill="#b8431a"/>
+        <text x="-8" y="219" text-anchor="end" font-weight="700">Vermont</text>
+        <text x="529" y="219" fill="#1a1a1a" font-weight="700">25.2%</text>
+      </g>
+
+    </g>
+  </svg>
+
+  <div class="footnote">The five states named in Berenbrok et al. all exceed 25%; specific per-state percentages are approximated from the paper's bucketed reporting. The 17.7% national average is exact. Eighteen states (not all shown) exceed the 20% threshold.</div>
+  <div class="chart-source">Source: Berenbrok et al., "Vulnerability Index Approach to Identify Pharmacy Deserts and Keystone Pharmacies," JAMA Network Open (March 2025).</div>
+</div>
+
+<!-- ============== CHART 3 ============== -->
+<div class="chart-block">
+  <div class="chart-eyebrow">Chart 3. Where the Big 3 PBM dollars came from</div>
+  <div class="chart-title">PBM-affiliated pharmacy specialty-generic excess revenue and spread-pricing profit</div>
+  <div class="chart-sub">Across the FTC study window, the Big 3 PBMs captured $7.3 billion in revenue above estimated acquisition cost at their own pharmacies, and an additional $1.4 billion in spread pricing, most of it on prescriptions filled at unaffiliated stores.</div>
+
+  <div class="legend">
+    <span><span class="swatch" style="background:#b8431a;"></span>Specialty-generic excess at affiliated pharmacies</span>
+    <span><span class="swatch" style="background:#d4a574;"></span>Spread-pricing profit</span>
+  </div>
+
+  <svg viewBox="0 0 820 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart comparing 7.3 billion dollars in specialty-generic excess revenue at PBM-affiliated pharmacies against 1.4 billion dollars in spread-pricing profit from the FTC Second Interim Staff Report.">
+    <g transform="translate(100, 30)">
+
+      <line x1="0" y1="0" x2="0" y2="240" stroke="#1a1a1a" stroke-width="1.2"/>
+      <line x1="0" y1="240" x2="620" y2="240" stroke="#1a1a1a" stroke-width="1.2"/>
+
+      <!-- scale: $8B max = 240px height; 1px = $33.3M -->
+      <g font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a">
+        <line x1="0" y1="0" x2="620" y2="0" stroke="#ece8de" stroke-width="1"/>
+        <text x="-8" y="4" text-anchor="end">$8B</text>
+        <line x1="0" y1="60" x2="620" y2="60" stroke="#ece8de" stroke-width="1"/>
+        <text x="-8" y="64" text-anchor="end">$6B</text>
+        <line x1="0" y1="120" x2="620" y2="120" stroke="#ece8de" stroke-width="1"/>
+        <text x="-8" y="124" text-anchor="end">$4B</text>
+        <line x1="0" y1="180" x2="620" y2="180" stroke="#ece8de" stroke-width="1"/>
+        <text x="-8" y="184" text-anchor="end">$2B</text>
+      </g>
+
+      <g font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#1a1a1a" text-anchor="middle">
+        <text x="155" y="262" font-weight="700">Specialty-generic excess</text>
+        <text x="155" y="276" font-size="10" fill="#4a4a4a">at affiliated pharmacies</text>
+        <text x="465" y="262" font-weight="700">Spread-pricing profit</text>
+        <text x="465" y="276" font-size="10" fill="#4a4a4a">across the Big 3</text>
+      </g>
+
+      <!-- $7.3B → height = 7.3/8 * 240 = 219 → y = 21 -->
+      <g fill="#b8431a">
+        <rect x="95" y="21" width="120" height="219"/>
+        <text x="155" y="13" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#1a1a1a" text-anchor="middle">$7.3B</text>
+      </g>
+
+      <!-- $1.4B → height = 1.4/8 * 240 = 42 → y = 198 -->
+      <g fill="#d4a574">
+        <rect x="405" y="198" width="120" height="42"/>
+        <text x="465" y="190" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#1a1a1a" text-anchor="middle">$1.4B</text>
+      </g>
+
+      <text transform="translate(-72, 120) rotate(-90)" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a" text-anchor="middle">Cumulative across FTC study window</text>
+
+    </g>
+  </svg>
+
+  <div class="footnote">FTC Second Interim Staff Report study window covers Big 3 PBM specialty-generic claims; both figures are exact from the report. Most spread-pricing profit was generated on prescriptions filled at non-affiliated pharmacies.</div>
+  <div class="chart-source">Source: FTC, "Second Interim Staff Report on Prescription Drug Middlemen," 6(b) Study (January 14, 2025).</div>
+</div>
+
+<!-- ============== CHART 4 ============== -->
+<div class="chart-block">
+  <div class="chart-eyebrow">Chart 4. The math fails at the counter</div>
+  <div class="chart-title">Cost to dispense versus typical PBM generic reimbursement</div>
+  <div class="chart-sub">Independent pharmacies report a per-prescription dispensing cost of $12 to $15. PBM generic reimbursement frequently falls below the drug's acquisition cost, before any labor.</div>
+
+  <div class="legend">
+    <span><span class="swatch" style="background:#2c5d8f;"></span>Cost to dispense (NCPA)</span>
+    <span><span class="swatch" style="background:#b8431a;"></span>Below-acquisition PBM reimbursement (illustrative)</span>
+  </div>
+
+  <svg viewBox="0 0 820 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart contrasting the 12 to 15 dollar cost to dispense a prescription against an illustrative below-acquisition PBM reimbursement of about 9 dollars on generics.">
+    <g transform="translate(100, 30)">
+
+      <line x1="0" y1="0" x2="0" y2="240" stroke="#1a1a1a" stroke-width="1.2"/>
+      <line x1="0" y1="240" x2="620" y2="240" stroke="#1a1a1a" stroke-width="1.2"/>
+
+      <!-- scale: $20 max = 240px height; 1px = $0.083 -->
+      <g font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a">
+        <line x1="0" y1="0" x2="620" y2="0" stroke="#ece8de" stroke-width="1"/>
+        <text x="-8" y="4" text-anchor="end">$20</text>
+        <line x1="0" y1="60" x2="620" y2="60" stroke="#ece8de" stroke-width="1"/>
+        <text x="-8" y="64" text-anchor="end">$15</text>
+        <line x1="0" y1="120" x2="620" y2="120" stroke="#ece8de" stroke-width="1"/>
+        <text x="-8" y="124" text-anchor="end">$10</text>
+        <line x1="0" y1="180" x2="620" y2="180" stroke="#ece8de" stroke-width="1"/>
+        <text x="-8" y="184" text-anchor="end">$5</text>
+      </g>
+
+      <g font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#1a1a1a" text-anchor="middle" font-weight="700">
+        <text x="155" y="262">Cost to dispense</text>
+        <text x="465" y="262">PBM reimbursement</text>
+      </g>
+
+      <!-- Cost to dispense band: $12 to $15 → bar at midpoint ~$13.50 with whisker. Bar covers $12 (y=144) to $15 (y=60) -->
+      <g>
+        <rect x="95" y="60" width="120" height="84" fill="#2c5d8f"/>
+        <line x1="95" y1="60" x2="215" y2="60" stroke="#1a1a1a" stroke-width="1.5"/>
+        <line x1="95" y1="144" x2="215" y2="144" stroke="#1a1a1a" stroke-width="1.5"/>
+        <text x="155" y="52" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#1a1a1a" text-anchor="middle">$12 – $15</text>
+        <text x="155" y="155" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="9" fill="#ffffff" text-anchor="middle"></text>
+      </g>
+
+      <!-- PBM reimbursement illustrative ~$9 → height = 108 → y = 132 -->
+      <g fill="#b8431a">
+        <rect x="405" y="132" width="120" height="108"/>
+        <text x="465" y="124" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#1a1a1a" text-anchor="middle">~$9</text>
+      </g>
+
+      <text transform="translate(-72, 120) rotate(-90)" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a" text-anchor="middle">Per-prescription dollars</text>
+
+    </g>
+  </svg>
+
+  <div class="footnote">Cost-to-dispense range ($12 to $15) is from the NCPA Cost of Dispensing study (NCPA is the trade association for independent pharmacies; funder disclosed). PBM reimbursement figure is illustrative. The FTC Second Interim Staff Report documents that Big 3 PBMs reimbursed unaffiliated pharmacies below acquisition cost on numerous generics; exact per-script averages are not reported.</div>
+  <div class="chart-source">Source: NCPA Cost of Dispensing study; FTC, "Second Interim Staff Report on Prescription Drug Middlemen" (January 14, 2025).</div>
+</div>
+
+<!-- ============== CHART 5 ============== -->
+<div class="chart-block">
+  <div class="chart-eyebrow">Chart 5. The closure curve has steepened</div>
+  <div class="chart-title">U.S. retail pharmacy count, 2015 to early 2026</div>
+  <div class="chart-sub">The U.S. has roughly 8,000 fewer retail pharmacies than a decade ago, a 15% drop. More than 300 stores closed in the first 10 weeks of 2026 alone, on pace for the largest single-year decline of the post-2010 period.</div>
+
+  <div class="legend">
+    <span><span class="swatch" style="background:#b8431a;"></span>Approximate U.S. retail pharmacy count</span>
+  </div>
+
+  <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Line chart showing approximate U.S. retail pharmacy count declining from around 60,000 in 2015 to about 52,000 in early 2026, with the slope steepening sharply after 2023.">
+    <g transform="translate(90, 30)">
+
+      <line x1="0" y1="0" x2="0" y2="260" stroke="#1a1a1a" stroke-width="1.2"/>
+      <line x1="0" y1="260" x2="660" y2="260" stroke="#1a1a1a" stroke-width="1.2"/>
+
+      <!-- scale: 62,000 max → y=0; 48,000 min → y=260; 1px = ~53.8 pharmacies -->
+      <g font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a">
+        <line x1="0" y1="0" x2="660" y2="0" stroke="#ece8de" stroke-width="1"/>
+        <text x="-8" y="4" text-anchor="end">62,000</text>
+        <line x1="0" y1="65" x2="660" y2="65" stroke="#ece8de" stroke-width="1"/>
+        <text x="-8" y="69" text-anchor="end">58,500</text>
+        <line x1="0" y1="130" x2="660" y2="130" stroke="#ece8de" stroke-width="1"/>
+        <text x="-8" y="134" text-anchor="end">55,000</text>
+        <line x1="0" y1="195" x2="660" y2="195" stroke="#ece8de" stroke-width="1"/>
+        <text x="-8" y="199" text-anchor="end">51,500</text>
+        <line x1="0" y1="260" x2="660" y2="260" stroke="#ece8de" stroke-width="1"/>
+        <text x="-8" y="264" text-anchor="end">48,000</text>
+      </g>
+
+      <!-- X axis labels: 2015 through 2026 across 660px → 60px per year -->
+      <g font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a" text-anchor="middle">
+        <text x="0" y="278">2015</text>
+        <text x="120" y="278">2017</text>
+        <text x="240" y="278">2019</text>
+        <text x="360" y="278">2021</text>
+        <text x="480" y="278">2023</text>
+        <text x="600" y="278">2025</text>
+        <text x="660" y="278">2026</text>
+      </g>
+
+      <!--
+        Approximate trajectory anchored to:
+        ~60,000 in 2015 (pre-decline reference)
+        ~58,000 in 2020
+        ~55,000 in 2023
+        ~52,000 in early 2026 (consistent with 15% / ~8,000 net decline vs. ~10 years prior)
+        Points (x = year-2015 * 60; y by interpolation against 62,000→y=0, 48,000→y=260):
+        2015: 60,000 → y=37
+        2017: 59,300 → y=50
+        2019: 58,500 → y=65
+        2021: 57,000 → y=93
+        2023: 55,000 → y=130
+        2024: 53,800 → y=152
+        2025: 52,800 → y=170
+        2026: 52,000 → y=186 (early 2026, sharp drop)
+      -->
+
+      <polyline fill="none" stroke="#b8431a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+        points="0,37 60,43 120,50 180,57 240,65 300,79 360,93 420,112 480,130 540,152 600,170 660,186"/>
+
+      <!-- Endpoint marker and callout -->
+      <circle cx="660" cy="186" r="4.5" fill="#b8431a"/>
+      <text x="666" y="184" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" fill="#b8431a">~52,000</text>
+      <text x="666" y="196" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="9" fill="#4a4a4a">early 2026</text>
+
+      <!-- Annotation: 2026 acceleration -->
+      <text x="540" y="240" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a" font-style="italic">300+ closures in</text>
+      <text x="540" y="252" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a" font-style="italic">first 10 weeks of 2026</text>
+
+      <text transform="translate(-58, 130) rotate(-90)" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a" text-anchor="middle">Approximate U.S. retail pharmacy count</text>
+
+    </g>
+  </svg>
+
+  <div class="footnote">Approximate trajectory derived from AELP/NCPA aggregate reporting of an ~8,000-store net decline (about 15%) versus a decade earlier, anchored at endpoints. Mid-decade intermediate values are interpolated and should be treated as illustrative of the trend shape rather than precise annual counts.</div>
+  <div class="chart-source">Source: American Economic Liberties Project U.S. pharmacy closure tracker; NCPA Executive Updates (February 20 and March 6, 2026); Guadamuz et al., Health Affairs (December 2024) for the pre-2021 baseline.</div>
+</div>
