@@ -78,13 +78,13 @@
 
     <div class="article-body">
 
-      <p class="lead">A pharmacy desert is what happens when the math stops working at the counter. <strong>29.4%</strong> of US retail pharmacies closed between 2010 and 2021, and independents close more than twice the rate of chains. The FTC&rsquo;s two 6(b) staff reports on prescription drug middlemen, released July 9, 2024 and January 14, 2025, name the mechanism. The Big 3 PBMs, Caremark, Express Scripts, and OptumRx, reimburse unaffiliated pharmacies below acquisition cost, steer prescriptions to pharmacies they own, and mark up specialty generics at the affiliated channel by hundreds of percent. The result is a country in which 57.1 million Americans now live somewhere a prescription is difficult to fill.</p>
+      <p class="lead">A pharmacy desert is what happens when the math stops working at the counter. <strong>29.4%</strong> of US retail pharmacies closed between 2010 and 2021, and independents closed at a sharply higher rate than chains: 38.9% versus 21.9%. The FTC&rsquo;s two 6(b) staff reports on prescription drug middlemen, released July 9, 2024 and January 14, 2025, name the mechanism. The Big 3 PBMs, Caremark, Express Scripts, and OptumRx, reimburse unaffiliated pharmacies below acquisition cost, steer prescriptions to pharmacies they own, and mark up specialty generics at the affiliated channel by hundreds of percent. The result is a country in which 57.1 million Americans now live somewhere a prescription is difficult to fill.</p>
 
       <!-- CHART 1 -->
       <div class="chart-block">
-        <div class="chart-eyebrow">Chart 1. Independents closed at more than twice the rate</div>
+        <div class="chart-eyebrow">Chart 1. Independents closed at nearly double the rate</div>
         <div class="chart-title">U.S. retail pharmacy closures, 2010 to 2021, by ownership type</div>
-        <div class="chart-sub">Nearly one in three U.S. retail pharmacies closed over the decade. Independents shut at more than twice the rate of chains, and were disproportionately the only pharmacy serving their community.</div>
+        <div class="chart-sub">Nearly one in three U.S. retail pharmacies closed over the decade. Independents shut at 38.9%, chains at 21.9%, and were disproportionately the only pharmacy serving their community.</div>
 
         <div class="legend">
           <span><span class="swatch" style="background:#2c5d8f;"></span>Chain pharmacies</span>
@@ -268,75 +268,101 @@
 
       <p>Applied across the contiguous United States, <strong>57.1 million</strong> people, 17.7% of the population, live in a pharmacy desert. Another 28.9 million depend on a single pharmacy, what the authors call a keystone pharmacy. In 18 states more than 20% of residents live in a desert. In New Hampshire, South Dakota, West Virginia, Maine, and Vermont, the share exceeds 25%.</p>
 
-      <p>These are not abstractions. A keystone pharmacy is one closure away from a desert. Independents are the stores most likely to be the keystone in a small town, and they closed at more than twice the rate of chains over the 2010 to 2021 window.</p>
+      <p>These are not abstractions. A keystone pharmacy is one closure away from a desert. Independents are the stores most likely to be the keystone in a small town, and they closed at 38.9% over the 2010 to 2021 window against 21.9% for chains.</p>
 
       <!-- CHART 4 -->
       <div class="chart-block">
         <div class="chart-eyebrow">Chart 4. Five states with the largest desert share</div>
-        <div class="chart-title">Share of state population living in a pharmacy desert</div>
-        <div class="chart-sub">In five states more than a quarter of residents already live in a pharmacy desert, well above the 17.7% national average. Each bar is split: the tan segment is the portion up to the national average, the red is the portion beyond it.</div>
+        <div class="chart-title">How far above the national average each state sits</div>
+        <div class="chart-sub">Each state is plotted as a single dot on a shared scale. The vertical line is the 17.7% national average. The horizontal connector is the gap, how many percentage points the state sits above the country as a whole.</div>
 
         <div class="legend">
-          <span><span class="swatch" style="background:#d4a574;"></span>Up to U.S. average (17.7%)</span>
-          <span><span class="swatch" style="background:#b8431a;"></span>Above U.S. average</span>
+          <span><span class="swatch" style="background:#1a1a1a;"></span>U.S. average (17.7%)</span>
+          <span><span class="swatch" style="background:#b8431a;"></span>State share in a pharmacy desert</span>
         </div>
 
-        <svg viewBox="0 0 820 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Horizontal split bar chart of five U.S. states with the highest share of residents living in a pharmacy desert. Each bar shows the portion up to the 17.7 percent national average in tan and the excess in red. All five states exceed 25 percent.">
-          <g transform="translate(110, 30)">
-            <line x1="0" y1="0" x2="0" y2="240" stroke="#1a1a1a" stroke-width="1.2"/>
-            <line x1="0" y1="240" x2="620" y2="240" stroke="#1a1a1a" stroke-width="1.2"/>
+        <svg viewBox="0 0 820 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lollipop chart showing the gap between the 17.7 percent U.S. average and five states with the highest pharmacy-desert population share. Each state has a horizontal line extending from the national average reference line to its own value, all above 25 percent.">
+          <g transform="translate(140, 40)">
 
-            <!-- scale: 30% max = 620px width; 1px = 0.0484%; 17.7% avg → x = 365.7 -->
+            <!-- X axis -->
+            <line x1="0" y1="220" x2="620" y2="220" stroke="#1a1a1a" stroke-width="1.2"/>
+
+            <!-- scale: 30% max = 620px width; 1px = 0.0484%; 17.7% → x = 365.7 -->
             <g font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a" text-anchor="middle">
-              <text x="0" y="258">0%</text>
-              <line x1="124" y1="0" x2="124" y2="240" stroke="#ece8de" stroke-width="1"/>
-              <text x="124" y="258">6%</text>
-              <line x1="248" y1="0" x2="248" y2="240" stroke="#ece8de" stroke-width="1"/>
-              <text x="248" y="258">12%</text>
-              <line x1="372" y1="0" x2="372" y2="240" stroke="#ece8de" stroke-width="1"/>
-              <text x="372" y="258">18%</text>
-              <line x1="496" y1="0" x2="496" y2="240" stroke="#ece8de" stroke-width="1"/>
-              <text x="496" y="258">24%</text>
-              <line x1="620" y1="0" x2="620" y2="240" stroke="#ece8de" stroke-width="1"/>
-              <text x="620" y="258">30%</text>
+              <text x="0" y="238">0%</text>
+              <line x1="124" y1="0" x2="124" y2="220" stroke="#ece8de" stroke-width="1"/>
+              <text x="124" y="238">6%</text>
+              <line x1="248" y1="0" x2="248" y2="220" stroke="#ece8de" stroke-width="1"/>
+              <text x="248" y="238">12%</text>
+              <line x1="496" y1="0" x2="496" y2="220" stroke="#ece8de" stroke-width="1"/>
+              <text x="496" y="238">24%</text>
+              <line x1="620" y1="0" x2="620" y2="220" stroke="#ece8de" stroke-width="1"/>
+              <text x="620" y="238">30%</text>
             </g>
+
+            <!-- U.S. average reference line (solid, dark) -->
+            <line x1="366" y1="-8" x2="366" y2="220" stroke="#1a1a1a" stroke-width="1.6"/>
+            <text x="366" y="-14" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="11" fill="#1a1a1a" font-weight="700" text-anchor="middle">U.S. average 17.7%</text>
 
             <!--
-              Bars: each split at x = 366 (17.7% national average).
-              Widths: NH 26.5% → 548; SD 26.0% → 537; WV 25.8% → 533; ME 25.5% → 527; VT 25.2% → 521.
-              Tan portion (0–17.7%): width 366.
-              Red portion (17.7%–value): NH 182, SD 171, WV 167, ME 161, VT 155.
+              Rows: y = 16, 56, 96, 136, 176 (5 states, evenly spaced inside 220px chart area).
+              State x positions (state% * 20.67):
+                NH 26.5% → 548
+                SD 26.0% → 537
+                WV 25.8% → 533
+                ME 25.5% → 527
+                VT 25.2% → 521
+              Gaps above U.S. avg (state% - 17.7%):
+                NH +8.8, SD +8.3, WV +8.1, ME +7.8, VT +7.5
             -->
             <g font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#1a1a1a">
-              <rect x="0"   y="14"  width="366" height="32" fill="#d4a574"/>
-              <rect x="366" y="14"  width="182" height="32" fill="#b8431a"/>
-              <text x="-8"  y="35" text-anchor="end" font-weight="700">New Hampshire</text>
-              <text x="556" y="35" font-weight="700">26.5%</text>
 
-              <rect x="0"   y="60"  width="366" height="32" fill="#d4a574"/>
-              <rect x="366" y="60"  width="171" height="32" fill="#b8431a"/>
-              <text x="-8"  y="81" text-anchor="end" font-weight="700">South Dakota</text>
-              <text x="545" y="81" font-weight="700">26.0%</text>
+              <!-- New Hampshire -->
+              <line x1="366" y1="16" x2="548" y2="16" stroke="#b8431a" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="548" cy="16" r="7" fill="#b8431a"/>
+              <text x="-12" y="20" text-anchor="end" font-weight="700">New Hampshire</text>
+              <text x="560" y="20" font-weight="700" fill="#b8431a">26.5%</text>
+              <text x="457" y="11" font-size="10" fill="#4a4a4a" text-anchor="middle" font-style="italic">+8.8 pts</text>
 
-              <rect x="0"   y="106" width="366" height="32" fill="#d4a574"/>
-              <rect x="366" y="106" width="167" height="32" fill="#b8431a"/>
-              <text x="-8"  y="127" text-anchor="end" font-weight="700">West Virginia</text>
-              <text x="541" y="127" font-weight="700">25.8%</text>
+              <!-- South Dakota -->
+              <line x1="366" y1="56" x2="537" y2="56" stroke="#b8431a" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="537" cy="56" r="7" fill="#b8431a"/>
+              <text x="-12" y="60" text-anchor="end" font-weight="700">South Dakota</text>
+              <text x="549" y="60" font-weight="700" fill="#b8431a">26.0%</text>
+              <text x="451" y="51" font-size="10" fill="#4a4a4a" text-anchor="middle" font-style="italic">+8.3 pts</text>
 
-              <rect x="0"   y="152" width="366" height="32" fill="#d4a574"/>
-              <rect x="366" y="152" width="161" height="32" fill="#b8431a"/>
-              <text x="-8"  y="173" text-anchor="end" font-weight="700">Maine</text>
-              <text x="535" y="173" font-weight="700">25.5%</text>
+              <!-- West Virginia -->
+              <line x1="366" y1="96" x2="533" y2="96" stroke="#b8431a" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="533" cy="96" r="7" fill="#b8431a"/>
+              <text x="-12" y="100" text-anchor="end" font-weight="700">West Virginia</text>
+              <text x="545" y="100" font-weight="700" fill="#b8431a">25.8%</text>
+              <text x="449" y="91" font-size="10" fill="#4a4a4a" text-anchor="middle" font-style="italic">+8.1 pts</text>
 
-              <rect x="0"   y="198" width="366" height="32" fill="#d4a574"/>
-              <rect x="366" y="198" width="155" height="32" fill="#b8431a"/>
-              <text x="-8"  y="219" text-anchor="end" font-weight="700">Vermont</text>
-              <text x="529" y="219" font-weight="700">25.2%</text>
+              <!-- Maine -->
+              <line x1="366" y1="136" x2="527" y2="136" stroke="#b8431a" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="527" cy="136" r="7" fill="#b8431a"/>
+              <text x="-12" y="140" text-anchor="end" font-weight="700">Maine</text>
+              <text x="539" y="140" font-weight="700" fill="#b8431a">25.5%</text>
+              <text x="446" y="131" font-size="10" fill="#4a4a4a" text-anchor="middle" font-style="italic">+7.8 pts</text>
+
+              <!-- Vermont -->
+              <line x1="366" y1="176" x2="521" y2="176" stroke="#b8431a" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="521" cy="176" r="7" fill="#b8431a"/>
+              <text x="-12" y="180" text-anchor="end" font-weight="700">Vermont</text>
+              <text x="533" y="180" font-weight="700" fill="#b8431a">25.2%</text>
+              <text x="443" y="171" font-size="10" fill="#4a4a4a" text-anchor="middle" font-style="italic">+7.5 pts</text>
+
             </g>
 
-            <!-- Average divider sits in the dead zone above the bars; no overlap with data -->
-            <line x1="366" y1="-6" x2="366" y2="0" stroke="#1a1a1a" stroke-width="1.2"/>
-            <text x="366" y="-12" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#1a1a1a" font-weight="700" text-anchor="middle">U.S. avg 17.7%</text>
+            <!-- Average dots at the baseline of each connector for visual anchor -->
+            <g fill="#1a1a1a">
+              <circle cx="366" cy="16" r="3.5"/>
+              <circle cx="366" cy="56" r="3.5"/>
+              <circle cx="366" cy="96" r="3.5"/>
+              <circle cx="366" cy="136" r="3.5"/>
+              <circle cx="366" cy="176" r="3.5"/>
+            </g>
+
           </g>
         </svg>
 
