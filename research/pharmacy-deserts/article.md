@@ -2,7 +2,7 @@
 
 <h1 class="article-headline">The pharmacy desert is a PBM business model</h1>
 
-<p class="article-deck">Nearly one in three U.S. retail pharmacies have closed since 2010, and the contraction is accelerating in 2026. Two FTC staff reports trace the squeeze to a small set of contract terms that move money from independents to pharmacies the PBMs own.</p>
+<p class="article-deck">Nearly one in three US retail pharmacies have closed since 2010, and the contraction is accelerating in 2026. Two FTC staff reports trace the squeeze to a small set of contract terms that move money from independents to pharmacies the PBMs own.</p>
 
 <div class="article-byline">
   By <strong>Chris Olsen</strong><span class="dot">&middot;</span>May 31, 2026<span class="dot">&middot;</span>7 min read
@@ -10,7 +10,7 @@
 
 <div class="article-body">
 
-  <p class="lead">A pharmacy desert is what happens when the math stops working at the counter. <strong>29.4%</strong> of U.S. retail pharmacies closed between 2010 and 2021, according to Guadamuz et al. in Health Affairs, and independents shut at more than twice the rate of chains. The FTC's two 6(b) staff reports on prescription drug middlemen, released July 9, 2024 and January 14, 2025, name the mechanism. Three Big 3 PBMs, Caremark, Express Scripts, and OptumRx, reimburse unaffiliated pharmacies below acquisition cost, steer prescriptions to pharmacies they own, and mark up specialty generics at the affiliated channel by hundreds of percent. The result, per Berenbrok et al. in JAMA Network Open (March 2025), is that 57.1 million Americans now live somewhere a prescription is hard to fill.</p>
+  <p class="lead">A pharmacy desert is what happens when the math stops working at the counter. <strong>29.4%</strong> of US retail pharmacies closed between 2010 and 2021, according to Guadamuz et al. in Health Affairs, and independents shut at more than twice the rate of chains. The FTC's two 6(b) staff reports on prescription drug middlemen, released July 9, 2024 and January 14, 2025, name the mechanism. Three Big 3 PBMs, Caremark, Express Scripts, and OptumRx, reimburse unaffiliated pharmacies below acquisition cost, steer prescriptions to pharmacies they own, and mark up specialty generics at the affiliated channel by hundreds of percent. The result, per Berenbrok et al. in JAMA Network Open (March 2025), is that 57.1 million Americans now live somewhere a prescription is hard to fill.</p>
 
   <h2>How the math fails at the counter</h2>
 

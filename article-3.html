@@ -145,9 +145,9 @@
 
       <p>This is not a marginal problem. It is the unit economics of the business. A store that fills 200 generic prescriptions a day at a two-dollar loss per script is bleeding $400 every day before rent. The contracts are take-it-or-leave-it because the Big 3 process roughly 80% of U.S. prescription claims, so refusing one network is refusing most of a town&rsquo;s insured customers.</p>
 
-      <!-- CHART 4 -->
+      <!-- CHART 2 -->
       <div class="chart-block">
-        <div class="chart-eyebrow">Chart 4. The math fails at the counter</div>
+        <div class="chart-eyebrow">Chart 2. The math fails at the counter</div>
         <div class="chart-title">Cost to dispense versus typical PBM generic reimbursement</div>
         <div class="chart-sub">Independent pharmacies report a per-prescription dispensing cost of $12 to $15. PBM generic reimbursement frequently falls below the drug&rsquo;s acquisition cost, before any labor.</div>
 
@@ -178,13 +178,15 @@
               <text x="465" y="262">PBM reimbursement</text>
             </g>
 
+            <!-- Cost to dispense: full bar from x-axis (y=240) up to $15 (y=60), with $12 tick marking the lower bound -->
             <g>
-              <rect x="95" y="60" width="120" height="84" fill="#2c5d8f"/>
-              <line x1="95" y1="60" x2="215" y2="60" stroke="#1a1a1a" stroke-width="1.5"/>
-              <line x1="95" y1="144" x2="215" y2="144" stroke="#1a1a1a" stroke-width="1.5"/>
+              <rect x="95" y="60" width="120" height="180" fill="#2c5d8f"/>
+              <line x1="95" y1="96" x2="215" y2="96" stroke="#f5f3ee" stroke-width="1.5" stroke-dasharray="4,3"/>
+              <text x="221" y="100" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a">$12 floor</text>
               <text x="155" y="52" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#1a1a1a" text-anchor="middle">$12 – $15</text>
             </g>
 
+            <!-- PBM reimbursement illustrative ~$9 → height = 108 → y = 132 -->
             <g fill="#b8431a">
               <rect x="405" y="132" width="120" height="108"/>
               <text x="465" y="124" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#1a1a1a" text-anchor="middle">~$9</text>
@@ -265,23 +267,23 @@
 
       <p>These are not abstractions. A keystone pharmacy is one closure away from a desert. The Guadamuz et al. Health Affairs study from December 2024 found that independents, the stores most likely to be the keystone in a small town, closed at more than twice the rate of chains over the 2010 to 2021 window.</p>
 
-      <!-- CHART 2 -->
+      <!-- CHART 4 -->
       <div class="chart-block">
-        <div class="chart-eyebrow">Chart 2. Five states with the largest desert share</div>
+        <div class="chart-eyebrow">Chart 4. Five states with the largest desert share</div>
         <div class="chart-title">Share of state population living in a pharmacy desert</div>
-        <div class="chart-sub">In five states more than a quarter of residents already live in a pharmacy desert, well above the 17.7% national average. Eighteen states sit above 20%.</div>
+        <div class="chart-sub">In five states more than a quarter of residents already live in a pharmacy desert, well above the 17.7% national average. Each bar is split: the tan segment is the portion up to the national average, the red is the portion beyond it.</div>
 
         <div class="legend">
-          <span><span class="swatch" style="background:#b8431a;"></span>State share in a pharmacy desert</span>
-          <span><span class="swatch" style="background:#2c5d8f;"></span>U.S. average (17.7%)</span>
+          <span><span class="swatch" style="background:#d4a574;"></span>Up to U.S. average (17.7%)</span>
+          <span><span class="swatch" style="background:#b8431a;"></span>Above U.S. average</span>
         </div>
 
-        <svg viewBox="0 0 820 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Horizontal bar chart of five U.S. states with the highest share of residents living in a pharmacy desert, all above 25 percent, compared to a U.S. average of 17.7 percent.">
+        <svg viewBox="0 0 820 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Horizontal split bar chart of five U.S. states with the highest share of residents living in a pharmacy desert. Each bar shows the portion up to the 17.7 percent national average in tan and the excess in red. All five states exceed 25 percent.">
           <g transform="translate(110, 30)">
             <line x1="0" y1="0" x2="0" y2="240" stroke="#1a1a1a" stroke-width="1.2"/>
             <line x1="0" y1="240" x2="620" y2="240" stroke="#1a1a1a" stroke-width="1.2"/>
 
-            <!-- scale: 30% max = 620px width; 1px = 0.0484% -->
+            <!-- scale: 30% max = 620px width; 1px = 0.0484%; 17.7% avg → x = 365.7 -->
             <g font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#4a4a4a" text-anchor="middle">
               <text x="0" y="258">0%</text>
               <line x1="124" y1="0" x2="124" y2="240" stroke="#ece8de" stroke-width="1"/>
@@ -296,30 +298,42 @@
               <text x="620" y="258">30%</text>
             </g>
 
-            <line x1="366" y1="0" x2="366" y2="240" stroke="#2c5d8f" stroke-dasharray="4,3" stroke-width="1.4"/>
-            <text x="370" y="12" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#2c5d8f" font-weight="700">U.S. avg 17.7%</text>
-
+            <!--
+              Bars: each split at x = 366 (17.7% national average).
+              Widths: NH 26.5% → 548; SD 26.0% → 537; WV 25.8% → 533; ME 25.5% → 527; VT 25.2% → 521.
+              Tan portion (0–17.7%): width 366.
+              Red portion (17.7%–value): NH 182, SD 171, WV 167, ME 161, VT 155.
+            -->
             <g font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#1a1a1a">
-              <rect x="0" y="14" width="548" height="32" fill="#b8431a"/>
-              <text x="-8" y="35" text-anchor="end" font-weight="700">New Hampshire</text>
-              <text x="556" y="35" fill="#1a1a1a" font-weight="700">26.5%</text>
+              <rect x="0"   y="14"  width="366" height="32" fill="#d4a574"/>
+              <rect x="366" y="14"  width="182" height="32" fill="#b8431a"/>
+              <text x="-8"  y="35" text-anchor="end" font-weight="700">New Hampshire</text>
+              <text x="556" y="35" font-weight="700">26.5%</text>
 
-              <rect x="0" y="60" width="537" height="32" fill="#b8431a"/>
-              <text x="-8" y="81" text-anchor="end" font-weight="700">South Dakota</text>
-              <text x="545" y="81" fill="#1a1a1a" font-weight="700">26.0%</text>
+              <rect x="0"   y="60"  width="366" height="32" fill="#d4a574"/>
+              <rect x="366" y="60"  width="171" height="32" fill="#b8431a"/>
+              <text x="-8"  y="81" text-anchor="end" font-weight="700">South Dakota</text>
+              <text x="545" y="81" font-weight="700">26.0%</text>
 
-              <rect x="0" y="106" width="533" height="32" fill="#b8431a"/>
-              <text x="-8" y="127" text-anchor="end" font-weight="700">West Virginia</text>
-              <text x="541" y="127" fill="#1a1a1a" font-weight="700">25.8%</text>
+              <rect x="0"   y="106" width="366" height="32" fill="#d4a574"/>
+              <rect x="366" y="106" width="167" height="32" fill="#b8431a"/>
+              <text x="-8"  y="127" text-anchor="end" font-weight="700">West Virginia</text>
+              <text x="541" y="127" font-weight="700">25.8%</text>
 
-              <rect x="0" y="152" width="527" height="32" fill="#b8431a"/>
-              <text x="-8" y="173" text-anchor="end" font-weight="700">Maine</text>
-              <text x="535" y="173" fill="#1a1a1a" font-weight="700">25.5%</text>
+              <rect x="0"   y="152" width="366" height="32" fill="#d4a574"/>
+              <rect x="366" y="152" width="161" height="32" fill="#b8431a"/>
+              <text x="-8"  y="173" text-anchor="end" font-weight="700">Maine</text>
+              <text x="535" y="173" font-weight="700">25.5%</text>
 
-              <rect x="0" y="198" width="521" height="32" fill="#b8431a"/>
-              <text x="-8" y="219" text-anchor="end" font-weight="700">Vermont</text>
-              <text x="529" y="219" fill="#1a1a1a" font-weight="700">25.2%</text>
+              <rect x="0"   y="198" width="366" height="32" fill="#d4a574"/>
+              <rect x="366" y="198" width="155" height="32" fill="#b8431a"/>
+              <text x="-8"  y="219" text-anchor="end" font-weight="700">Vermont</text>
+              <text x="529" y="219" font-weight="700">25.2%</text>
             </g>
+
+            <!-- Average divider sits in the dead zone above the bars; no overlap with data -->
+            <line x1="366" y1="-6" x2="366" y2="0" stroke="#1a1a1a" stroke-width="1.2"/>
+            <text x="366" y="-12" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#1a1a1a" font-weight="700" text-anchor="middle">U.S. avg 17.7%</text>
           </g>
         </svg>
 
